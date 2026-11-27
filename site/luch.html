@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Координатный луч и отрезки — памятка и разбор № 60</title>
+<meta name="description" content="Памятка для пятиклассника: цена деления, десятичная дробь для точки и длина отрезка на координатном луче. Схемы, разбор задачи № 60 и тренажёр.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a5593'/%3E%3Cpath d='M18 18l28 28M46 18L18 46' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fcfbfa;
+    --ink: #21221f;
+    --ink-soft: #55564f;
+    --line: #e7e2da;
+    --card: #ffffff;
+    --accent: #e4572e;
+    --accent-soft: #fdeee8;
+    --teal: #0e7c7b;
+    --teal-soft: #e6f2f1;
+    --gold: #f4c542;
+    --gold-soft: #fdf4dd;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Nunito", "PT Sans", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  /* ---------- header ---------- */
+  header {
+    padding: 56px 0 36px;
+    background:
+      radial-gradient(circle at 12% 20%, rgba(228, 87, 46, 0.07), transparent 42%),
+      radial-gradient(circle at 88% 80%, rgba(14, 124, 123, 0.07), transparent 42%);
+  }
+  .kicker {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 6px 14px;
+    margin-bottom: 18px;
+  }
+  h1 {
+    font-size: clamp(34px, 6vw, 56px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    max-width: 15ch;
+  }
+  .lead {
+    margin-top: 18px;
+    max-width: 62ch;
+    color: var(--ink-soft);
+    font-size: 19px;
+  }
+
+  /* ---------- sections ---------- */
+  section { padding: 44px 0; }
+  h2 {
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .sub { color: var(--ink-soft); max-width: 66ch; margin-bottom: 28px; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px;
+  }
+
+  /* algorithm steps */
+  .steps { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 700px) {
+    .steps { grid-template-columns: 1fr 1fr; }
+  }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .step-num {
+    flex: 0 0 auto;
+    width: 44px; height: 44px;
+    border-radius: 14px;
+    background: var(--ink);
+    color: #fff;
+    font-weight: 900;
+    font-size: 20px;
+    display: grid; place-items: center;
+  }
+  .step h3 { font-size: 19px; font-weight: 800; margin-bottom: 4px; }
+  .step p { color: var(--ink-soft); font-size: 16px; }
+
+  .formula {
+    margin-top: 22px;
+    background: var(--gold-soft);
+    border: 1px dashed #e4c96a;
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    font-size: 19px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .formula .muted { color: var(--ink-soft); font-weight: 600; }
+  .concept-figure {
+    max-width: 560px; margin: 20px auto 0; padding: 10px 12px 12px;
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+  }
+  .concept-figure svg { display: block; width: 100%; height: auto; }
+  .concept-figure figcaption { margin-top: 6px; color: var(--ink-soft); font-size: 14px; line-height: 1.45; text-align: center; }
+
+  /* division cases */
+  .cases { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 760px) {
+    .cases { grid-template-columns: 1fr 1fr; }
+  }
+  .case h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+  .case .tag {
+    display: inline-block;
+    font-size: 13px; font-weight: 800;
+    border-radius: 999px; padding: 3px 12px;
+    margin-bottom: 12px;
+  }
+  .tag.ten { background: var(--teal-soft); color: var(--teal); }
+  .tag.four { background: var(--accent-soft); color: var(--accent); }
+  .case svg { width: 100%; height: auto; display: block; }
+  .case .note { font-size: 15px; color: var(--ink-soft); margin-top: 10px; }
+
+  /* solutions */
+  .ray-block { margin-bottom: 30px; }
+  .ray-block:last-child { margin-bottom: 0; }
+  .ray-head {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .ray-head h3 { font-size: 20px; font-weight: 900; }
+  .ray-head .badge {
+    font-size: 13px; font-weight: 800;
+    background: var(--teal-soft); color: var(--teal);
+    border-radius: 999px; padding: 3px 12px;
+  }
+  .ray-svg { width: 100%; height: auto; display: block; margin: 8px 0 12px; }
+  .answers {
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .ans {
+    background: var(--teal-soft);
+    color: var(--teal);
+    font-weight: 800;
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-size: 17px;
+  }
+  .howto {
+    margin-top: 14px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    border-left: 3px solid var(--line);
+    padding-left: 14px;
+  }
+  .howto b { color: var(--ink); }
+
+  /* trainer */
+  .trainer { background: var(--ink); color: #f5f4f0; border: none; }
+  .trainer h2, .trainer .sub { color: #f5f4f0; }
+  .trainer .sub { color: #b9b8b0; }
+  .t-card {
+    background: #2c2d29;
+    border-radius: var(--radius);
+    padding: 24px;
+  }
+  .t-meta {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    margin-bottom: 14px;
+  }
+  .t-mode {
+    font-size: 13px; font-weight: 800;
+    background: rgba(244, 197, 66, 0.16);
+    color: var(--gold);
+    border-radius: 999px; padding: 4px 14px;
+  }
+  .t-score { margin-left: auto; font-size: 14px; color: #b9b8b0; font-weight: 700; }
+  .t-ray { width: 100%; height: auto; display: block; }
+  .t-controls {
+    display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+    margin-top: 18px;
+  }
+  .t-controls label { font-weight: 700; font-size: 16px; }
+  .t-controls input {
+    font: inherit;
+    font-weight: 800;
+    width: 130px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 2px solid #4a4b45;
+    background: #1d1e1a;
+    color: #f5f4f0;
+    outline: none;
+  }
+  .t-controls input:focus-visible { border-color: var(--gold); }
+  .btn {
+    font: inherit;
+    font-weight: 800;
+    border: none;
+    border-radius: 12px;
+    padding: 11px 22px;
+    cursor: pointer;
+    background: var(--gold);
+    color: #21221f;
+    transition: transform .15s ease, opacity .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn.ghost {
+    background: transparent;
+    color: #f5f4f0;
+    border: 2px solid #4a4b45;
+  }
+  .btn:focus-visible { outline: 3px solid rgba(244,197,66,.5); outline-offset: 2px; }
+  .t-feedback { margin-top: 14px; font-weight: 800; font-size: 17px; min-height: 28px; }
+  .t-feedback.ok { color: #7fd6a4; }
+  .t-feedback.no { color: #ff9d7e; }
+  .t-hint { color: #b9b8b0; font-weight: 600; }
+  .t-error-toggle { padding: 6px 12px; font-size: 14px; }
+  .t-error-toggle[aria-expanded="true"] { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+  .t-error-toggle:disabled { opacity: .55; cursor: not-allowed; }
+  .t-errors { margin-top: 20px; padding-top: 18px; border-top: 1px solid #4a4b45; }
+  .t-errors h3 { font-size: 21px; margin-bottom: 4px; }
+  .t-error-help { color: #b9b8b0; font-size: 14px; margin-bottom: 14px; }
+  .t-error-list { display: grid; gap: 12px; }
+  .t-error-item { min-width: 0; padding: 16px; border: 1px solid #4a4b45; border-radius: 14px; background: #1d1e1a; }
+  .t-error-item p { overflow-wrap: anywhere; }
+  .t-error-question { font-weight: 800; }
+  .t-error-last { color: #ff9d7e; margin: 5px 0 12px; }
+  .t-error-item .btn { margin: 4px 0 12px; }
+  .t-errors details { background: #2c2d29; border-color: #4a4b45; color: #f5f4f0; }
+  .t-errors details .body { color: #e3e2dc; }
+  .t-error-answer { margin-top: 10px; color: #7fd6a4; font-weight: 800; }
+
+  /* Короткое видео перед уроком */
+  .video-section { padding-top: 32px; }
+  .video-lesson {
+    display: grid; grid-template-columns: 1fr; gap: 26px; align-items: center;
+    padding: 26px; border-radius: var(--radius);
+    background: var(--ink); color: #fff;
+  }
+  .video-tag {
+    display: inline-block; padding: 4px 12px; border-radius: 999px;
+    background: rgba(255,255,255,.12); color: #fff;
+    font-size: 13px; font-weight: 800; letter-spacing: .04em;
+  }
+  .video-copy h2 { color: #fff; margin: 10px 0 12px; }
+  .video-copy p, .video-points { color: #e3e2dc; }
+  .video-points { margin: 14px 0 0 21px; }
+  .video-points li + li { margin-top: 5px; }
+  .video-copy .video-help { margin-top: 16px; font-size: 14px; color: #c9c8c1; }
+  .video-player {
+    display: block; width: 100%; max-width: 320px; height: auto;
+    aspect-ratio: 9 / 16; margin: 0 auto; border-radius: 16px;
+    background: var(--ink); border: 1px solid rgba(255,255,255,.25);
+  }
+  .video-player:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+  @media (min-width: 760px) {
+    .video-lesson { grid-template-columns: minmax(0, 1fr) 300px; padding: 30px; }
+  }
+
+  footer {
+    padding: 30px 0 44px;
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+  .top-link { display: inline-block; margin-top: 8px; color: var(--accent); font-weight: 800; text-decoration: none; }
+  .top-link:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="wrap">
+    <span class="kicker">Математика · 5 класс</span>
+    <h1>Координатный луч и отрезки без страха</h1>
+    <p class="lead">Памятка: как определить «цену деления», записать десятичную дробь для точки и найти длину отрезка. Ниже — схемы, полный разбор задачи №&nbsp;60 и тренажёр.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ VIDEO ============ -->
+  <section id="video" class="video-section" aria-labelledby="video-title">
+    <div class="video-lesson">
+      <div class="video-copy">
+        <span class="video-tag">Видео · 51 секунда</span>
+        <h2 id="video-title">Координатный луч за минуту</h2>
+        <p>Разберём порядок действий на коротком примере, а затем закрепим его на задаче № 60.</p>
+        <ul class="video-points">
+          <li>Как найти цену одного деления.</li>
+          <li>Как сосчитать шаги до точки.</li>
+          <li>Как записать ответ десятичной дробью.</li>
+        </ul>
+        <p class="video-help">Видео не запускается само. Нажми «Воспроизвести»; на паузе удобно пересчитать деления.</p>
+      </div>
+      <video class="video-player" controls playsinline preload="metadata" poster="videos/luch.jpg" width="720" height="1280" aria-label="Видеообъяснение: десятичные дроби на координатном луче">
+        <source src="videos/luch.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео. <a href="videos/luch.mp4">Скачать ролик</a>.
+      </video>
+    </div>
+  </section>
+
+  <!-- ============ ALGORITHM ============ -->
+  <section id="algorithm">
+    <h2>Алгоритм: 4 шага</h2>
+    <p class="sub">Координатный луч — это линейка. Подписаны не все числа, а лишь некоторые, а промежуток между соседними подписями разбит на одинаковые шаги.</p>
+
+    <div class="steps">
+      <div class="card step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Найди два соседних подписанных числа</h3>
+          <p>Например, 0 и 1, или 9 и 10. Это «опорные» числа, от которых считаем.</p>
+        </div>
+      </div>
+      <div class="card step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Посчитай шаги между ними</h3>
+          <p>Сосчитай, на сколько одинаковых делений разбит промежуток: 10 шагов, 4 шага и т.д.</p>
+        </div>
+      </div>
+      <div class="card step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Вычисли цену одного шага</h3>
+          <p>Раздели 1 на число шагов: 10 шагов → 0,1; 4 шага → 0,25; 5 шагов → 0,2.</p>
+        </div>
+      </div>
+      <div class="card step">
+        <div class="step-num">4</div>
+        <div>
+          <h3>Сосчитай шаги до точки</h3>
+          <p>От ближайшего подписанного числа пересчитай деления до точки (пальцем или карандашом) и сложи.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="formula">
+      Значение точки = <span class="muted">ближайшее подписанное число</span> + <span class="muted">число шагов</span> × <span class="muted">цену шага</span>
+    </div>
+    <figure class="concept-figure">
+      <svg id="algorithm-ray" viewBox="0 0 900 150" role="img" aria-label="Между 9 и 10 десять одинаковых шагов. Цена шага 0,1. Точка D находится на четыре шага правее 9, поэтому её координата 9,4."></svg>
+      <figcaption>10 шагов между 9 и 10 → шаг 0,1. До D четыре шага → 9 + 4 × 0,1 = 9,4.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ DIVISION CASES ============ -->
+  <section id="cases">
+    <h2>Запомни два главных случая</h2>
+    <p class="sub">Чаще всего в задачах встречаются эти два варианта делений — как копейки в рубле и четверти часа.</p>
+
+    <div class="cases">
+      <div class="card case">
+        <span class="tag ten">10 делений между числами</span>
+        <h3>Один шаг = 0,1</h3>
+        <svg id="case-ten" viewBox="0 0 900 120" role="img" aria-label="Луч от 0 до 1,3 с делениями по 0,1 и точкой B на отметке 0,6"></svg>
+        <p class="note">Как 10 копеек в рубле. Точка B — 6 шагов после нуля, значит B = 0,6.</p>
+      </div>
+      <div class="card case">
+        <span class="tag four">4 деления между числами</span>
+        <h3>Один шаг = 0,25</h3>
+        <svg id="case-four" viewBox="0 0 900 120" role="img" aria-label="Луч от 1 до 2,75 с делениями по 0,25 и точкой C на отметке 2,25"></svg>
+        <p class="note">Как четверти часа (15 минут). Проверка: 0,25 + 0,25 + 0,25 + 0,25 = 1. Точка C — 5 шагов после единицы, значит C = 1 + 5·0,25 = 2,25.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEGMENTS ============ -->
+  <section id="segments">
+    <h2>Длина отрезка на координатном луче</h2>
+    <p class="sub">У отрезка два конца. Правый конец имеет большую координату, левый — меньшую. Поэтому длину находим вычитанием.</p>
+    <div class="card">
+      <figure class="concept-figure" style="margin-top:0;">
+        <svg viewBox="0 0 600 220" role="img" aria-label="На координатном луче точка A имеет координату 1,5, точка B — 2,75. Длина отрезка AB равна 2,75 минус 1,5, то есть 1,25.">
+          <line x1="40" y1="100" x2="550" y2="100" stroke="#21221f" stroke-width="3" stroke-linecap="round"/>
+          <path d="M550 100 L532 91 L537 100 L532 109 Z" fill="#21221f"/>
+          <g stroke="#8a887f" stroke-width="2"><path d="M60 86 V114 M273 86 V114 M487 86 V114"/></g>
+          <g font-family="Nunito, sans-serif" fill="#21221f" font-size="24" font-weight="900" text-anchor="middle"><text x="60" y="147">1</text><text x="273" y="147">2</text><text x="487" y="147">3</text></g>
+          <circle cx="166.5" cy="100" r="10" fill="#e4572e"/><circle cx="433" cy="100" r="10" fill="#0e7c7b"/>
+          <g font-family="Nunito, sans-serif" font-size="25" font-weight="900" font-style="italic" text-anchor="middle"><text x="166.5" y="65" fill="#e4572e">A</text><text x="433" y="65" fill="#0e7c7b">B</text></g>
+          <g font-family="Nunito, sans-serif" font-size="18" font-weight="800" text-anchor="middle"><text x="166.5" y="185" fill="#e4572e">1,5</text><text x="433" y="185" fill="#0e7c7b">2,75</text></g>
+          <path d="M166.5 120 V155 H433 V120" fill="none" stroke="#0e7c7b" stroke-width="3"/>
+          <text x="300" y="210" font-family="Nunito, sans-serif" font-size="18" font-weight="900" fill="#0e7c7b" text-anchor="middle">AB = 2,75 − 1,5 = 1,25</text>
+        </svg>
+        <figcaption>Вычитаем координаты: правая точка минус левая точка.</figcaption>
+      </figure>
+      <div class="formula">Длина отрезка = <span class="muted">правая координата</span> − <span class="muted">левая координата</span></div>
+      <p class="howto"><b>Проверка по делениям:</b> между A и B пять шагов по 0,25. Поэтому AB = 5 × 0,25 = 1,25. Оба способа дали одинаковый ответ.</p>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTION ============ -->
+  <section id="solution">
+    <h2>Задача № 60: полное решение</h2>
+    <p class="sub">«Какие десятичные дроби соответствуют точкам, если изображена часть луча». Сначала ребёнок решает сам, потом сверяется с этим разбором.</p>
+
+    <!-- ray 1 -->
+    <div class="card ray-block">
+      <div class="ray-head">
+        <h3>Первый луч</h3>
+        <span class="badge">между 0 и 1 — 10 делений → шаг 0,1</span>
+      </div>
+      <svg class="ray-svg" id="ray1" viewBox="0 0 900 150" role="img" aria-label="Координатный луч от 0 до 1,3; точки K, N, T, C, L"></svg>
+      <div class="answers">
+        <span class="ans">K = 0,1</span>
+        <span class="ans">N = 0,3</span>
+        <span class="ans">T = 0,7</span>
+        <span class="ans">C = 0,9</span>
+        <span class="ans">L = 1,1</span>
+      </div>
+      <p class="howto"><b>Как считали:</b> от нуля — K&nbsp;(1&nbsp;шаг), N&nbsp;(3), T&nbsp;(7), C&nbsp;(9). Точка L правее единицы ровно на один шаг: 1&nbsp;+&nbsp;0,1&nbsp;=&nbsp;1,1.</p>
+    </div>
+
+    <!-- ray 2 -->
+    <div class="card ray-block">
+      <div class="ray-head">
+        <h3>Второй луч</h3>
+        <span class="badge">между 1 и 2 — 4 деления → шаг 0,25</span>
+      </div>
+      <svg class="ray-svg" id="ray2" viewBox="0 0 900 150" role="img" aria-label="Координатный луч от 1 до 4,5; точки A, B, C, D"></svg>
+      <div class="answers">
+        <span class="ans">A = 1,5</span>
+        <span class="ans">B = 2,5</span>
+        <span class="ans">C = 3</span>
+        <span class="ans">D = 4</span>
+      </div>
+      <p class="howto"><b>Как считали:</b> A = 1 + 2·0,25 = 1,5; B = 2 + 2·0,25 = 2,5; C = 2 + 4·0,25 = 3; D = 2 + 8·0,25 = 4. Заметь: C и D попали ровно на целые числа — это нормально, целые числа тоже десятичные дроби.</p>
+    </div>
+
+    <!-- ray 3 -->
+    <div class="card ray-block">
+      <div class="ray-head">
+        <h3>Третий луч</h3>
+        <span class="badge">между 9 и 10 — 10 делений → шаг 0,1</span>
+      </div>
+      <svg class="ray-svg" id="ray3" viewBox="0 0 900 150" role="img" aria-label="Координатный луч от 8 до 11,3; точки A, C, D, E, F"></svg>
+      <div class="answers">
+        <span class="ans">A = 8,2</span>
+        <span class="ans">C = 8,8</span>
+        <span class="ans">D = 9,4</span>
+        <span class="ans">E = 9,8</span>
+        <span class="ans">F = 10,5</span>
+      </div>
+      <p class="howto"><b>Как считали:</b> A — 2 шага после 8; C — 2 шага до 9 (или 8 после 8); D — 4 шага после 9; E — 8 шагов после 9; F — прошли 10 и ещё 5 шагов: 10 + 5·0,1 = 10,5.</p>
+    </div>
+
+    <div class="card" style="margin-top:16px;">
+      <h3 style="font-size:19px; font-weight:800; margin-bottom:10px;">Быстрая проверка ответа ребёнка</h3>
+      <div class="step"><div class="step-num" style="background:var(--teal);">✓</div><div><p style="color:var(--ink-soft); font-size:16px;">Точка между 9 и 10? Тогда целая часть — 9, а не 8 и не 10. Точка правее числа — значение больше, левее — меньше.</p></div></div>
+      <div class="step" style="margin-top:10px;"><div class="step-num" style="background:var(--teal);">✓</div><div><p style="color:var(--ink-soft); font-size:16px;">Ответ по модулю не больше цены шага: если шаг 0,1, а «хвост» после запятой получился 0,35 — ошибка в счёте делений.</p></div></div>
+      <div class="step" style="margin-top:10px;"><div class="step-num" style="background:var(--teal);">✓</div><div><p style="color:var(--ink-soft); font-size:16px;">Пересчитайте шаги пальцем от подписанного числа до точки — самый частый промах: пропустить или зачесть лишнее деление.</p></div></div>
+    </div>
+  </section>
+
+  <!-- ============ TRAINER ============ -->
+  <section id="trainer">
+    <h2>Тренажёр: проверь себя</h2>
+    <p class="sub">Генерируется случайный луч. Запиши десятичную дробь для точки с буквой и нажми «Проверить». Запятую или точку — как удобно.</p>
+
+    <div class="card trainer t-card">
+      <div class="t-meta">
+        <span class="t-mode" id="t-mode">—</span>
+        <button type="button" class="btn ghost t-error-toggle" id="t-errors-btn" aria-expanded="false" aria-controls="t-errors" disabled>Мои ошибки (0)</button>
+        <span class="t-score" id="t-score">Верно: 0 из 0</span>
+      </div>
+      <svg class="t-ray" id="t-ray" viewBox="0 0 900 150" role="img" aria-label="Луч для тренировки"></svg>
+      <form class="t-controls" id="t-form" autocomplete="off">
+        <label for="t-input">Точка <span id="t-letter">M</span> =</label>
+        <input id="t-input" name="answer" inputmode="decimal" placeholder="0,0" aria-label="Ответ">
+        <button type="submit" class="btn">Проверить</button>
+        <button type="button" class="btn ghost" id="t-next">Другой пример</button>
+      </form>
+      <p class="t-feedback" id="t-feedback" aria-live="polite"></p>
+      <div class="t-errors" id="t-errors" hidden>
+        <h3>Разбор ошибок</h3>
+        <p class="t-error-help">Сначала попробуй решить снова. Если не получается, открой разбор: там сохранены схема, способ подсчёта и ответ.</p>
+        <div class="t-error-list" id="t-error-list"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Памятка к теме «Десятичные дроби»: цена деления, координата точки и длина отрезка на координатном луче.
+    <br>Другие памятки на этом сайте: <a class="top-link" href="procenty.html">Проценты без путаницы →</a> <a class="top-link" href="index.html">Пропорции на пальцах (6 класс) →</a>
+    <br><a class="top-link" href="#top">Наверх ↑</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var SVGNS = "http://www.w3.org/2000/svg";
+  var INK = "#21221f", SOFT = "#8a887f", ACCENT = "#e4572e", TEAL = "#0e7c7b";
+
+  function el(tag, attrs, parent) {
+    var n = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+
+  function fmt(v) {
+    // 0.1 -> "0,1"; 3 -> "3"; 10.5 -> "10,5"
+    var r = Math.round(v * 100) / 100;
+    var s = String(r);
+    if (s.indexOf(".") >= 0) {
+      s = s.replace(".", ",");
+      s = s.replace(/,?0+$/, "");
+    }
+    return s;
+  }
+
+  /**
+   * Рисует координатный луч.
+   * opts: { from, to, step, marks: [{label, value}], ints: [значения с подписями снизу],
+   *        markFill — цвет точек, dark — тёмный фон (для тренажёра) }
+   */
+  function drawRay(svg, opts) {
+    var W = 900, axisY = 78, x0 = 50, x1 = 850;
+    var span = opts.to - opts.from;
+    var px = function (v) { return x0 + (v - opts.from) / span * (x1 - x0); };
+    var axisColor = opts.dark ? "#f5f4f0" : INK;
+    var tickColor = opts.dark ? "#cfcfc8" : SOFT;
+    var labelColor = opts.dark ? "#f5f4f0" : INK;
+
+    svg.innerHTML = "";
+
+    // ось со стрелкой
+    el("line", { x1: x0 - 25, y1: axisY, x2: x1, y2: axisY, stroke: axisColor, "stroke-width": 3, "stroke-linecap": "round" }, svg);
+    el("path", {
+      d: "M " + x1 + " " + axisY + " l -16 -8 l 5 8 l -5 8 z",
+      fill: axisColor
+    }, svg);
+
+    // деления
+    var n = Math.round((opts.to - opts.from) / opts.step);
+    for (var i = 0; i <= n; i++) {
+      var v = opts.from + i * opts.step;
+      var x = px(v);
+      var isInt = Math.abs(v - Math.round(v)) < 1e-9;
+      el("line", {
+        x1: x, y1: axisY - (isInt ? 12 : 8),
+        x2: x, y2: axisY + (isInt ? 12 : 8),
+        stroke: tickColor, "stroke-width": isInt ? 2.5 : 2
+      }, svg);
+    }
+
+    // подписанные числа снизу
+    (opts.ints || []).forEach(function (v) {
+      var t = el("text", {
+        x: px(v), y: axisY + 44,
+        "text-anchor": "middle",
+        "font-size": 30, "font-weight": 900,
+        fill: labelColor
+      }, svg);
+      t.textContent = String(Math.round(v));
+    });
+
+    // отмеченные точки
+    (opts.marks || []).forEach(function (m) {
+      var x = px(m.value);
+      el("circle", { cx: x, cy: axisY, r: 10, fill: m.fill || ACCENT }, svg);
+      var t = el("text", {
+        x: x, y: axisY - 30,
+        "text-anchor": "middle",
+        "font-size": 32, "font-weight": 900, "font-style": "italic",
+        fill: m.fill || ACCENT
+      }, svg);
+      t.textContent = m.label;
+    });
+  }
+
+  /* ---------- учебные лучи ---------- */
+
+  drawRay(document.getElementById("algorithm-ray"), {
+    from: 9, to: 10.3, step: 0.1,
+    ints: [9, 10],
+    marks: [{ label: "D", value: 9.4 }]
+  });
+
+  drawRay(document.getElementById("case-ten"), {
+    from: 0, to: 1.3, step: 0.1,
+    ints: [0, 1],
+    marks: [{ label: "B", value: 0.6 }]
+  });
+
+  drawRay(document.getElementById("case-four"), {
+    from: 1, to: 2.75, step: 0.25,
+    ints: [1, 2],
+    marks: [{ label: "C", value: 2.25, fill: TEAL }]
+  });
+
+  drawRay(document.getElementById("ray1"), {
+    from: 0, to: 1.3, step: 0.1,
+    ints: [0, 1],
+    marks: [
+      { label: "K", value: 0.1 }, { label: "N", value: 0.3 },
+      { label: "T", value: 0.7 }, { label: "C", value: 0.9 },
+      { label: "L", value: 1.1 }
+    ]
+  });
+
+  drawRay(document.getElementById("ray2"), {
+    from: 1, to: 4.5, step: 0.25,
+    ints: [1, 2, 3, 4],
+    marks: [
+      { label: "A", value: 1.5 }, { label: "B", value: 2.5 },
+      { label: "C", value: 3 }, { label: "D", value: 4 }
+    ]
+  });
+
+  drawRay(document.getElementById("ray3"), {
+    from: 8, to: 11.3, step: 0.1,
+    ints: [8, 9, 10],
+    marks: [
+      { label: "A", value: 8.2 }, { label: "C", value: 8.8 },
+      { label: "D", value: 9.4 }, { label: "E", value: 9.8 },
+      { label: "F", value: 10.5 }
+    ]
+  });
+
+  /* ---------- тренажёр ---------- */
+
+  var LETTERS = ["M", "P", "Q", "R", "S", "X", "Y", "Z"];
+  var state = { answer: 0, total: 0, ok: 0, hint: "", letter: "", modeText: "", currentMistakeId: null };
+  var mistakes = [];
+  var nextMistakeId = 1;
+
+  var tRay = document.getElementById("t-ray");
+  var tMode = document.getElementById("t-mode");
+  var tScore = document.getElementById("t-score");
+  var tLetter = document.getElementById("t-letter");
+  var tInput = document.getElementById("t-input");
+  var tFeedback = document.getElementById("t-feedback");
+  var tErrorsBtn = document.getElementById("t-errors-btn");
+  var tErrors = document.getElementById("t-errors");
+  var tErrorList = document.getElementById("t-error-list");
+
+  function findMistake(id) {
+    for (var i = 0; i < mistakes.length; i++) {
+      if (mistakes[i].id === id) return mistakes[i];
+    }
+    return null;
+  }
+
+  function renderMistakes() {
+    tErrorsBtn.textContent = "Мои ошибки (" + mistakes.length + ")";
+    tErrorsBtn.disabled = mistakes.length === 0;
+    if (mistakes.length === 0) {
+      tErrors.hidden = true;
+      tErrorsBtn.setAttribute("aria-expanded", "false");
+    }
+    tErrorList.textContent = "";
+
+    mistakes.forEach(function (mistake) {
+      var item = document.createElement("article");
+      item.className = "t-error-item";
+
+      var question = document.createElement("p");
+      question.className = "t-error-question";
+      question.textContent = mistake.question;
+      item.appendChild(question);
+
+      var lastAnswer = document.createElement("p");
+      lastAnswer.className = "t-error-last";
+      lastAnswer.textContent = "Ваш неверный ответ: " + mistake.lastAnswer;
+      item.appendChild(lastAnswer);
+
+      var retry = document.createElement("button");
+      retry.type = "button";
+      retry.className = "btn";
+      retry.textContent = "Решить снова";
+      retry.addEventListener("click", function () { retryMistake(mistake.id); });
+      item.appendChild(retry);
+
+      var details = document.createElement("details");
+      var summary = document.createElement("summary");
+      summary.textContent = "Показать разбор";
+      details.appendChild(summary);
+      var body = document.createElement("div");
+      body.className = "body";
+      var hint = document.createElement("p");
+      hint.textContent = mistake.hint;
+      body.appendChild(hint);
+      var answer = document.createElement("p");
+      answer.className = "t-error-answer";
+      answer.textContent = "Правильный ответ: " + mistake.letter + " = " + fmt(mistake.answer);
+      body.appendChild(answer);
+      details.appendChild(body);
+      item.appendChild(details);
+      tErrorList.appendChild(item);
+    });
+  }
+
+  function recordMistake(rawAnswer) {
+    var existing = findMistake(state.currentMistakeId);
+    if (existing) {
+      existing.lastAnswer = rawAnswer;
+    } else {
+      var mistake = {
+        id: nextMistakeId++,
+        question: "Точка " + state.letter + " на координатном луче (" + state.modeText + ")",
+        rayHtml: tRay.innerHTML,
+        answer: state.answer,
+        hint: state.hint,
+        letter: state.letter,
+        modeText: state.modeText,
+        lastAnswer: rawAnswer
+      };
+      mistakes.push(mistake);
+      state.currentMistakeId = mistake.id;
+    }
+    renderMistakes();
+  }
+
+  function retryMistake(id) {
+    var mistake = findMistake(id);
+    if (!mistake) return;
+    state.answer = mistake.answer;
+    state.hint = mistake.hint;
+    state.letter = mistake.letter;
+    state.modeText = mistake.modeText;
+    state.currentMistakeId = mistake.id;
+    // Возвращаем только внутренний SVG генератора, не ввод пользователя.
+    tRay.innerHTML = mistake.rayHtml;
+    tMode.textContent = mistake.modeText;
+    tLetter.textContent = mistake.letter;
+    tInput.value = "";
+    tFeedback.textContent = "Реши это задание ещё раз. Разбор остаётся доступен в списке ошибок.";
+    tFeedback.className = "t-feedback";
+    tErrors.hidden = true;
+    tErrorsBtn.setAttribute("aria-expanded", "false");
+    tInput.focus();
+  }
+
+  function newTask(focusInput) {
+    state.currentMistakeId = null;
+    var tenths = Math.random() < 0.5;
+    var from, step, to, markVal, modeText;
+    if (tenths) {
+      from = Math.floor(Math.random() * 9);        // 0..8
+      step = 0.1;
+      to = from + 1.3;
+      markVal = from + (1 + Math.floor(Math.random() * 12)) * step; // от from+0.1 до from+1.3
+      modeText = "10 делений на единицу → шаг 0,1";
+    } else {
+      from = 1 + Math.floor(Math.random() * 3);    // 1..3
+      step = 0.25;
+      to = from + 3.5;
+      markVal = from + (1 + Math.floor(Math.random() * 13)) * step; // от +0.25 до +3.25
+      modeText = "4 деления на единицу → шаг 0,25";
+    }
+    var letter = LETTERS[Math.floor(Math.random() * LETTERS.length)];
+    state.answer = Math.round(markVal * 100) / 100;
+    state.letter = letter;
+    state.modeText = modeText;
+    var steps = Math.round((markVal - from) / step);
+    state.hint = "Цена одного деления: " + fmt(step) + ". От числа " + from + " до точки " + letter + " нужно пройти " + steps + " шагов: " + from + " + " + steps + " × " + fmt(step) + " = " + fmt(markVal) + ".";
+
+    var ints = [];
+    for (var v = Math.ceil(from); v <= Math.floor(to); v++) ints.push(v);
+
+    drawRay(tRay, {
+      from: from, to: to, step: step,
+      ints: ints, dark: true,
+      marks: [{ label: letter, value: markVal, fill: "#f4c542" }]
+    });
+
+    tMode.textContent = modeText;
+    tLetter.textContent = letter;
+    tInput.value = "";
+    tFeedback.textContent = "";
+    tFeedback.className = "t-feedback";
+    if (focusInput) tInput.focus();
+  }
+
+  document.getElementById("t-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var raw = tInput.value.trim().replace(/\s/g, "").replace(",", ".");
+    var val = parseFloat(raw);
+    if (isNaN(val)) {
+      tFeedback.textContent = "Впиши число, например 0,6";
+      tFeedback.className = "t-feedback no";
+      return;
+    }
+    state.total++;
+    if (Math.abs(val - state.answer) < 0.001) {
+      state.ok++;
+      var corrected = state.currentMistakeId !== null;
+      if (corrected) {
+        mistakes = mistakes.filter(function (mistake) { return mistake.id !== state.currentMistakeId; });
+        state.currentMistakeId = null;
+        renderMistakes();
+      }
+      tFeedback.textContent = corrected
+        ? "Верно! Ошибка исправлена, задание удалено из списка. Можно следующий пример."
+        : "Верно! " + tLetter.textContent + " = " + fmt(state.answer) + ". Можно следующий пример.";
+      tFeedback.className = "t-feedback ok";
+    } else {
+      recordMistake(tInput.value.trim());
+      tFeedback.textContent = "Пока мимо. Правильный ответ: " + tLetter.textContent + " = " + fmt(state.answer) + ". Задание и его схема сохранены в «Мои ошибки».";
+      tFeedback.className = "t-feedback no";
+    }
+    tScore.textContent = "Верно: " + state.ok + " из " + state.total;
+  });
+
+  document.getElementById("t-next").addEventListener("click", function () { newTask(true); });
+  tErrorsBtn.addEventListener("click", function () {
+    if (mistakes.length === 0) return;
+    tErrors.hidden = !tErrors.hidden;
+    tErrorsBtn.setAttribute("aria-expanded", tErrors.hidden ? "false" : "true");
+  });
+
+  renderMistakes();
+  newTask(false);
+})();
+</script>
+</body>
+</html>

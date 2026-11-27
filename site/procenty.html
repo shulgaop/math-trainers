@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Проценты без путаницы — три типа задач, разбор № 46–65 и тренажёр</title>
+<meta name="description" content="Проценты для школьника: что такое процент, три типа задач на проценты, алгоритм выбора типа, решение задач № 46–65 из учебника и тренажёр с проверкой.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a5593'/%3E%3Cpath d='M18 18l28 28M46 18L18 46' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fff5ee;
+    --card: #fffdf9;
+    --ink: #16171a;
+    --ink-soft: #5b5a55;
+    --line: #ecdfd2;
+    --blue: #0a5593;
+    --blue-soft: #e6eef5;
+    --orange: #fc7523;
+    --orange-soft: #ffe8d7;
+    --green: #1e7a4c;
+    --green-soft: #e3f2e8;
+    --radius: 20px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Nunito", "PT Sans", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 56px 0 30px; }
+  .kicker {
+    display: inline-block;
+    font-size: 13px; font-weight: 800;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--blue); background: var(--blue-soft);
+    border-radius: 999px; padding: 6px 14px; margin-bottom: 18px;
+  }
+  h1 {
+    font-size: clamp(36px, 6.4vw, 60px);
+    font-weight: 900; line-height: 1.06; letter-spacing: -0.01em;
+    max-width: 16ch;
+  }
+  h1 .hl { color: var(--blue); }
+  .lead { margin-top: 18px; max-width: 62ch; color: var(--ink-soft); font-size: 19px; }
+
+  section { padding: 40px 0; }
+  h2 { font-size: clamp(26px, 4vw, 34px); font-weight: 900; margin-bottom: 8px; }
+  .sub { color: var(--ink-soft); max-width: 66ch; margin-bottom: 26px; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px;
+  }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .grid > * { min-width: 0; }
+  @media (min-width: 720px) {
+    .grid.two { grid-template-columns: 1fr 1fr; }
+    .grid.three { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  .math { font-weight: 900; color: var(--blue); font-size: 22px; }
+  .example-line {
+    background: var(--blue-soft);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 19px; font-weight: 800;
+    overflow-wrap: anywhere;
+  }
+  .note { color: var(--ink-soft); font-size: 16px; }
+  .concept-figure {
+    max-width: 520px; margin: 16px auto; padding: 10px 12px 12px;
+    background: #faf6ef; border: 1px solid var(--line); border-radius: 14px;
+  }
+  .concept-figure svg { display: block; width: 100%; height: auto; }
+  .concept-figure figcaption { margin-top: 6px; color: var(--ink-soft); font-size: 13px; line-height: 1.45; text-align: center; }
+  .type-tag {
+    display: inline-block;
+    font-size: 13px; font-weight: 800;
+    border-radius: 999px; padding: 4px 14px; margin-bottom: 10px;
+    background: var(--orange-soft); color: var(--orange);
+  }
+  .grid.three h3 { font-size: 19px; font-weight: 900; margin-bottom: 8px; }
+  .grid.three .example-line { font-size: 16px; padding: 12px 14px; }
+
+  .step-list { display: grid; gap: 14px; counter-reset: s; }
+  .step-item { display: flex; gap: 16px; align-items: flex-start; }
+  .step-item::before {
+    counter-increment: s;
+    content: counter(s);
+    flex: 0 0 auto;
+    width: 40px; height: 40px;
+    border-radius: 13px;
+    background: var(--blue); color: #fff;
+    font-weight: 900; font-size: 19px;
+    display: grid; place-items: center;
+  }
+  .step-item h3 { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+  .step-item p { color: var(--ink-soft); font-size: 16px; }
+
+  details {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 14px 20px;
+  }
+  details + details { margin-top: 10px; }
+  summary {
+    cursor: pointer;
+    font-weight: 800; font-size: 17px;
+    list-style: none;
+    display: flex; gap: 12px; align-items: baseline;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before {
+    content: "+";
+    flex: 0 0 auto;
+    width: 28px; height: 28px;
+    border-radius: 9px;
+    background: var(--orange-soft); color: var(--orange);
+    display: grid; place-items: center;
+    font-size: 20px; font-weight: 900;
+  }
+  details[open] summary::before { content: "−"; }
+  summary:hover { color: var(--blue); }
+  summary:focus-visible { outline: 3px solid rgba(10,85,147,.35); outline-offset: 4px; border-radius: 8px; }
+  details .body { margin-top: 10px; }
+  .answer-chip {
+    display: inline-block;
+    background: var(--green-soft); color: var(--green);
+    font-weight: 900; border-radius: 10px; padding: 4px 12px;
+    margin-top: 6px;
+  }
+  .num-badge {
+    display: inline-block;
+    background: var(--blue); color: #fff;
+    font-weight: 900; border-radius: 8px;
+    padding: 0 8px; margin-right: 6px;
+    font-size: 15px;
+  }
+
+  .rule-banner {
+    background: var(--blue);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    font-size: 19px; font-weight: 800;
+    text-align: center;
+    margin-top: 16px;
+  }
+  .rule-banner small { display: block; font-size: 15px; font-weight: 600; color: #cfe2f2; margin-top: 6px; }
+
+  /* trainer */
+  .trainer { background: #10395c; border: none; color: #f4f8fb; }
+  .t-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+  .t-tab {
+    font: inherit; font-weight: 800;
+    border-radius: 999px;
+    padding: 9px 20px;
+    cursor: pointer;
+    border: 2px solid rgba(255,255,255,.35);
+    background: transparent; color: #f4f8fb;
+    transition: background .15s ease;
+  }
+  .t-tab[aria-pressed="true"] { background: var(--orange); border-color: var(--orange); color: #1c1c1a; }
+  .t-tab:focus-visible { outline: 3px solid rgba(252,117,35,.5); outline-offset: 2px; }
+  .t-score { margin-left: auto; font-weight: 700; color: #b8d2e6; font-size: 15px; align-self: center; }
+  .t-task {
+    background: #0c2c47;
+    border-radius: 16px;
+    padding: 24px;
+    font-size: 21px; font-weight: 700;
+    line-height: 1.6;
+  }
+  .t-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 18px; }
+  .t-controls label { font-weight: 700; }
+  .t-controls input {
+    font: inherit; font-weight: 800;
+    width: 140px; padding: 10px 14px;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,.35);
+    background: #0c2c47; color: #fff;
+    outline: none;
+  }
+  .t-controls input:focus-visible { border-color: var(--orange); }
+  .btn {
+    font: inherit; font-weight: 800;
+    border: none; border-radius: 12px;
+    padding: 11px 22px; cursor: pointer;
+    background: var(--orange); color: #1c1c1a;
+    transition: transform .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn.ghost { background: transparent; color: #f4f8fb; border: 2px solid rgba(255,255,255,.35); }
+  .btn:focus-visible { outline: 3px solid rgba(252,117,35,.5); outline-offset: 2px; }
+  .t-feedback { margin-top: 14px; font-weight: 800; min-height: 28px; }
+  .t-feedback.ok { color: #8fe3b4; }
+  .t-feedback.no { color: #ffb28c; }
+  .t-hint { color: #b8d2e6; font-weight: 600; font-size: 15px; margin-top: 8px; min-height: 22px; }
+  .t-error-toggle[aria-expanded="true"] { background: var(--orange); border-color: var(--orange); color: #1c1c1a; }
+  .t-tab:disabled { opacity: .55; cursor: not-allowed; }
+  .t-errors { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.25); }
+  .t-errors h3 { font-size: 21px; margin-bottom: 4px; }
+  .t-error-help { color: #b8d2e6; font-size: 14px; margin-bottom: 14px; }
+  .t-error-list { display: grid; gap: 12px; }
+  .t-error-item { min-width: 0; padding: 16px; border: 1px solid rgba(255,255,255,.25); border-radius: 14px; background: #0c2c47; }
+  .t-error-item p { overflow-wrap: anywhere; }
+  .t-error-question { font-weight: 800; }
+  .t-error-last { color: #ffb28c; margin: 5px 0 12px; }
+  .t-error-item .btn { margin: 4px 0 12px; }
+  .t-errors details { background: #10395c; border-color: rgba(255,255,255,.25); color: #f4f8fb; }
+  .t-errors details .body { color: #dce9f2; }
+  .t-error-answer { margin-top: 10px; color: #8fe3b4; font-weight: 800; }
+
+  /* Короткое видео перед уроком */
+  .video-section { padding-top: 32px; }
+  .video-lesson {
+    display: grid; grid-template-columns: 1fr; gap: 26px; align-items: center;
+    padding: 26px; border-radius: var(--radius);
+    background: var(--blue); color: #fff;
+  }
+  .video-tag {
+    display: inline-block; padding: 4px 12px; border-radius: 999px;
+    background: rgba(255,255,255,.14); color: #fff;
+    font-size: 13px; font-weight: 800; letter-spacing: .04em;
+  }
+  .video-copy h2 { color: #fff; margin: 10px 0 12px; }
+  .video-copy p, .video-points { color: #dceaf4; }
+  .video-points { margin: 14px 0 0 21px; }
+  .video-points li + li { margin-top: 5px; }
+  .video-copy .video-help { margin-top: 16px; font-size: 14px; color: #cfe2f2; }
+  .video-player {
+    display: block; width: 100%; max-width: 320px; height: auto;
+    aspect-ratio: 9 / 16; margin: 0 auto; border-radius: 16px;
+    background: var(--ink); border: 1px solid rgba(255,255,255,.25);
+  }
+  .video-player:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+  @media (min-width: 760px) {
+    .video-lesson { grid-template-columns: minmax(0, 1fr) 300px; padding: 30px; }
+  }
+
+  footer { padding: 28px 0 44px; color: var(--ink-soft); font-size: 14px; }
+  .top-link { display: inline-block; margin-top: 8px; color: var(--blue); font-weight: 800; text-decoration: none; }
+  .top-link:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .t-tab { transition: none; }
+  }
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="wrap">
+    <span class="kicker">Математика · 5–6 класс</span>
+    <h1>Проценты <span class="hl">без путаницы</span></h1>
+    <p class="lead">Все задачи на проценты — это всего три типа. Научись узнавать тип за 5 секунд, и остальное — арифметика. Ниже разбор задач № 46–65 и № 81–94 из учебника и тренажёр.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ВИДЕООБЪЯСНЕНИЕ -->
+  <section id="video" class="video-section" aria-labelledby="video-title">
+    <div class="video-lesson">
+      <div class="video-copy">
+        <span class="video-tag">Видео · 1 мин 16 сек</span>
+        <h2 id="video-title">Три типа задач — за один ролик</h2>
+        <p>Посмотри на смысл процента и научись выбирать нужное действие до вычислений.</p>
+        <ul class="video-points">
+          <li>Как перевести проценты в десятичную дробь.</li>
+          <li>Как найти часть, целое или процент.</li>
+          <li>Как проверить, что ответ похож на правду.</li>
+        </ul>
+        <p class="video-help">Видео не запускается само. Нажми «Воспроизвести»; на паузе удобно повторить пример.</p>
+      </div>
+      <video class="video-player" controls playsinline preload="metadata" poster="videos/procenty.jpg" width="720" height="1280" aria-label="Видеообъяснение: проценты">
+        <source src="videos/procenty.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео. <a href="videos/procenty.mp4">Скачать ролик</a>.
+      </video>
+    </div>
+  </section>
+
+  <!-- ЧТО ТАКОЕ ПРОЦЕНТ -->
+  <section id="what">
+    <h2>Сначала: что такое процент</h2>
+    <p class="sub">Процент — это <b>одна сотая часть</b>. Слово «процент» так и переводится: «на сто».</p>
+    <div class="card">
+      <div class="example-line">1% = 1/100 = 0,01 &nbsp;&nbsp;|&nbsp;&nbsp; 7% = 0,07 &nbsp;&nbsp;|&nbsp;&nbsp; 62,5% = 0,625</div>
+      <figure class="concept-figure">
+        <svg viewBox="0 0 420 230" role="img" aria-label="Квадрат разделён на сто одинаковых клеток. Закрашены пятнадцать клеток — это пятнадцать сотых или пятнадцать процентов.">
+          <defs><pattern id="hundred-cells" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0 H0 V20" fill="none" stroke="#d7c8ba" stroke-width="1"/></pattern></defs>
+          <rect x="20" y="15" width="200" height="200" fill="#fffdf9"/>
+          <rect x="20" y="15" width="200" height="20" fill="#0a5593"/>
+          <rect x="20" y="35" width="100" height="20" fill="#0a5593"/>
+          <rect x="20" y="15" width="200" height="200" fill="url(#hundred-cells)"/>
+          <rect x="20" y="15" width="200" height="200" fill="none" stroke="#16171a" stroke-width="2"/>
+          <g font-family="Nunito, sans-serif" fill="#16171a"><text x="245" y="70" font-size="18" font-weight="800">15 клеток</text><text x="245" y="94" font-size="18" font-weight="800">из 100</text><text x="245" y="139" font-size="24" font-weight="900" fill="#0a5593">15/100</text><text x="245" y="174" font-size="24" font-weight="900" fill="#fc7523">= 15%</text></g>
+        </svg>
+        <figcaption>Одна клетка — 1%. Пятнадцать клеток — 15 сотых целого.</figcaption>
+      </figure>
+      <p class="note"><b>Как перевести проценты в число:</b> убери значок % и раздели на 100. Например: 35% → 0,35.</p>
+      <p class="note"><b>И обратно:</b> умножь на 100 и добавь %. Например: 0,9 → 90%.</p>
+      <div class="example-line">Целое = 100%. Половина = 50%. Четверть = 25%. Пятая часть = 20%.</div>
+    </div>
+  </section>
+
+  <!-- ТРИ ТИПА -->
+  <section id="types">
+    <h2>Три типа задач — и три формулы</h2>
+    <p class="sub">Смотри, что дано и что ищем. Это и есть весь секрет.</p>
+    <div class="grid three">
+      <div class="card">
+        <span class="type-tag">Тип 1</span>
+        <h3>Найти процент ОТ числа</h3>
+        <p class="note">Дано целое и процент. Ищем часть.</p>
+        <figure class="concept-figure">
+          <svg viewBox="0 0 400 140" role="img" aria-label="Вся полоска — 680, или 100 процентов. Закрашенная часть — 15 процентов, то есть 102.">
+            <text x="200" y="25" font-family="Nunito, sans-serif" font-size="17" font-weight="800" fill="#16171a" text-anchor="middle">Целое 680 = 100%</text>
+            <rect x="40" y="45" width="320" height="42" rx="8" fill="#fffdf9" stroke="#16171a" stroke-width="2"/>
+            <path d="M48 45 H88 V87 H48 Q40 87 40 79 V53 Q40 45 48 45 Z" fill="#0a5593"/>
+            <text x="200" y="72" font-family="Nunito, sans-serif" font-size="17" font-weight="900" fill="#16171a" text-anchor="middle">15% → часть ?</text>
+            <text x="200" y="120" font-family="Nunito, sans-serif" font-size="20" font-weight="900" fill="#0a5593" text-anchor="middle">680 × 0,15 = 102</text>
+          </svg>
+          <figcaption>Знаем целое — часть находим умножением.</figcaption>
+        </figure>
+        <div class="example-line">число × (процент : 100)</div>
+        <p class="note">Пример: 15% от 680.<br>680 × 0,15 = <b>102</b>.</p>
+      </div>
+      <div class="card">
+        <span class="type-tag">Тип 2</span>
+        <h3>Найти число ПО его проценту</h3>
+        <p class="note">Дана часть и процент. Ищем целое.</p>
+        <figure class="concept-figure">
+          <svg viewBox="0 0 400 140" role="img" aria-label="Закрашено 95 процентов полоски, это 38 деревьев. Вся полоска неизвестна. Делением получают 40.">
+            <text x="200" y="25" font-family="Nunito, sans-serif" font-size="17" font-weight="800" fill="#16171a" text-anchor="middle">Целое ? = 100%</text>
+            <rect x="40" y="45" width="320" height="42" rx="8" fill="#fffdf9" stroke="#16171a" stroke-width="2"/>
+            <path d="M48 45 H344 V87 H48 Q40 87 40 79 V53 Q40 45 48 45 Z" fill="#0a5593"/>
+            <text x="190" y="72" font-family="Nunito, sans-serif" font-size="17" font-weight="900" fill="#ffffff" text-anchor="middle">38 = 95%</text>
+            <text x="200" y="120" font-family="Nunito, sans-serif" font-size="20" font-weight="900" fill="#0a5593" text-anchor="middle">38 : 0,95 = 40</text>
+          </svg>
+          <figcaption>Знаем часть — целое находим делением.</figcaption>
+        </figure>
+        <div class="example-line">часть : (процент : 100)</div>
+        <p class="note">Пример: 38 деревьев — это 95%.<br>38 : 0,95 = <b>40</b> деревьев.</p>
+      </div>
+      <div class="card">
+        <span class="type-tag">Тип 3</span>
+        <h3>Сколько % одно число от другого</h3>
+        <p class="note">Даны целое и часть. Ищем процент.</p>
+        <figure class="concept-figure">
+          <svg viewBox="0 0 400 140" role="img" aria-label="Вся полоска — 160 семян. Закрашенная часть — 144 семени. Их отношение равно 0,9, то есть 90 процентов.">
+            <text x="200" y="25" font-family="Nunito, sans-serif" font-size="17" font-weight="800" fill="#16171a" text-anchor="middle">Целое 160 = 100%</text>
+            <rect x="40" y="45" width="320" height="42" rx="8" fill="#fffdf9" stroke="#16171a" stroke-width="2"/>
+            <path d="M48 45 H328 V87 H48 Q40 87 40 79 V53 Q40 45 48 45 Z" fill="#0a5593"/>
+            <text x="185" y="72" font-family="Nunito, sans-serif" font-size="17" font-weight="900" fill="#ffffff" text-anchor="middle">144 = ? %</text>
+            <text x="200" y="120" font-family="Nunito, sans-serif" font-size="20" font-weight="900" fill="#0a5593" text-anchor="middle">144 : 160 = 0,9 → 90%</text>
+          </svg>
+          <figcaption>Делим часть на целое и переводим в проценты.</figcaption>
+        </figure>
+        <div class="example-line">(часть : целое) × 100</div>
+        <p class="note">Пример: 144 из 160 семян.<br>144 : 160 × 100 = <b>90%</b>.</p>
+      </div>
+    </div>
+    <div class="rule-banner">
+      Умножаем — когда ищем ЧАСТЬ. Делим — когда ищем ЦЕЛОЕ или ПРОЦЕНТ.
+      <small>Часть меньше целого: если получилось больше целого — скорее всего, перепутал тип.</small>
+    </div>
+  </section>
+
+  <!-- ПРИЁМЫ -->
+  <section id="tricks">
+    <h2>Два приёма для задач «с подвохом»</h2>
+    <p class="sub">В учебнике после простых задач идут задачи на остаток и многошаговые. Они решаются теми же тремя типами, но с одной подготовкой.</p>
+    <div class="card step-list">
+      <div class="step-item"><div><h3>Приём «Остаток»: сначала 100% − процент</h3><p>«Построено 82% газопровода» → осталось 100 − 82 = 18%. И только потом считаем 18% от длины. «Отрезали 40% ленты, осталось 60 м» → эти 60 м и есть 60%, ищем целое (тип 2).</p></div></div>
+      <div class="step-item"><div><h3>Приём «Процент от остатка»: считаем по шагам</h3><p>«Книга — 25% всех денег, журнал — 12% <b>оставшихся</b>». Здесь два разных целых! Сначала вычитаем цену книги, а процент журнала считаем уже от нового остатка. Нельзя складывать 25% + 12%.</p></div></div>
+      <div class="step-item"><div><h3>Проверка здравым смыслом</h3><p>Часть меньше целого. Остаток меньше, чем было. Если труб/денег/деревьев получилось «с потолка» — пересчитай, какой тип применил.</p></div></div>
+    </div>
+    <div class="grid two" style="margin-top:16px;">
+      <div class="card">
+        <h3 style="font-size:19px; font-weight:900;">Остаток на одной полоске</h3>
+        <figure class="concept-figure">
+          <svg viewBox="0 0 400 165" role="img" aria-label="Весь газопровод 204,5 километра. Построено 82 процента, осталось 18 процентов. Это 36,81 километра.">
+            <text x="200" y="25" font-family="Nunito, sans-serif" font-size="17" font-weight="800" fill="#16171a" text-anchor="middle">204,5 км = 100%</text>
+            <rect x="40" y="45" width="320" height="44" rx="8" fill="#fffdf9" stroke="#16171a" stroke-width="2"/>
+            <path d="M48 45 H302 V89 H48 Q40 89 40 81 V53 Q40 45 48 45 Z" fill="#0a5593"/>
+            <path d="M302 45 H352 Q360 45 360 53 V81 Q360 89 352 89 H302 Z" fill="#fc7523"/>
+            <text x="170" y="74" font-family="Nunito, sans-serif" font-size="17" font-weight="900" fill="#ffffff" text-anchor="middle">Построено 82%</text>
+            <text x="331" y="74" font-family="Nunito, sans-serif" font-size="14" font-weight="900" fill="#16171a" text-anchor="middle">18%</text>
+            <text x="200" y="128" font-family="Nunito, sans-serif" font-size="19" font-weight="900" fill="#0a5593" text-anchor="middle">100 − 82 = 18%</text>
+            <text x="200" y="153" font-family="Nunito, sans-serif" font-size="17" font-weight="800" fill="#16171a" text-anchor="middle">204,5 × 0,18 = 36,81 км</text>
+          </svg>
+          <figcaption>Сначала находим процент остатка, потом его значение.</figcaption>
+        </figure>
+      </div>
+      <div class="card">
+        <h3 style="font-size:19px; font-weight:900;">Процент от остатка: целое меняется</h3>
+        <figure class="concept-figure">
+          <svg viewBox="0 0 400 225" role="img" aria-label="Из 40 рублей книга стоит 25 процентов, то есть 10 рублей. Остаются 30 рублей. Журнал стоит 12 процентов уже от 30 рублей, то есть 3,6 рубля. Остаются 26,4 рубля.">
+            <g font-family="Nunito, sans-serif" fill="#16171a"><text x="200" y="22" font-size="16" font-weight="800" text-anchor="middle">Сначала целое — 40 р.</text><text x="200" y="105" font-size="16" font-weight="800" text-anchor="middle">Теперь целое — 30 р.</text></g>
+            <rect x="40" y="35" width="320" height="40" rx="8" fill="#fffdf9" stroke="#16171a" stroke-width="2"/>
+            <path d="M48 35 H120 V75 H48 Q40 75 40 67 V43 Q40 35 48 35 Z" fill="#fc7523"/>
+            <path d="M120 35 H352 Q360 35 360 43 V67 Q360 75 352 75 H120 Z" fill="#0a5593"/>
+            <rect x="40" y="120" width="240" height="40" rx="8" fill="#fffdf9" stroke="#16171a" stroke-width="2"/>
+            <path d="M48 120 H68.8 V160 H48 Q40 160 40 152 V128 Q40 120 48 120 Z" fill="#fc7523"/>
+            <path d="M68.8 120 H272 Q280 120 280 128 V152 Q280 160 272 160 H68.8 Z" fill="#1e7a4c"/>
+            <g font-family="Nunito, sans-serif" font-size="14" font-weight="900" text-anchor="middle"><text x="80" y="61" fill="#16171a">Книга 10</text><text x="240" y="61" fill="#ffffff">Остаток 30</text><text x="91" y="114" fill="#fc7523">Журнал 3,6</text><text x="175" y="146" fill="#ffffff">Осталось 26,4</text></g>
+            <text x="200" y="202" font-family="Nunito, sans-serif" font-size="17" font-weight="900" fill="#0a5593" text-anchor="middle">12% считаем от 30, не от 40</text>
+          </svg>
+          <figcaption>Вторая полоска короче: процент журнала берём от нового остатка.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- РАЗБОР ЗАДАЧ -->
+  <section id="solutions">
+    <h2>Разбор задач № 46–65 из учебника</h2>
+    <p class="sub">Сначала реши сам, потом открой решение. Указан тип задачи — сверь, правильно ли ты его определил.</p>
+
+    <details><summary><span class="num-badge">46</span>Парусные лодки — 35%. Сколько процентов моторных?</summary><div class="body"><p class="note">Остаток: все лодки — 100%.</p><div class="example-line">100 − 35 = 65</div><span class="answer-chip">65%</span></div></details>
+
+    <details><summary><span class="num-badge">47</span>Зерновые 45%, картофель 32,5%, остальное — кормовые травы</summary><div class="body"><p class="note">Остаток от 100%.</p><div class="example-line">100 − 45 − 32,5 = 22,5</div><span class="answer-chip">22,5%</span></div></details>
+
+    <details><summary><span class="num-badge">48</span>Руда содержит 1,3% никеля. Сколько руды для 21,45 т никеля?</summary><div class="body"><p class="note">Тип 2: дана часть (21,45 т) и процент, ищем целое.</p><div class="example-line">21,45 : 0,013 = 1650</div><span class="answer-chip">1650 т руды</span></div></details>
+
+    <details><summary><span class="num-badge">49</span>Из 160 семян взошло 144. Какой процент всхожести?</summary><div class="body"><p class="note">Тип 3: ищем процент.</p><div class="example-line">144 : 160 × 100 = 90</div><span class="answer-chip">90%</span></div></details>
+
+    <details><summary><span class="num-badge">50</span>Петя попадает в 85% случаев. Сколько промахов из 60 выстрелов?</summary><div class="body"><p class="note">Сначала остаток: промахи — это 100 − 85 = 15%. Потом тип 1.</p><div class="example-line">60 × 0,15 = 9</div><span class="answer-chip">9 промахов</span></div></details>
+
+    <details><summary><span class="num-badge">51</span>Построено 82% газопровода. Осталось построить — ? Длина 204,5 км</summary><div class="body"><p class="note">Остаток: 100 − 82 = 18%. Тип 1.</p><div class="example-line">204,5 × 0,18 = 36,81</div><span class="answer-chip">36,81 км</span></div></details>
+
+    <details><summary><span class="num-badge">52</span>480 км — это 15% маршрута. Сколько осталось проехать?</summary><div class="body"><p class="note">Тип 2: находим весь маршрут, затем вычитаем пройденное.</p><div class="example-line">480 : 0,15 = 3200 км — весь маршрут<br>3200 − 480 = 2720</div><span class="answer-chip">2720 км</span></div></details>
+
+    <details><summary><span class="num-badge">53</span>Принялось 38 деревьев — 95%. Сколько не принялось?</summary><div class="body"><p class="note">Тип 2: 38 : 0,95 = 40 деревьев посажено. Не принялось 40 − 38.</p><div class="example-line">38 : 0,95 = 40<br>40 − 38 = 2</div><span class="answer-chip">2 дерева</span></div></details>
+
+    <details><summary><span class="num-badge">54</span>Мальчики — 48% от девочек, мальчиков 12. Сколько девочек? Сколько % девочки от мальчиков?</summary><div class="body"><p class="note">Тип 2: девочки — целое. Затем тип 3.</p><div class="example-line">12 : 0,48 = 25 девочек<br>25 : 12 × 100 = 208⅓ ≈ 208,3</div><span class="answer-chip">25 девочек; ≈ 208,3%</span></div></details>
+
+    <details><summary><span class="num-badge">55</span>Груши — 35%, остальные 130 деревьев — яблони. Сколько груш?</summary><div class="body"><p class="note">Яблони — это 100 − 35 = 65%. Тип 2: находим все деревья, затем тип 1.</p><div class="example-line">130 : 0,65 = 200 деревьев всего<br>200 × 0,35 = 70</div><span class="answer-chip">70 грушевых деревьев</span></div></details>
+
+    <details><summary><span class="num-badge">56</span>Отрезали 40% ленты, осталось 60 м. Длина всей ленты?</summary><div class="body"><p class="note">60 м — это 60%. Тип 2.</p><div class="example-line">60 : 0,6 = 100</div><span class="answer-chip">100 м</span></div></details>
+
+    <details><summary><span class="num-badge">57</span>Продано 62,5% телевизоров, осталось 72. Сколько получено магазином?</summary><div class="body"><p class="note">72 телевизора — это 100 − 62,5 = 37,5%. Тип 2.</p><div class="example-line">72 : 0,375 = 192</div><span class="answer-chip">192 телевизора</span></div></details>
+
+    <details><summary><span class="num-badge">58</span>Длина 40 см, ширина — 80% длины. Периметр и площадь</summary><div class="body"><p class="note">Тип 1: ширина 40 × 0,8 = 32 см. Дальше формулы прямоугольника.</p><div class="example-line">P = 2 × (40 + 32) = 144 см<br>S = 40 × 32 = 1280 см²</div><span class="answer-chip">144 см; 1280 см²</span></div></details>
+
+    <details><summary><span class="num-badge">59</span>20 учащихся: 30% — математика, 45% — история, остальные — химия</summary><div class="body"><p class="note">Остаток: 100 − 30 − 45 = 25%. Тип 1.</p><div class="example-line">20 × 0,25 = 5</div><span class="answer-chip">5 участников олимпиады по химии</span></div></details>
+
+    <details><summary><span class="num-badge">60</span>Сумма трёх чисел 680. Первое — 15%, второе — 45%. Третье?</summary><div class="body"><p class="note">Третье — это 100 − 15 − 45 = 40% суммы. Тип 1.</p><div class="example-line">680 × 0,4 = 272</div><span class="answer-chip">272</span></div></details>
+
+    <details><summary><span class="num-badge">61</span>Книга — 25% денег, журнал — 12% оставшихся. Было 40 р.</summary><div class="body"><p class="note">Процент от остатка — два шага, два разных целых!</p><div class="example-line">Книга: 40 × 0,25 = 10 р. → осталось 30 р.<br>Журнал: 30 × 0,12 = 3,6 р.<br>40 − 10 − 3,6 = 26,4</div><span class="answer-chip">26,4 р. осталось</span></div></details>
+
+    <details><summary><span class="num-badge">62</span>240 км за 3 часа: первый час 45% пути, второй — 75% от первого</summary><div class="body"><p class="note">Два разных целых: сначала 45% от 240, потом 75% уже от первого часа.</p><div class="example-line">1-й час: 240 × 0,45 = 108 км<br>2-й час: 108 × 0,75 = 81 км<br>240 − 108 − 81 = 51</div><span class="answer-chip">51 км за третий час</span></div></details>
+
+    <details><summary><span class="num-badge">63</span>Первое число 48 — это 15% второго. Третье — 65% второго</summary><div class="body"><p class="note">Тип 2 для второго числа, тип 1 для третьего.</p><div class="example-line">Второе: 48 : 0,15 = 320<br>Третье: 320 × 0,65 = 208</div><span class="answer-chip">Второе 320, третье 208</span></div></details>
+
+    <details><summary><span class="num-badge">64</span>Форма — 62,5% от 960 р., инвентарь — 40% стоимости формы</summary><div class="body"><p class="note">Два шага: сначала форма, потом инвентарь от её стоимости.</p><div class="example-line">Форма: 960 × 0,625 = 600 р.<br>Инвентарь: 600 × 0,4 = 240 р.<br>960 − 600 − 240 = 120</div><span class="answer-chip">120 р. осталось</span></div></details>
+
+    <details><summary><span class="num-badge">65</span>1-й день 40%, 2-й день 25%, 3-й день — 1400 тетрадей. Сколько в 1-й день?</summary><div class="body"><p class="note">1400 тетрадей — это 100 − 40 − 25 = 35%. Тип 2, затем тип 1.</p><div class="example-line">Всего: 1400 : 0,35 = 4000 тетрадей<br>1-й день: 4000 × 0,4 = 1600</div><span class="answer-chip">1600 тетрадей</span></div></details>
+  </section>
+
+  <!-- РАЗБОР ЗАДАЧ 81–94 -->
+  <section id="solutions2">
+    <h2>Разбор задач № 81–94 (с. 102–103)</h2>
+    <p class="sub">Продолжение темы: дроби в процентах, уравнения и задачи «в n раз». Сначала реши сам, потом сверься.</p>
+
+    <details><summary><span class="num-badge">81</span>Выразите обыкновенные дроби в процентах</summary><div class="body"><p class="note">Умножаем дробь на 100. Если делится с остатком — пишем приближённо.</p><div class="example-line">а) 3/4 = <b>75%</b><br>б) 7/20 = <b>35%</b><br>в) 1 9/25 = 1,36 = <b>136%</b><br>г) 2/3 = <b>66⅔% ≈ 66,7%</b><br>д) 5/7 = <b>71 3/7% ≈ 71,4%</b><br>е) 2 1/9 = <b>211 1/9% ≈ 211,1%</b></div></div></details>
+
+    <details><summary><span class="num-badge">82</span>Уравнения: а) (x − 0,25) + 3 1/12 = 7 1/3; б) 4 4/9 · x + 1 = 2 17/18</summary><div class="body"><p class="note">Используем зависимости между компонентами: неизвестное слагаемое = сумма − другое слагаемое; неизвестный множитель = произведение : известный множитель.</p><div class="example-line">а) x − 0,25 = 7 1/3 − 3 1/12 = 4 1/4 = 4,25<br>x = 4,25 + 0,25 = <b>4,5</b><br><br>б) 4 4/9 · x = 2 17/18 − 1 = 1 17/18<br>x = 1 17/18 : 4 4/9 = 35/18 : 40/9 = <b>7/16 = 0,4375</b></div><p class="note">Проверка б): 4 4/9 · 7/16 = 40/9 · 7/16 = 35/18 = 1 17/18, плюс 1 — как раз 2 17/18.</p></div></details>
+
+    <details><summary><span class="num-badge">83</span>С двух полей 239,76 т свёклы, с первого — в 1,7 раза больше</summary><div class="body"><p class="note">Второе поле — x, первое — 1,7x. Вместе 2,7x.</p><div class="example-line">2,7x = 239,76 → x = 88,8<br>Первое: 88,8 × 1,7 = 150,96</div><span class="answer-chip">С первого 150,96 т, со второго 88,8 т</span></div></details>
+
+    <details><summary><span class="num-badge">84</span>В первый день в 1,3 раза меньше; во второй — на 71,1 т больше</summary><div class="body"><p class="note">Первый день — x, второй — 1,3x. Разница 0,3x = 71,1.</p><div class="example-line">0,3x = 71,1 → x = <b>237 т</b></div><p class="note">Проверка: второй день 237 × 1,3 = 308,1 т, разница 308,1 − 237 = 71,1 т.</p></div></details>
+
+    <details><summary><span class="num-badge">85</span>Одно число на 3,6 меньше другого, среднее арифметическое 9</summary><div class="body"><p class="note">Среднее 9 → сумма чисел 18. Меньшее — x, большее — x + 3,6.</p><div class="example-line">2x + 3,6 = 18 → x = 7,2<br>Большее: 7,2 + 3,6 = 10,8</div><span class="answer-chip">7,2 и 10,8</span></div></details>
+
+    <details><summary><span class="num-badge">86</span>Ширина участка на 8,2 м меньше длины, забор 82,4 м</summary><div class="body"><p class="note">Забор — это периметр. Полупериметр: 82,4 : 2 = 41,2 м (длина + ширина).</p><div class="example-line">2 × ширина + 8,2 = 41,2 → ширина = 16,5 м<br>Длина: 16,5 + 8,2 = 24,7 м</div><span class="answer-chip">Длина 24,7 м, ширина 16,5 м</span></div></details>
+
+    <details><summary><span class="num-badge">87</span>В трёх сосудах 32 л: второй — 35% первого, третий — 5/7 второго</summary><div class="body"><p class="note">Первый сосуд — x. Второй: 0,35x. Третий: 5/7 · 0,35x = 0,25x.</p><div class="example-line">x + 0,35x + 0,25x = 1,6x = 32 → x = 20<br>Второй: 0,35 × 20 = 7<br>Третий: 0,25 × 20 = 5</div><span class="answer-chip">20 л, 7 л, 5 л</span></div></details>
+
+    <details><summary><span class="num-badge">88</span>Найдите процент от числа (тип 1)</summary><div class="body"><div class="example-line">а) 5%: от 300 → <b>15</b>; от 6 → <b>0,3</b>; от 25 → <b>1,25</b><br>б) 75%: от 20 → <b>15</b>; от 400 → <b>300</b>; от 0,2 → <b>0,15</b><br>в) 120%: от 80 → <b>96</b>; от 2 → <b>2,4</b>; от 100 → <b>120</b><br>г) 0,9%: от 7 → <b>0,063</b>; от 60 → <b>0,54</b>; от 0,4 → <b>0,0036</b></div><p class="note">Обрати внимание: процент может быть больше 100 (120% — часть больше целого) и меньше 1 (0,9% = 0,009).</p></div></details>
+
+    <details><summary><span class="num-badge">89</span>Найдите число по его проценту (тип 2)</summary><div class="body"><div class="example-line">а) 20% равны: 16 → <b>80</b>; 8,4 → <b>42</b><br>б) 45% равны: 9 → <b>20</b>; 180 → <b>400</b><br>в) 110% равны: 44 → <b>40</b>; 5,5 → <b>5</b><br>г) 1,5% равны: 120 → <b>8000</b>; 2,25 → <b>150</b></div><p class="note">Делим часть на процент в виде дроби: 16 : 0,2 = 80; 120 : 0,015 = 8000.</p></div></details>
+
+    <details><summary><span class="num-badge">90</span>Сколько процентов составляет число (тип 3)</summary><div class="body"><div class="example-line">а) 2 от 5: 2 : 5 × 100 = <b>40%</b><br>б) 16 от 25: 16 : 25 × 100 = <b>64%</b><br>в) 7 от 3: 7 : 3 × 100 = <b>233⅓% ≈ 233,3%</b></div></div></details>
+
+    <details><summary><span class="num-badge">91</span>Процентное отношение величин — сначала к одним единицам!</summary><div class="body"><p class="note">Главная ловушка: нельзя делить минуты на часы или метры на километры. Переводим в одни единицы.</p><div class="example-line">а) 5 мин и 1 ч: 1 ч = 60 мин → 5 : 60 × 100 = <b>8⅓% ≈ 8,3%</b><br>б) 20 м и 3 км: 3 км = 3000 м → 20 : 3000 × 100 = <b>⅔% ≈ 0,67%</b><br>в) 1 т и 6 ц: 1 т = 10 ц → 10 : 6 × 100 = <b>166⅔% ≈ 166,7%</b><br>г) 2 а и 1 га: 1 га = 100 а → 2 : 100 × 100 = <b>2%</b></div></div></details>
+
+    <details><summary><span class="num-badge">92</span>Удобный способ: 25% — это четверть, 50% — половина</summary><div class="body"><p class="note">Не умножай на 0,25 — просто раздели на 4. А для 50% — на 2. Это и есть «рациональный способ».</p><div class="example-line">а) 25% числа: 12 : 4 = <b>3</b>; 60 : 4 = <b>15</b>; 0,16 : 4 = <b>0,04</b><br>б) 50% равны 10 → число 10 × 2 = <b>20</b>; 0,6 × 2 = <b>1,2</b>; 250 × 2 = <b>500</b></div></div></details>
+
+    <details><summary><span class="num-badge">93</span>Из свежих слив 35% сушёных. Сколько из 600 кг?</summary><div class="body"><p class="note">Тип 1.</p><div class="example-line">600 × 0,35 = <b>210 кг</b></div><span class="answer-chip">210 кг сушёных слив</span></div></details>
+
+    <details><summary><span class="num-badge">94</span>Отсутствовали 3 человека — 10% класса. Сколько учащихся?</summary><div class="body"><p class="note">Тип 2: 3 человека — это 10%, ищем целое.</p><div class="example-line">3 : 0,1 = <b>30 учащихся</b></div><p class="note">Аналогичная задача про свой класс: посчитай, сколько человек отсутствовало, прими это за 10% (или 5%, или 20%) и найди целое — сверь с реальным числом учеников.</p></div></details>
+
+    <details><summary><span class="num-badge">✓</span>«Проверь себя»: пропущенные слова в трёх правилах</summary><div class="body"><div class="example-line">1. Чтобы найти процент от числа, нужно это число <b>разделить</b> на 100 и <b>умножить</b> на число процентов.<br><br>2. Чтобы найти число по его проценту, нужно это число <b>разделить</b> на число процентов и <b>умножить</b> на 100.<br><br>3. Чтобы найти, сколько процентов первое число составляет от второго, нужно <b>первое</b> число разделить на <b>второе</b> и умножить на 100%.</div></div></details>
+  </section>
+
+  <!-- ТРЕНАЖЁР -->
+  <section id="trainer">
+    <h2>Тренажёр</h2>
+    <p class="sub">Режим «Три типа» — короткие задания на формулы. Режим «Задачи» — сюжеты как в учебнике: остатки, процент от остатка и многошаговые. Ответ пиши числом, запятую или точку — как удобно.</p>
+
+    <div class="card trainer">
+      <div class="t-tabs">
+        <button type="button" class="t-tab" id="tab-num" aria-pressed="true">Три типа</button>
+        <button type="button" class="t-tab" id="tab-word" aria-pressed="false">Задачи</button>
+        <button type="button" class="t-tab t-error-toggle" id="t-errors-btn" aria-expanded="false" aria-controls="t-errors" disabled>Мои ошибки (0)</button>
+        <span class="t-score" id="t-score">Верно: 0 из 0</span>
+      </div>
+      <div class="t-task" id="t-task"></div>
+      <form class="t-controls" id="t-form" autocomplete="off">
+        <label for="t-input">Ответ:</label>
+        <input id="t-input" name="answer" inputmode="decimal" placeholder="число" aria-label="Ответ">
+        <button type="submit" class="btn">Проверить</button>
+        <button type="button" class="btn ghost" id="t-next">Ещё пример</button>
+        <button type="button" class="btn ghost" id="t-hint-btn">Подсказка</button>
+      </form>
+      <p class="t-feedback" id="t-feedback" aria-live="polite"></p>
+      <p class="t-hint" id="t-hint"></p>
+      <div class="t-errors" id="t-errors" hidden>
+        <h3>Разбор ошибок</h3>
+        <p class="t-error-help">Сначала попробуй решить снова. Если не получается, открой разбор: там есть способ решения и ответ.</p>
+        <div class="t-error-list" id="t-error-list"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Памятка к теме «Проценты»: процент как сотая часть, три типа задач, остаток и процент от остатка.
+    <br>Другие памятки на этом сайте: <a class="top-link" href="index.html">Пропорции (6 класс) →</a> <a class="top-link" href="luch.html">Координатный луч (5 класс) →</a>
+    <br><a class="top-link" href="#top">Наверх ↑</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  function fmt(v) {
+    var r = Math.round(v * 100) / 100;
+    return String(r).replace(".", ",");
+  }
+  function rnd(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+  var mode = "num";
+  var state = { answer: 0, hint: "", total: 0, ok: 0, currentMistakeId: null };
+  var mistakes = [];
+  var nextMistakeId = 1;
+
+  var tTask = document.getElementById("t-task");
+  var tInput = document.getElementById("t-input");
+  var tFeedback = document.getElementById("t-feedback");
+  var tHint = document.getElementById("t-hint");
+  var tScore = document.getElementById("t-score");
+  var tabNum = document.getElementById("tab-num");
+  var tabWord = document.getElementById("tab-word");
+  var tErrorsBtn = document.getElementById("t-errors-btn");
+  var tErrors = document.getElementById("t-errors");
+  var tErrorList = document.getElementById("t-error-list");
+
+  var PCTS = [5, 10, 15, 20, 25, 30, 40, 50, 60, 75, 80];
+
+  /* ---------- короткие задания на три типа ---------- */
+  function genNum() {
+    var type = rnd(1, 3);
+    var N = pick([40, 60, 80, 100, 120, 160, 200, 240, 300, 400]);
+    var p = pick(PCTS);
+    var part = Math.round(N * p) / 100; // N*p/100
+    if (type === 1) {
+      state.answer = part;
+      state.hint = "Тип 1: ищем ЧАСТЬ → умножаем: " + N + " × " + fmt(p / 100) + ".";
+      return "Найдите " + p + "% от числа " + N + ".";
+    }
+    if (type === 2) {
+      state.answer = N;
+      state.hint = "Тип 2: ищем ЦЕЛОЕ → делим: " + fmt(part) + " : " + fmt(p / 100) + ".";
+      return "Число " + fmt(part) + " составляет " + p + "% от неизвестного числа. Найдите это число.";
+    }
+    state.answer = p;
+    state.hint = "Тип 3: ищем ПРОЦЕНТ → (часть : целое) × 100 = (" + fmt(part) + " : " + N + ") × 100.";
+    return "Сколько процентов составляет число " + fmt(part) + " от числа " + N + "? Ответ дай в процентах.";
+  }
+
+  /* ---------- текстовые задачи как в учебнике ---------- */
+  function genWord() {
+    var kind = pick(["left_km", "sold_tv", "pears", "sum3", "money", "seeds"]);
+    if (kind === "left_km") {
+      var p = pick([40, 60, 75, 80, 82, 90]);
+      var L = pick([100, 120, 200, 240, 300]);
+      state.answer = Math.round(L * (100 - p)) / 100;
+      state.hint = "Остаток: 100 − " + p + " = " + (100 - p) + "%. Затем тип 1: " + L + " × " + fmt((100 - p) / 100) + ".";
+      return "Дорогу длиной " + L + " км отремонтировали на " + p + "%. Сколько километров осталось отремонтировать?";
+    }
+    if (kind === "sold_tv") {
+      var p2 = pick([25, 40, 50, 62.5, 75, 80]);
+      var N2 = pick([80, 120, 160, 200, 240]);
+      var left = Math.round(N2 * (100 - p2)) / 100;
+      state.answer = N2;
+      state.hint = "Осталось " + (100 - p2) + "% — это " + fmt(left) + ". Ищем ЦЕЛОЕ (тип 2): " + fmt(left) + " : " + fmt((100 - p2) / 100) + ".";
+      return "В магазине продали " + fmt(p2) + "% всех телевизоров, после чего осталось " + fmt(left) + " телевизоров. Сколько телевизоров было в магазине?";
+    }
+    if (kind === "pears") {
+      var p3 = pick([20, 25, 35, 40, 60]);
+      var N3 = pick([80, 100, 120, 200, 300]);
+      var apples = Math.round(N3 * (100 - p3)) / 100;
+      state.answer = Math.round(N3 * p3) / 100;
+      state.hint = "Яблони — " + (100 - p3) + "%. Все деревья: " + fmt(apples) + " : " + fmt((100 - p3) / 100) + " = " + N3 + ". Груши: " + N3 + " × " + fmt(p3 / 100) + ".";
+      return "Грушевые деревья составляют " + p3 + "% всех деревьев сада, остальные " + fmt(apples) + " деревьев — яблони. Сколько грушевых деревьев в саду?";
+    }
+    if (kind === "sum3") {
+      var S = pick([400, 500, 600, 680, 800, 1000]);
+      var a = pick([10, 15, 20, 25]);
+      var b = pick([30, 35, 40, 45]);
+      state.answer = Math.round(S * (100 - a - b)) / 100;
+      state.hint = "Третье число — " + (100 - a - b) + "% суммы. Тип 1: " + S + " × " + fmt((100 - a - b) / 100) + ".";
+      return "Сумма трёх чисел равна " + S + ". Первое число составляет " + a + "% суммы, второе — " + b + "%. Найдите третье число.";
+    }
+    if (kind === "money") {
+      var M = pick([40, 60, 80, 100, 200]);
+      var p4 = pick([20, 25, 50]);
+      var p5 = pick([10, 12, 20]);
+      var afterBook = Math.round(M * (100 - p4)) / 100;
+      var journal = Math.round(afterBook * p5) / 100;
+      state.answer = Math.round((afterBook - journal) * 100) / 100;
+      state.hint = "Два разных целых! Сначала остаток после книги: " + M + " × " + fmt((100 - p4) / 100) + " = " + fmt(afterBook) + ". Журнал считаем от него: " + fmt(afterBook) + " × " + fmt(p5 / 100) + " = " + fmt(journal) + ".";
+      return "Книга стоит " + p4 + "% всех денег, журнал — " + p5 + "% оставшихся после покупки книги денег. Сколько денег осталось, если было " + M + " р.?";
+    }
+    // seeds
+    var N6 = pick([120, 160, 200, 250, 400]);
+    var p6 = pick([60, 75, 80, 90, 95]);
+    var grown = Math.round(N6 * p6) / 100;
+    state.answer = p6;
+    state.hint = "Тип 3: (взошло : посеяно) × 100 = (" + fmt(grown) + " : " + N6 + ") × 100.";
+    return "Из " + N6 + " посеянных семян взошло " + fmt(grown) + ". Какой процент семян дал всходы? Ответ дай в процентах.";
+  }
+
+  function findMistake(id) {
+    for (var i = 0; i < mistakes.length; i++) {
+      if (mistakes[i].id === id) return mistakes[i];
+    }
+    return null;
+  }
+
+  function updateModeTabs() {
+    tabNum.setAttribute("aria-pressed", mode === "num" ? "true" : "false");
+    tabWord.setAttribute("aria-pressed", mode === "word" ? "true" : "false");
+  }
+
+  function renderMistakes() {
+    tErrorsBtn.textContent = "Мои ошибки (" + mistakes.length + ")";
+    tErrorsBtn.disabled = mistakes.length === 0;
+    if (mistakes.length === 0) {
+      tErrors.hidden = true;
+      tErrorsBtn.setAttribute("aria-expanded", "false");
+    }
+    tErrorList.textContent = "";
+
+    mistakes.forEach(function (mistake) {
+      var item = document.createElement("article");
+      item.className = "t-error-item";
+
+      var question = document.createElement("p");
+      question.className = "t-error-question";
+      question.textContent = mistake.question;
+      item.appendChild(question);
+
+      var lastAnswer = document.createElement("p");
+      lastAnswer.className = "t-error-last";
+      lastAnswer.textContent = "Ваш неверный ответ: " + mistake.lastAnswer;
+      item.appendChild(lastAnswer);
+
+      var retry = document.createElement("button");
+      retry.type = "button";
+      retry.className = "btn";
+      retry.textContent = "Решить снова";
+      retry.addEventListener("click", function () { retryMistake(mistake.id); });
+      item.appendChild(retry);
+
+      var details = document.createElement("details");
+      var summary = document.createElement("summary");
+      summary.textContent = "Показать разбор";
+      details.appendChild(summary);
+      var body = document.createElement("div");
+      body.className = "body";
+      var hint = document.createElement("p");
+      hint.textContent = mistake.hint;
+      body.appendChild(hint);
+      var answer = document.createElement("p");
+      answer.className = "t-error-answer";
+      answer.textContent = "Правильный ответ: " + fmt(mistake.answer);
+      body.appendChild(answer);
+      details.appendChild(body);
+      item.appendChild(details);
+      tErrorList.appendChild(item);
+    });
+  }
+
+  function recordMistake(rawAnswer) {
+    var existing = findMistake(state.currentMistakeId);
+    if (existing) {
+      existing.lastAnswer = rawAnswer;
+    } else {
+      var mistake = {
+        id: nextMistakeId++,
+        question: tTask.textContent.trim(),
+        taskHtml: tTask.innerHTML,
+        answer: state.answer,
+        hint: state.hint,
+        mode: mode,
+        lastAnswer: rawAnswer
+      };
+      mistakes.push(mistake);
+      state.currentMistakeId = mistake.id;
+    }
+    renderMistakes();
+  }
+
+  function retryMistake(id) {
+    var mistake = findMistake(id);
+    if (!mistake) return;
+    mode = mistake.mode;
+    updateModeTabs();
+    state.answer = mistake.answer;
+    state.hint = mistake.hint;
+    state.currentMistakeId = mistake.id;
+    tTask.textContent = mistake.question;
+    tInput.value = "";
+    tFeedback.textContent = "Реши это задание ещё раз. Разбор остаётся доступен в списке ошибок.";
+    tFeedback.className = "t-feedback";
+    tHint.textContent = "";
+    tErrors.hidden = true;
+    tErrorsBtn.setAttribute("aria-expanded", "false");
+    tInput.focus();
+  }
+
+  function newTask(focusInput) {
+    state.currentMistakeId = null;
+    tTask.textContent = mode === "num" ? genNum() : genWord();
+    tInput.value = "";
+    tFeedback.textContent = "";
+    tFeedback.className = "t-feedback";
+    tHint.textContent = "";
+    if (focusInput) tInput.focus();
+  }
+
+  document.getElementById("t-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var raw = tInput.value.trim().replace(/\s/g, "").replace(",", ".");
+    var val = parseFloat(raw);
+    if (isNaN(val)) {
+      tFeedback.textContent = "Впиши число, например 65 или 26,4";
+      tFeedback.className = "t-feedback no";
+      return;
+    }
+    state.total++;
+    if (Math.abs(val - state.answer) < 0.005) {
+      state.ok++;
+      var corrected = state.currentMistakeId !== null;
+      if (corrected) {
+        mistakes = mistakes.filter(function (mistake) { return mistake.id !== state.currentMistakeId; });
+        state.currentMistakeId = null;
+        renderMistakes();
+      }
+      tFeedback.textContent = corrected
+        ? "Верно! Ошибка исправлена, задание удалено из списка. Можно следующий пример."
+        : "Верно! Ответ: " + fmt(state.answer) + ". Жми «Ещё пример».";
+      tFeedback.className = "t-feedback ok";
+    } else {
+      recordMistake(tInput.value.trim());
+      tFeedback.textContent = "Пока мимо. Правильный ответ: " + fmt(state.answer) + ". Задание сохранено в «Мои ошибки»: открой разбор или реши его снова.";
+      tFeedback.className = "t-feedback no";
+    }
+    tScore.textContent = "Верно: " + state.ok + " из " + state.total;
+  });
+
+  document.getElementById("t-next").addEventListener("click", function () { newTask(true); });
+  document.getElementById("t-hint-btn").addEventListener("click", function () {
+    tHint.textContent = state.hint;
+  });
+
+  function setMode(m) {
+    mode = m;
+    updateModeTabs();
+    newTask(false);
+  }
+  tabNum.addEventListener("click", function () { setMode("num"); });
+  tabWord.addEventListener("click", function () { setMode("word"); });
+  tErrorsBtn.addEventListener("click", function () {
+    if (mistakes.length === 0) return;
+    tErrors.hidden = !tErrors.hidden;
+    tErrorsBtn.setAttribute("aria-expanded", tErrors.hidden ? "false" : "true");
+  });
+
+  renderMistakes();
+  newTask(false);
+})();
+</script>
+</body>
+</html>

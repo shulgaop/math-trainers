@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пропорции на пальцах — памятка и тренажёр, 6 класс</title>
+<meta name="description" content="Пропорции для шестиклассника: понятное объяснение через постоянную величину, таблицы, способ через единицу, разборы задач № 140–158 и тренажёр с проверкой ответов.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a5593'/%3E%3Cpath d='M18 18l28 28M46 18L18 46' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fff5ee;
+    --card: #fffdf9;
+    --ink: #16171a;
+    --ink-soft: #5b5a55;
+    --line: #ecdfd2;
+    --blue: #0a5593;
+    --blue-soft: #e6eef5;
+    --orange: #fc7523;
+    --orange-soft: #ffe8d7;
+    --green: #1e7a4c;
+    --green-soft: #e3f2e8;
+    --radius: 20px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Nunito", "PT Sans", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+
+  header { padding: 56px 0 30px; }
+  .kicker {
+    display: inline-block;
+    font-size: 13px; font-weight: 800;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--blue); background: var(--blue-soft);
+    border-radius: 999px; padding: 6px 14px; margin-bottom: 18px;
+  }
+  h1 {
+    font-size: clamp(36px, 6.4vw, 60px);
+    font-weight: 900; line-height: 1.06; letter-spacing: -0.01em;
+    max-width: 16ch;
+  }
+  h1 .hl { color: var(--blue); }
+  .lead { margin-top: 18px; max-width: 62ch; color: var(--ink-soft); font-size: 19px; }
+
+  section { padding: 40px 0; }
+  h2 { font-size: clamp(26px, 4vw, 34px); font-weight: 900; margin-bottom: 8px; }
+  .sub { color: var(--ink-soft); max-width: 66ch; margin-bottom: 26px; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px;
+  }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 720px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+
+  .math {
+    font-weight: 900;
+    color: var(--blue);
+    font-size: 22px;
+  }
+  .example-line {
+    background: var(--blue-soft);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    font-size: 20px; font-weight: 800;
+  }
+  .note { color: var(--ink-soft); font-size: 16px; }
+
+  .step-list { display: grid; gap: 14px; counter-reset: s; }
+  .step-item { display: flex; gap: 16px; align-items: flex-start; }
+  .step-item::before {
+    counter-increment: s;
+    content: counter(s);
+    flex: 0 0 auto;
+    width: 40px; height: 40px;
+    border-radius: 13px;
+    background: var(--blue); color: #fff;
+    font-weight: 900; font-size: 19px;
+    display: grid; place-items: center;
+  }
+  .step-item h3 { font-size: 18px; font-weight: 800; margin-bottom: 2px; }
+  .step-item p { color: var(--ink-soft); font-size: 16px; }
+
+  details {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+  }
+  details + details { margin-top: 12px; }
+  summary {
+    cursor: pointer;
+    font-weight: 800; font-size: 18px;
+    list-style: none;
+    display: flex; gap: 12px; align-items: baseline;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before {
+    content: "+";
+    flex: 0 0 auto;
+    width: 30px; height: 30px;
+    border-radius: 10px;
+    background: var(--orange-soft); color: var(--orange);
+    display: grid; place-items: center;
+    font-size: 22px; font-weight: 900;
+  }
+  details[open] summary::before { content: "−"; }
+  summary:hover { color: var(--blue); }
+  summary:focus-visible { outline: 3px solid rgba(10,85,147,.35); outline-offset: 4px; border-radius: 8px; }
+  details .body { margin-top: 12px; }
+
+  .cross-svg { width: 100%; max-width: 460px; height: auto; display: block; margin: 6px auto; }
+
+  .rule-banner {
+    background: var(--blue);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 22px 26px;
+    font-size: 20px; font-weight: 800;
+    text-align: center;
+    margin-top: 18px;
+  }
+  .rule-banner small { display: block; font-size: 15px; font-weight: 600; color: #cfe2f2; margin-top: 6px; }
+
+  .vs { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 720px) { .vs { grid-template-columns: 1fr 1fr; } }
+  .vs .tag {
+    display: inline-block;
+    font-size: 13px; font-weight: 800;
+    border-radius: 999px; padding: 4px 14px; margin-bottom: 10px;
+  }
+  .tag.direct { background: var(--green-soft); color: var(--green); }
+  .tag.inverse { background: var(--orange-soft); color: var(--orange); }
+  .vs h3 { font-size: 20px; font-weight: 900; margin-bottom: 8px; }
+
+  .mistakes { display: grid; gap: 12px; }
+  .mistake { display: flex; gap: 14px; align-items: flex-start; }
+  .mistake .x {
+    flex: 0 0 auto;
+    width: 34px; height: 34px;
+    border-radius: 11px;
+    background: var(--orange-soft); color: var(--orange);
+    font-weight: 900; display: grid; place-items: center;
+  }
+  .mistake p { color: var(--ink-soft); font-size: 16px; }
+  .mistake b { color: var(--ink); }
+
+  /* trainer */
+  .trainer { background: #10395c; border: none; color: #f4f8fb; }
+  .t-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+  .t-tab {
+    font: inherit; font-weight: 800;
+    border-radius: 999px;
+    padding: 9px 20px;
+    cursor: pointer;
+    border: 2px solid rgba(255,255,255,.35);
+    background: transparent; color: #f4f8fb;
+    transition: background .15s ease;
+  }
+  .t-tab[aria-pressed="true"] { background: var(--orange); border-color: var(--orange); color: #1c1c1a; }
+  .t-tab:focus-visible { outline: 3px solid rgba(252,117,35,.5); outline-offset: 2px; }
+  .t-score { margin-left: auto; font-weight: 700; color: #b8d2e6; font-size: 15px; align-self: center; }
+  .t-task {
+    background: #0c2c47;
+    border-radius: 16px;
+    padding: 24px;
+    font-size: 21px; font-weight: 700;
+    line-height: 1.6;
+  }
+  .t-task .prop { font-size: 30px; font-weight: 900; color: #ffd9ae; letter-spacing: .02em; }
+  .t-controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 18px; }
+  .t-controls label { font-weight: 700; }
+  .t-controls input {
+    font: inherit; font-weight: 800;
+    width: 140px; padding: 10px 14px;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,.35);
+    background: #0c2c47; color: #fff;
+    outline: none;
+  }
+  .t-controls input:focus-visible { border-color: var(--orange); }
+  .btn {
+    font: inherit; font-weight: 800;
+    border: none; border-radius: 12px;
+    padding: 11px 22px; cursor: pointer;
+    background: var(--orange); color: #1c1c1a;
+    transition: transform .15s ease;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:active { transform: translateY(0); }
+  .btn.ghost { background: transparent; color: #f4f8fb; border: 2px solid rgba(255,255,255,.35); }
+  .btn:focus-visible { outline: 3px solid rgba(252,117,35,.5); outline-offset: 2px; }
+  .t-feedback { margin-top: 14px; font-weight: 800; min-height: 28px; }
+  .t-feedback.ok { color: #8fe3b4; }
+  .t-feedback.no { color: #ffb28c; }
+  .t-hint { color: #b8d2e6; font-weight: 600; font-size: 15px; margin-top: 8px; min-height: 22px; }
+  .t-method-guide { margin: 0 0 14px; color: #b8d2e6; font-size: 14px; line-height: 1.55; }
+  .t-method-guide b { color: #f4f8fb; }
+  .t-error-toggle[aria-expanded="true"] { background: var(--orange); border-color: var(--orange); color: #1c1c1a; }
+  .t-tab:disabled { opacity: .55; cursor: not-allowed; }
+  .t-errors { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.25); }
+  .t-errors h3 { font-size: 21px; margin-bottom: 4px; }
+  .t-error-help { color: #b8d2e6; font-size: 14px; margin-bottom: 14px; }
+  .t-error-list { display: grid; gap: 12px; }
+  .t-error-item { min-width: 0; padding: 16px; border: 1px solid rgba(255,255,255,.25); border-radius: 14px; background: #0c2c47; }
+  .t-error-item p { overflow-wrap: anywhere; }
+  .t-error-question { font-weight: 800; }
+  .t-error-last { color: #ffb28c; margin: 5px 0 12px; }
+  .t-error-item .btn { margin: 4px 0 12px; }
+  .t-errors details { background: #10395c; border-color: rgba(255,255,255,.25); color: #f4f8fb; }
+  .t-errors details .body { color: #dce9f2; }
+  .t-error-answer { margin-top: 10px; color: #8fe3b4; font-weight: 800; }
+
+  /* Навигация и учебные схемы */
+  .lesson-nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(255,245,238,.96);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+  }
+  .lesson-nav .wrap {
+    display: flex; gap: 8px; overflow-x: auto;
+    padding-top: 10px; padding-bottom: 10px;
+    scrollbar-width: thin;
+  }
+  .lesson-nav a {
+    flex: 0 0 auto; padding: 7px 13px;
+    border: 1px solid var(--line); border-radius: 999px;
+    background: var(--card); color: var(--blue);
+    font-size: 14px; font-weight: 800; text-decoration: none;
+  }
+  .lesson-nav a:hover { border-color: var(--blue); }
+  .lesson-nav a:focus-visible { outline: 3px solid rgba(10,85,147,.3); outline-offset: 2px; }
+  section { scroll-margin-top: 76px; }
+  @media (min-width: 720px) { .grid.three { grid-template-columns: repeat(3, 1fr); } }
+  .key-question {
+    margin: 20px 0; padding: 22px 24px;
+    border-radius: var(--radius); background: var(--blue); color: #fff;
+    font-size: clamp(21px, 3vw, 27px); font-weight: 900; line-height: 1.35;
+  }
+  .key-question small { display: block; margin-top: 5px; color: #cfe2f2; font-size: 15px; font-weight: 600; }
+  .formula-chip {
+    display: inline-block; margin: 10px 0 4px; padding: 6px 12px;
+    border-radius: 10px; background: var(--blue-soft); color: var(--blue);
+    font-size: 19px; font-weight: 900;
+  }
+  .method-title { margin: 28px 0 12px; font-size: 23px; }
+  .compare-table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 16px; }
+  .compare-table th, .compare-table td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: center; }
+  .compare-table th { color: var(--ink-soft); font-size: 14px; }
+  .compare-table .change { color: var(--orange); font-weight: 900; white-space: nowrap; }
+  .nonexample { margin-top: 12px; }
+  .nonexample summary { color: var(--ink); }
+
+  /* Разборы учебника */
+  .solution-tools { display: flex; flex-wrap: wrap; gap: 9px; margin: 18px 0 20px; }
+  .filter-btn {
+    font: inherit; font-size: 14px; font-weight: 800; cursor: pointer;
+    padding: 8px 14px; border-radius: 999px;
+    border: 1px solid var(--line); background: var(--card); color: var(--blue);
+  }
+  .filter-btn:hover { border-color: var(--blue); }
+  .filter-btn[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .filter-btn:focus-visible { outline: 3px solid rgba(10,85,147,.3); outline-offset: 2px; }
+  .task-badge {
+    flex: 0 0 auto; min-width: 42px; padding: 1px 8px;
+    border-radius: 8px; background: var(--blue); color: #fff;
+    text-align: center; font-size: 14px; font-weight: 900;
+  }
+  .solution[hidden] { display: none; }
+  .solution .body { color: var(--ink); }
+  .solution .body p + .example-line { margin-top: 12px; }
+  .answer-chip {
+    display: inline-block; margin-top: 7px; padding: 4px 11px;
+    border-radius: 9px; background: var(--green-soft); color: var(--green);
+    font-weight: 900;
+  }
+  .table-scroll { overflow-x: auto; max-width: 100%; }
+  .vs > *, .grid > * { min-width: 0; }
+  .example-line { overflow-wrap: anywhere; }
+  .solution-table { min-width: 390px; }
+  .filter-status { color: var(--ink-soft); font-size: 14px; margin: -8px 0 14px; }
+
+  /* Короткое видео перед уроком */
+  .video-section { padding-top: 32px; }
+  .video-lesson {
+    display: grid; grid-template-columns: 1fr; gap: 26px; align-items: center;
+    padding: 26px; border-radius: var(--radius);
+    background: var(--blue); color: #fff;
+  }
+  .video-tag {
+    display: inline-block; padding: 4px 12px; border-radius: 999px;
+    background: rgba(255,255,255,.14); color: #fff;
+    font-size: 13px; font-weight: 800; letter-spacing: .04em;
+  }
+  .video-copy h2 { color: #fff; margin: 10px 0 12px; }
+  .video-copy p, .video-points { color: #dceaf4; }
+  .video-points { margin: 14px 0 0 21px; }
+  .video-points li + li { margin-top: 5px; }
+  .video-copy .video-help { margin-top: 16px; font-size: 14px; color: #cfe2f2; }
+  .video-player {
+    display: block; width: 100%; max-width: 320px; height: auto;
+    aspect-ratio: 9 / 16; margin: 0 auto; border-radius: 16px;
+    background: var(--ink); border: 1px solid rgba(255,255,255,.25);
+  }
+  .video-player:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+  @media (min-width: 760px) {
+    .video-lesson { grid-template-columns: minmax(0, 1fr) 300px; padding: 30px; }
+  }
+
+  /* Русскоязычная видеоподборка */
+  .russian-video-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .russian-video-grid > * { min-width: 0; }
+  .russian-video-card { display: flex; flex-direction: column; }
+  .russian-video-card h3 { font-size: 21px; line-height: 1.3; margin-bottom: 9px; }
+  .russian-video-card .method-video { margin-top: auto; }
+  .russian-video-card .best-for { margin: 12px 0 18px; font-weight: 800; }
+  .rutube-alternative { margin-top: 18px; color: var(--ink-soft); font-size: 15px; }
+  .rutube-alternative a { color: var(--blue); font-weight: 800; }
+  @media (min-width: 760px) {
+    .russian-video-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .russian-video-card { padding: 22px; }
+  }
+
+  /* Выбор метода и международные подходы */
+  .method-strip {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--radius); overflow: hidden;
+  }
+  .method-row { display: grid; grid-template-columns: 1fr; gap: 5px; padding: 17px 20px; }
+  .method-row + .method-row { border-top: 1px solid var(--line); }
+  .method-row .question { font-weight: 800; }
+  .method-row .answer { color: var(--blue); font-weight: 800; }
+  .method-row .answer span { display: block; color: var(--ink-soft); font-size: 14px; font-weight: 600; }
+  .world-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .world-grid > * { min-width: 0; }
+  .world-card { display: flex; flex-direction: column; }
+  .country-line { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .country-tag {
+    display: inline-block; padding: 3px 11px; border-radius: 999px;
+    background: var(--blue-soft); color: var(--blue); font-size: 13px; font-weight: 900;
+  }
+  .original-language { color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+  .world-card h3 { font-size: 22px; font-weight: 900; margin-bottom: 8px; }
+  .method-diagram {
+    display: block; width: 100%; height: auto; margin: 12px 0 16px;
+    background: #faf6ef; border-radius: 12px;
+  }
+  .conspect-figure {
+    max-width: 460px; margin: 16px auto; padding: 10px 12px 12px;
+    background: #faf6ef; border: 1px solid var(--line); border-radius: 14px;
+  }
+  .conspect-figure.wide { max-width: 780px; }
+  .conspect-figure svg { display: block; width: 100%; height: auto; }
+  .conspect-figure .diagram-compact { display: none; }
+  @media (max-width: 600px) {
+    .conspect-figure.wide .diagram-wide { display: none; }
+    .conspect-figure.wide .diagram-compact { display: block; }
+  }
+  .conspect-figure figcaption { margin-top: 6px; color: var(--ink-soft); font-size: 13px; line-height: 1.45; text-align: center; }
+  .method-mini {
+    margin: 14px 0 16px; padding: 14px 16px; border-radius: 12px;
+    background: var(--blue-soft); color: var(--blue); font-size: 19px; font-weight: 900;
+    overflow-wrap: anywhere;
+  }
+  .method-video {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 48px; margin-top: 16px; padding: 11px 16px;
+    border-radius: 12px; background: var(--blue); color: #fff;
+    font-weight: 800; text-align: center; text-decoration: none;
+    transition: background .15s ease;
+  }
+  .method-video:hover { background: #074675; }
+  .method-video:focus-visible { outline: 3px solid rgba(10,85,147,.35); outline-offset: 3px; }
+  .method-video svg { flex: 0 0 auto; width: 24px; height: 24px; }
+  .video-source { margin-top: 7px; color: var(--ink-soft); font-size: 13px; text-align: center; }
+  .world-card details {
+    margin-top: 18px; padding: 14px 0 0; border: 0; border-top: 1px solid var(--line);
+    border-radius: 0; background: transparent;
+  }
+  .world-card details ul { margin-left: 20px; }
+  .world-card details li + li { margin-top: 6px; }
+  .world-card .best-for { margin-top: 12px; color: var(--ink); font-weight: 800; }
+  .task-source { display: block; margin-top: 2px; color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+  .practice-task .body { padding-top: 4px; }
+  @media (min-width: 650px) {
+    .method-row { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 20px; align-items: center; }
+  }
+  @media (min-width: 760px) {
+    .world-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Адаптивный учебный маршрут */
+  [hidden] { display: none !important; }
+  .lh-shell { border: 2px solid var(--blue); }
+  .lh-intro { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 20px; }
+  .lh-phase { padding: 5px 11px; border-radius: 999px; background: var(--blue-soft); color: var(--blue); font-size: 13px; font-weight: 900; }
+  .lh-phase + .lh-phase::before { content: "→ "; }
+  .lh-question { border: 0; margin-top: 18px; }
+  .lh-question legend { margin-bottom: 8px; font-size: 18px; font-weight: 900; }
+  .lh-options { display: grid; gap: 8px; }
+  .lh-option { display: flex; align-items: center; gap: 10px; min-height: 46px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 12px; cursor: pointer; }
+  .lh-option:hover { background: var(--blue-soft); }
+  .lh-option:focus-within { outline: 3px solid rgba(10,85,147,.28); outline-offset: 2px; }
+  .lh-option input { flex: 0 0 auto; width: 20px; height: 20px; accent-color: var(--blue); }
+  .lh-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
+  .lh-feedback { min-height: 26px; margin-top: 10px; font-weight: 800; }
+  .lh-feedback.ok { color: var(--green); }
+  .lh-feedback.no { color: #a84316; }
+  .lh-explanation { margin-top: 16px; padding: 16px 18px; border-radius: 14px; background: var(--blue-soft); }
+  .lh-explanation h4 { margin-bottom: 6px; font-size: 19px; }
+  .lh-plan { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 18px 0; }
+  .lh-node { min-height: 78px; padding: 12px; border: 2px solid var(--line); border-radius: 14px; background: #fff; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+  .lh-node:hover { border-color: var(--blue); }
+  .lh-node:focus-visible { outline: 3px solid rgba(10,85,147,.35); outline-offset: 3px; }
+  .lh-node.current { border-color: var(--blue); background: var(--blue-soft); }
+  .lh-node.done { border-color: var(--green); background: var(--green-soft); }
+  .lh-node small { display: block; margin-top: 4px; color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+  .lh-node .lh-node-status { display: block; color: var(--blue); font-size: 13px; font-weight: 900; }
+  .lh-node.done .lh-node-status { color: var(--green); }
+  .lh-progress { color: var(--ink-soft); font-weight: 800; }
+  #lh-plan-wrap, .lh-lesson { scroll-margin-top: 76px; }
+  .lh-lesson { margin-top: 18px; padding-top: 20px; border-top: 1px solid var(--line); }
+  .lh-lesson h3 { margin-bottom: 6px; font-size: 24px; }
+  .lh-step-label { color: var(--blue); font-size: 14px; font-weight: 900; }
+  .lh-storage { margin-top: 12px; color: var(--ink-soft); font-size: 14px; }
+  .lh-text-button { border: 0; background: transparent; color: var(--blue); font: inherit; font-weight: 800; text-decoration: underline; cursor: pointer; min-height: 44px; }
+  .lh-text-button:focus-visible { outline: 3px solid rgba(10,85,147,.35); outline-offset: 3px; }
+  @media (min-width: 680px) {
+    .lh-plan { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+
+  footer { padding: 28px 0 44px; color: var(--ink-soft); font-size: 14px; }
+  .top-link { display: inline-block; margin-top: 8px; color: var(--blue); font-weight: 800; text-decoration: none; }
+  .top-link:hover { text-decoration: underline; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn, .t-tab, .method-video { transition: none; }
+  }
+</style>
+</head>
+<body id="top">
+
+<header>
+  <div class="wrap">
+    <span class="kicker">Математика · 6 класс</span>
+    <h1>Пропорции <span class="hl">на пальцах</span></h1>
+    <p class="lead">Поймём пропорцию через смысл, таблицы и постоянную величину — без зубрёжки. Затем разберём задачи № 140–158 и потренируемся.</p>
+  </div>
+</header>
+
+<nav class="lesson-nav" aria-label="Разделы урока">
+  <div class="wrap">
+    <a href="#video">Видео</a>
+    <a href="#russian-videos">Видео на русском</a>
+    <a href="#learning-harness">Мой маршрут</a>
+    <a href="#ratio">1. Отношение</a>
+    <a href="#proportion">2. Пропорция</a>
+    <a href="#problems">3. Задачи</a>
+    <a href="#direct-inverse">4. Зависимости</a>
+    <a href="#method-choice">Метод за 5 секунд</a>
+    <a href="#world-methods">4 подхода</a>
+    <a href="#practice">6 задач</a>
+    <a href="#textbook">Разборы № 140–158</a>
+    <a href="#trainer">Тренажёр</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ВИДЕООБЪЯСНЕНИЕ -->
+  <section id="video" class="video-section" aria-labelledby="video-title">
+    <div class="video-lesson">
+      <div class="video-copy">
+        <span class="video-tag">Видео · 1 мин 17 сек</span>
+        <h2 id="video-title">Сначала посмотри, потом решай</h2>
+        <p>Короткий ролик поможет увидеть главную идею до чтения подробной памятки.</p>
+        <ul class="video-points">
+          <li>Что такое отношение и пропорция.</li>
+          <li>Как найти неизвестное число крест-накрест.</li>
+          <li>Как проверить ответ через равенство отношений.</li>
+        </ul>
+        <p class="video-help">Видео не запускается само. Нажми «Воспроизвести»; на паузе удобно повторить пример.</p>
+      </div>
+      <video class="video-player" controls playsinline preload="metadata" poster="videos/proporcii.jpg" width="720" height="1280" aria-label="Видеообъяснение: пропорции">
+        <source src="videos/proporcii.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео. <a href="videos/proporcii.mp4">Скачать ролик</a>.
+      </video>
+    </div>
+  </section>
+
+  <!-- РУССКОЯЗЫЧНЫЕ ВИДЕО -->
+  <section id="russian-videos" aria-labelledby="russian-videos-title">
+    <h2 id="russian-videos-title">Ещё три объяснения на русском</h2>
+    <p class="sub">Выбирай ролик по своей трудности: повторить базу, различить зависимости или научиться составлять пропорцию по условию. Все видео открываются в новой вкладке, без автозапуска.</p>
+    <div class="russian-video-grid">
+      <article class="card russian-video-card">
+        <div class="country-line"><span class="country-tag">Начни здесь</span><span class="original-language">6 мин 24 сек</span></div>
+        <h3>Пропорция и её основное свойство</h3>
+        <p>Короткий мини-урок: равенство двух отношений, крайние и средние члены, поиск неизвестного числа.</p>
+        <p class="best-for">Подходит перед шагами 1–2 этого урока.</p>
+        <a class="method-video" href="https://www.youtube.com/watch?v=Uf-9a-0aPNY" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+          Смотреть на YouTube
+        </a>
+        <p class="video-source">«Мини уроки по математике» · «6 класс. Пропорция. Основное свойство пропорции»</p>
+      </article>
+
+      <article class="card russian-video-card">
+        <div class="country-line"><span class="country-tag">Два вида зависимости</span></div>
+        <h3>Прямая и обратная пропорциональность</h3>
+        <p>Видеоурок помогает различить ситуации, в которых постоянно отношение величин, и те, где постоянно их произведение.</p>
+        <p class="best-for">Смотри перед разделом «Прямая или обратная?».</p>
+        <a class="method-video" href="https://www.youtube.com/watch?v=q85xJudMB4c" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+          Смотреть на YouTube
+        </a>
+        <p class="video-source">MEKTEП OnLine MATEMATИKA · «Прямо пропорциональная и обратно пропорциональная зависимость. 6 класс»</p>
+      </article>
+
+      <article class="card russian-video-card">
+        <div class="country-line"><span class="country-tag">Текстовые задачи</span></div>
+        <h3>Как составить пропорцию по условию</h3>
+        <p>Разбор простейших задач для 6 класса с акцентом на главную трудность: как записать величины в правильном порядке.</p>
+        <p class="best-for">Выбирай после базового объяснения, перед практикой.</p>
+        <a class="method-video" href="https://www.youtube.com/watch?v=9va8jmWcdKI" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+          Смотреть на YouTube
+        </a>
+        <p class="video-source">«Математика — это просто!» · «Задачи на пропорции. 6 класс»</p>
+      </article>
+    </div>
+    <p class="rutube-alternative">Если YouTube недоступен, базовую тему можно также посмотреть на <a href="https://rutube.ru/video/d90a923712b0a80d15c1db2b5f58e6e5/" target="_blank" rel="noopener noreferrer">RuTube: «Пропорция. Основное свойство пропорции»</a>. Локальный ролик и текст урока работают независимо от внешних платформ.</p>
+  </section>
+
+  <!-- АДАПТИВНЫЙ МАРШРУТ ПО ПРИНЦИПАМ LEARNHARNESS -->
+  <section id="learning-harness" aria-labelledby="learning-harness-title">
+    <h2 id="learning-harness-title">Мой маршрут: от диагностики к практике</h2>
+    <p class="sub">Не обязательно читать всё подряд. Ответь на четыре коротких вопроса — сайт определит первый пробел и предложит маршрут. На каждом шаге: предсказание → объяснение → проверка.</p>
+
+    <div class="card lh-shell">
+      <div class="lh-intro" aria-label="Этапы учебного цикла">
+        <span class="lh-phase">Измерить</span>
+        <span class="lh-phase">Построить маршрут</span>
+        <span class="lh-phase">Объяснить</span>
+        <span class="lh-phase">Проверить</span>
+        <span class="lh-phase">Практиковать</span>
+      </div>
+
+      <div id="lh-diagnostic">
+        <h3>Сначала четыре вопроса</h3>
+        <p>Выбирай ответ сам. Это не оценка: ошибка здесь нужна, чтобы начать именно с нужной темы.</p>
+        <form id="lh-diagnostic-form" novalidate>
+          <fieldset class="lh-question">
+            <legend>1. Как записать отношение 12 : 18 в самом простом виде?</legend>
+            <div class="lh-options">
+              <label class="lh-option"><input type="radio" name="lh-d0" value="0"> 3 : 2</label>
+              <label class="lh-option"><input type="radio" name="lh-d0" value="1"> 2 : 3</label>
+              <label class="lh-option"><input type="radio" name="lh-d0" value="2"> 4 : 9</label>
+            </div>
+          </fieldset>
+          <fieldset class="lh-question">
+            <legend>2. Почему 4 : 6 = 10 : 15 — верная пропорция?</legend>
+            <div class="lh-options">
+              <label class="lh-option"><input type="radio" name="lh-d1" value="0"> 4 · 6 = 10 · 15</label>
+              <label class="lh-option"><input type="radio" name="lh-d1" value="1"> 4 + 15 = 6 + 10</label>
+              <label class="lh-option"><input type="radio" name="lh-d1" value="2"> 4 · 15 = 6 · 10</label>
+            </div>
+          </fieldset>
+          <fieldset class="lh-question">
+            <legend>3. Путь тот же, скорость увеличили в 2 раза. Что будет со временем?</legend>
+            <div class="lh-options">
+              <label class="lh-option"><input type="radio" name="lh-d2" value="0"> Уменьшится в 2 раза</label>
+              <label class="lh-option"><input type="radio" name="lh-d2" value="1"> Увеличится в 2 раза</label>
+              <label class="lh-option"><input type="radio" name="lh-d2" value="2"> Не изменится</label>
+            </div>
+          </fieldset>
+          <fieldset class="lh-question">
+            <legend>4. Через 1 час в баке 9 л, через 2 часа — 8 л. Это обратная пропорциональность?</legend>
+            <div class="lh-options">
+              <label class="lh-option"><input type="radio" name="lh-d3" value="0"> Да: литров становится меньше</label>
+              <label class="lh-option"><input type="radio" name="lh-d3" value="1"> Нет: 1 · 9 ≠ 2 · 8</label>
+              <label class="lh-option"><input type="radio" name="lh-d3" value="2"> Это прямая пропорциональность</label>
+            </div>
+          </fieldset>
+          <div class="lh-actions">
+            <button class="btn" type="submit">Построить мой маршрут</button>
+            <button class="btn secondary" id="lh-reset-top" type="button">Сбросить прогресс</button>
+          </div>
+          <p id="lh-diagnostic-feedback" class="lh-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <div id="lh-plan-wrap" hidden>
+        <h3>Твой маршрут</h3>
+        <p id="lh-diagnostic-result"></p>
+        <p id="lh-progress" class="lh-progress"></p>
+        <div id="lh-plan" class="lh-plan" aria-label="Учебные шаги"></div>
+        <div class="lh-actions">
+          <button class="btn secondary" id="lh-retake" type="button">Пройти диагностику заново</button>
+          <button class="btn secondary" id="lh-reset" type="button">Сбросить прогресс</button>
+        </div>
+        <div id="lh-lesson" class="lh-lesson" aria-live="polite"></div>
+      </div>
+
+      <p id="lh-storage-note" class="lh-storage">Прогресс хранится только в этом браузере. Сайт не отправляет ответы на сервер и не использует внешнюю AI-модель.</p>
+    </div>
+  </section>
+
+  <!-- 1. ОТНОШЕНИЕ -->
+  <section id="ratio">
+    <h2>Шаг 1. Отношение — это просто деление</h2>
+    <p class="sub">Отношение двух чисел показывает, во сколько раз одно число больше другого. Записывают двумя способами — смысл один.</p>
+    <div class="card">
+      <div class="example-line">10 : 5 = 2 &nbsp;&nbsp;—&nbsp;&nbsp; то же самое, что &nbsp; 10/5 = 2</div>
+      <p class="note">Читаем: «десять относится к пяти, как два к одному». Значит, 10 в два раза больше, чем 5.</p>
+      <div class="example-line">6 : 3 = 2 &nbsp;&nbsp;и&nbsp;&nbsp; 10 : 5 = 2 &nbsp;&nbsp;→&nbsp;&nbsp; отношения одинаковые!</div>
+      <p class="note">Если два отношения равны — получилась пропорция. Переходим к шагу 2.</p>
+    </div>
+  </section>
+
+  <!-- 2. ПРОПОРЦИЯ -->
+  <section id="proportion">
+    <h2>Шаг 2. Пропорция и правило «крест-накрест»</h2>
+    <p class="sub">Пропорция — это равенство двух отношений: <b>a : b = c : d</b>. Здесь a и d — <b>крайние</b> члены, b и c — <b>средние</b>.</p>
+
+    <div class="card">
+      <svg class="cross-svg" viewBox="0 0 460 190" role="img" aria-label="Схема: a относится к b, как c относится к d. Стрелки крест-накрест: a умножить на d и b умножить на c.">
+        <text x="60" y="105" font-size="44" font-weight="900" fill="#0a5593">a : b = c : d</text>
+        <path d="M 52 128 C 90 175, 330 175, 380 122" fill="none" stroke="#fc7523" stroke-width="4" stroke-linecap="round"/>
+        <path d="M 380 122 l -16 -2 l 6 12 z" fill="#fc7523"/>
+        <path d="M 128 122 C 160 70, 260 62, 300 40" fill="none" stroke="#1e7a4c" stroke-width="4" stroke-linecap="round"/>
+        <text x="30" y="170" font-size="19" font-weight="800" fill="#fc7523">a · d</text>
+        <text x="150" y="52" font-size="19" font-weight="800" fill="#1e7a4c">b · c</text>
+      </svg>
+      <div class="rule-banner">
+        a · d = b · c
+        <small>Произведение крайних членов равно произведению средних. Запомни: перемножаем наискось.</small>
+      </div>
+      <div class="example-line" style="margin-top:18px;">3 : 4 = x : 8 &nbsp;→&nbsp; 4 · x = 3 · 8 &nbsp;→&nbsp; x = 24 : 4 = <span class="math">6</span></div>
+      <p class="note"><b>Проверка:</b> 3 : 4 = 0,75 и 6 : 8 = 0,75. Отношения равны — ответ верный. Всегда проверяй так!</p>
+    </div>
+  </section>
+
+  <!-- 3. ЗАДАЧИ -->
+  <section id="problems">
+    <h2>Шаг 3. Решаем задачи из жизни</h2>
+    <p class="sub">Алгоритм один для всех задач. Главное — записывать величины в одинаковом порядке: если слева «было : стало», то и справа «было : стало».</p>
+
+    <div class="card step-list" style="margin-bottom:20px;">
+      <div class="step-item"><div><h3>Подпиши, что к чему относится</h3><p>Например: «порции» и «граммы муки».</p></div></div>
+      <div class="step-item"><div><h3>Составь пропорцию в одинаковом порядке</h3><p>2 порции : 5 порций = 200 г : x г.</p></div></div>
+      <div class="step-item"><div><h3>Умножь крест-накрест и найди x</h3><p>2 · x = 5 · 200 → x = 1000 : 2 = 500.</p></div></div>
+      <div class="step-item"><div><h3>Проверь ответ здравым смыслом</h3><p>Порций стало больше — муки тоже должно быть больше. 500 г &gt; 200 г. Всё сходится.</p></div></div>
+    </div>
+
+    <details>
+      <summary>Рецепт: на 2 порции 200 г муки. Сколько на 5 порций?</summary>
+      <div class="body">
+        <div class="example-line">2 : 5 = 200 : x → 2x = 1000 → x = <span class="math">500 г</span></div>
+        <p class="note">Порции к порциям, мука к муке — порядок одинаковый слева и справа.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Скорость: 120 км за 2 часа. Сколько за 5 часов?</summary>
+      <div class="body">
+        <div class="example-line">120 : x = 2 : 5 → 2x = 600 → x = <span class="math">300 км</span></div>
+        <p class="note">Скорость та же, значит отношение «путь : время» не меняется: 120 : 2 = 300 : 5 = 60 км/ч.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Покупки: 3 ручки стоят 4,5 рубля. Сколько стоят 7 ручек?</summary>
+      <div class="body">
+        <div class="example-line">3 : 7 = 4,5 : x → 3x = 31,5 → x = <span class="math">10,5 рубля</span></div>
+        <p class="note">Проверка: одна ручка стоит 4,5 : 3 = 1,5 рубля, а 7 · 1,5 = 10,5. Сошлось!</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- 4. ПРЯМАЯ / ОБРАТНАЯ -->
+  <section id="direct-inverse">
+    <h2>Шаг 4. Прямая, обратная — или пропорции нет?</h2>
+    <p class="sub">Не начинай с «крест-накрест» и не угадывай по стрелкам. Сначала пойми сюжет, затем проверь числа: постоянно отношение, постоянно произведение или ни то ни другое.</p>
+
+    <div class="key-question">
+      Что в задаче остаётся постоянным?
+      <small>Ответ на этот вопрос подскажет и зависимость, и способ решения.</small>
+    </div>
+
+    <div class="grid three">
+      <div class="card">
+        <span class="tag direct">Прямая</span>
+        <h3>Меняются в одно и то же число раз</h3>
+        <p>Во 2 раза больше времени при той же скорости — во 2 раза больше путь.</p>
+        <span class="formula-chip">y : x = k</span>
+        <p class="note"><b>Постоянно отношение.</b> Например, путь : время = скорость.</p>
+      </div>
+      <div class="card">
+        <span class="tag inverse">Обратная</span>
+        <h3>Одна растёт — другая уменьшается во столько же раз</h3>
+        <p>Во 2 раза больше скорость на том же пути — во 2 раза меньше время.</p>
+        <span class="formula-chip">x · y = k</span>
+        <p class="note"><b>Постоянно произведение.</b> Например, скорость × время = путь.</p>
+      </div>
+      <div class="card">
+        <span class="tag" style="background:#eee7df;color:#5b5a55;">Не всякая зависимость</span>
+        <h3>Направления стрелок недостаточно</h3>
+        <p>Рост с возрастом увеличивается, но не во столько же раз. Значит, прямой пропорциональности нет.</p>
+        <p class="note"><b>Всегда проверяй множитель:</b> «во столько же раз» — обязательная часть правила.</p>
+      </div>
+    </div>
+
+    <h3 class="method-title">Способ 1. Через единицу — когда так проще понять</h3>
+    <div class="card">
+      <p><b>3 ручки стоят 4,5 рубля. Сколько стоят 7 ручек?</b></p>
+      <div class="example-line">1 ручка: 4,5 : 3 = 1,5 рубля<br>7 ручек: 1,5 × 7 = <span class="math">10,5 рубля</span></div>
+      <p class="note">Сначала узнали цену <b>одной</b> вещи, потом умножили на нужное количество. Это тот же смысл, что и у пропорции, но без формальной записи.</p>
+    </div>
+
+    <h3 class="method-title">Способ 2. Таблица и одинаковые множители</h3>
+    <div class="vs">
+      <div class="card">
+        <span class="tag direct">Прямая: путь при постоянной скорости</span>
+        <div class="table-scroll">
+          <table class="compare-table">
+            <tr><th>Время</th><td>2 ч</td><td>6 ч</td></tr>
+            <tr><th>Путь</th><td>120 км</td><td>360 км</td></tr>
+            <tr><th>Изменение</th><td colspan="2" class="change">и время, и путь × 3</td></tr>
+          </table>
+        </div>
+        <p class="note">120 : 2 = 360 : 6 = 60 км/ч. Отношение не изменилось.</p>
+      </div>
+      <div class="card">
+        <span class="tag inverse">Обратная: время на постоянном пути</span>
+        <div class="table-scroll">
+          <table class="compare-table">
+            <tr><th>Скорость</th><td>60 км/ч</td><td>120 км/ч</td></tr>
+            <tr><th>Время</th><td>4 ч</td><td>2 ч</td></tr>
+            <tr><th>Изменение</th><td colspan="2" class="change">скорость × 2, время : 2</td></tr>
+          </table>
+        </div>
+        <p class="note">60 × 4 = 120 × 2 = 240 км. Произведение не изменилось.</p>
+      </div>
+    </div>
+
+    <details class="nonexample">
+      <summary>Почему день и ночь — НЕ обратная пропорциональность?</summary>
+      <div class="body"><p>Чем дольше день, тем короче ночь, но их <b>сумма</b> постоянна: день + ночь = 24 часа. А для обратной пропорциональности должно быть постоянным <b>произведение</b>. Например, 8 × 16 = 128, а 12 × 12 = 144 — произведение меняется.</p></div>
+    </details>
+    <details class="nonexample">
+      <summary>Ловушка: одна труба наполняет бассейн за 6 часов. А три такие трубы?</summary>
+      <div class="body">
+        <p>Работа одна и та же. Труб в 3 раза больше — времени нужно в 3 раза <b>меньше</b>.</p>
+        <div class="example-line">1 · 6 = 3 · x → x = 6 : 3 = <span class="math">2 часа</span></div>
+        <p class="note">Проверка здравым смыслом: три трубы не могут работать дольше одной.</p>
+      </div>
+    </details>
+    <h3 class="method-title">Обратная пропорциональность: проверяем произведение</h3>
+    <div class="card">
+      <p><b>Один и тот же путь — 240 км.</b> Скорость и время меняются, но их произведение остаётся равным пути. Поэтому это обратная пропорциональность.</p>
+      <figure class="conspect-figure wide">
+        <svg class="diagram-wide" viewBox="0 0 780 285" role="img" aria-label="Три пары скорости и времени на пути 240 километров: 60 и 4, 80 и 3, 120 и 2. Во всех строках произведение равно 240. При удвоении скорости время делится на два.">
+          <rect x="12" y="12" width="756" height="250" rx="14" fill="#fffdf9"/>
+          <g font-family="Nunito, sans-serif" fill="#16171a" text-anchor="middle">
+            <g font-size="18" font-weight="900" fill="#0a5593">
+              <text x="150" y="48">Скорость, км/ч</text><text x="365" y="48">Время, ч</text><text x="610" y="48">Путь = v · t</text>
+            </g>
+            <g stroke="#d7c8ba" stroke-width="2"><path d="M35 62 H745 M35 122 H745 M35 182 H745 M270 28 V242 M490 28 V242"/></g>
+            <g font-size="22" font-weight="900">
+              <text x="150" y="103">60</text><text x="365" y="103">4</text><text x="610" y="103">60 × 4 = 240</text>
+              <text x="150" y="163">80</text><text x="365" y="163">3</text><text x="610" y="163">80 × 3 = 240</text>
+              <text x="150" y="223" fill="#fc7523">120</text><text x="365" y="223" fill="#1e7a4c">2</text><text x="610" y="223">120 × 2 = 240</text>
+            </g>
+            <text x="150" y="253" font-size="16" font-weight="900" fill="#fc7523">60 → 120 (× 2)</text>
+            <text x="365" y="253" font-size="16" font-weight="900" fill="#1e7a4c">4 → 2 (: 2)</text>
+          </g>
+        </svg>
+        <svg class="diagram-compact" viewBox="0 0 360 490" role="img" aria-label="Тот же путь 240 километров: 60 километров в час за 4 часа, 80 за 3 часа, 120 за 2 часа. При удвоении скорости время делится на два.">
+          <rect x="5" y="5" width="350" height="480" rx="14" fill="#fffdf9"/>
+          <g font-family="Nunito, sans-serif" text-anchor="middle">
+            <text x="180" y="42" font-size="21" font-weight="900" fill="#0a5593">Один путь — 240 км</text>
+            <g font-size="22" font-weight="900" fill="#16171a">
+              <rect x="25" y="68" width="310" height="72" rx="12" fill="#e6eef5"/><text x="180" y="113">60 км/ч × 4 ч = 240 км</text>
+              <rect x="25" y="166" width="310" height="72" rx="12" fill="#e6eef5"/><text x="180" y="211">80 км/ч × 3 ч = 240 км</text>
+              <rect x="25" y="264" width="310" height="72" rx="12" fill="#e6eef5"/><text x="180" y="309">120 км/ч × 2 ч = 240 км</text>
+            </g>
+            <text x="180" y="382" font-size="20" font-weight="900" fill="#fc7523">Скорость: 60 → 120 (× 2)</text>
+            <text x="180" y="423" font-size="20" font-weight="900" fill="#1e7a4c">Время: 4 → 2 (: 2)</text>
+            <text x="180" y="462" font-size="18" font-weight="900" fill="#16171a">Произведение не меняется</text>
+          </g>
+        </svg>
+        <figcaption>Скорость умножили на 2, а время разделили на 2. Произведение не изменилось.</figcaption>
+      </figure>
+      <div class="example-line">v · t = 240 → при v = 80: 80 · t = 240 → t = <span class="math">3 ч</span></div>
+      <p class="note"><b>Важное условие:</b> путь должен быть одним и тем же. Если расстояние другое, нельзя автоматически писать «больше скорость — пропорционально меньше время».</p>
+    </div>
+
+    <h3 class="method-title">Не всякое уменьшение — обратная пропорциональность</h3>
+    <div class="card">
+      <p><b>В баке было 10 л воды, каждый час уходит 1 л.</b> Остаток действительно уменьшается. Но обратной пропорциональности нет: постоянна сумма «израсходовано + осталось», а не произведение времени и остатка.</p>
+      <figure class="conspect-figure wide">
+        <svg class="diagram-wide" viewBox="0 0 780 320" role="img" aria-label="Бак вмещает 10 литров, каждый час расходуется один литр. Через 1, 2 и 4 часа остаются 9, 8 и 6 литров. Сумма расхода и остатка всегда 10, а произведения времени и остатка — 9, 16 и 24 — разные. Значит, это не обратная пропорциональность.">
+          <rect x="12" y="12" width="756" height="292" rx="14" fill="#fffdf9"/>
+          <g font-family="Nunito, sans-serif" fill="#16171a" text-anchor="middle">
+            <text x="390" y="43" font-size="20" font-weight="900" fill="#0a5593">10 л в начале, расход — 1 л/ч</text>
+            <g font-size="18" font-weight="900" fill="#0a5593"><text x="205" y="82">1 час</text><text x="390" y="82">2 часа</text><text x="575" y="82">4 часа</text></g>
+            <g font-size="20" font-weight="900">
+              <text x="205" y="126">осталось 9 л</text><text x="390" y="126">осталось 8 л</text><text x="575" y="126">осталось 6 л</text>
+              <text x="205" y="174" fill="#1e7a4c">1 + 9 = 10</text><text x="390" y="174" fill="#1e7a4c">2 + 8 = 10</text><text x="575" y="174" fill="#1e7a4c">4 + 6 = 10</text>
+              <text x="205" y="222" fill="#fc7523">1 × 9 = 9</text><text x="390" y="222" fill="#fc7523">2 × 8 = 16</text><text x="575" y="222" fill="#fc7523">4 × 6 = 24</text>
+            </g>
+            <text x="390" y="274" font-size="20" font-weight="900" fill="#fc7523">Произведения разные → это НЕ обратная зависимость</text>
+          </g>
+        </svg>
+        <svg class="diagram-compact" viewBox="0 0 360 575" role="img" aria-label="Из бака с 10 литрами каждый час уходит один литр. Через 1, 2 и 4 часа остаются 9, 8 и 6 литров. Суммы равны 10, а произведения 9, 16 и 24 разные. Это не обратная зависимость.">
+          <rect x="5" y="5" width="350" height="565" rx="14" fill="#fffdf9"/>
+          <g font-family="Nunito, sans-serif" text-anchor="middle">
+            <text x="180" y="42" font-size="20" font-weight="900" fill="#0a5593">10 л, расход — 1 л/ч</text>
+            <g font-size="21" font-weight="900" fill="#16171a">
+              <text x="180" y="88">1 час → осталось 9 л</text>
+              <text x="180" y="126" fill="#1e7a4c">1 + 9 = 10</text>
+              <text x="180" y="164" fill="#fc7523">1 × 9 = 9</text>
+              <text x="180" y="222">2 часа → осталось 8 л</text>
+              <text x="180" y="260" fill="#1e7a4c">2 + 8 = 10</text>
+              <text x="180" y="298" fill="#fc7523">2 × 8 = 16</text>
+              <text x="180" y="356">4 часа → осталось 6 л</text>
+              <text x="180" y="394" fill="#1e7a4c">4 + 6 = 10</text>
+              <text x="180" y="432" fill="#fc7523">4 × 6 = 24</text>
+            </g>
+            <text x="180" y="490" font-size="20" font-weight="900" fill="#fc7523">Произведения разные</text>
+            <text x="180" y="532" font-size="20" font-weight="900" fill="#fc7523">Это НЕ обратная зависимость</text>
+          </g>
+        </svg>
+        <figcaption>Стрелка «остаток уменьшается» ничего не доказывает. Решают числа: произведение должно быть одним и тем же.</figcaption>
+      </figure>
+    </div>
+
+    <div class="key-question">
+      Три проверки по очереди
+      <small>1. Отношение y : x одинаково? Это прямая зависимость. 2. Произведение x · y одинаково? Это обратная. 3. Оба результата меняются? Пропорции здесь нет — ищи другое правило.</small>
+    </div>
+
+    <h3 class="method-title">Пять примеров: сначала реши сам, потом открой проверку</h3>
+    <details class="practice-task">
+      <summary>1. Обратная: 60 км/ч — 4 часа. Сколько времени займёт тот же путь при 80 км/ч?</summary>
+      <div class="body">
+        <p class="note"><b>Что постоянно?</b> Путь. Значит, скорость × время должно остаться равным 240 км.</p>
+        <div class="example-line">60 · 4 = 80 · x → 240 = 80x → <b>x = 3 часа</b></div>
+        <p class="note"><b>Проверка:</b> 60 · 4 = 240 и 80 · 3 = 240. Скорость выросла, время уменьшилось — разумно.</p>
+      </div>
+    </details>
+    <details class="practice-task">
+      <summary>2. Обратная: 8 одинаковых рабочих заканчивают работу за 15 дней. А 12 таких рабочих?</summary>
+      <div class="body">
+        <p class="note"><b>Условие метода:</b> работа одна и та же, производительность рабочих одинаковая. Тогда число рабочих × дни = постоянная работа.</p>
+        <div class="example-line">8 · 15 = 12 · x → 120 = 12x → <b>x = 10 дней</b></div>
+        <p class="note"><b>Проверка:</b> рабочих стало в 1,5 раза больше, а дней в 1,5 раза меньше: 15 : 1,5 = 10.</p>
+      </div>
+    </details>
+    <details class="practice-task">
+      <summary>3. Обратная: 24 кг крупы расфасовали в 12 пакетов по 2 кг. Сколько пакетов нужно по 3 кг?</summary>
+      <div class="body">
+        <p class="note"><b>Что постоянно?</b> Вся масса крупы — 24 кг. Число пакетов × масса одного пакета = 24.</p>
+        <div class="example-line">12 · 2 = x · 3 → 24 = 3x → <b>x = 8 пакетов</b></div>
+        <p class="note"><b>Проверка:</b> в каждый пакет кладут больше крупы, поэтому пакетов нужно меньше. 8 · 3 = 24 кг.</p>
+      </div>
+    </details>
+
+    <details class="nonexample practice-task">
+      <summary>4. Пропорции нет: из бака с 10 л каждый час уходит 1 л. Сколько останется через 1, 2 и 4 часа?</summary>
+      <div class="body">
+        <div class="example-line">Через 1 ч: 10 − 1 = <b>9 л</b><br>Через 2 ч: 10 − 2 = <b>8 л</b><br>Через 4 ч: 10 − 4 = <b>6 л</b></div>
+        <p class="note"><b>Это не обратная пропорциональность:</b> 1 · 9 = 9, 2 · 8 = 16, 4 · 6 = 24 — произведения разные. Здесь постоянна другая величина: израсходовано + осталось = 10 л.</p>
+      </div>
+    </details>
+    <details class="nonexample practice-task">
+      <summary>5. Ни прямая, ни обратная: такси берёт 5 р. за подачу и 3 р. за каждый километр</summary>
+      <div class="body">
+        <p>Сначала найди две пары: 2 км стоят 5 + 3 · 2 = <b>11 р.</b>; 4 км стоят 5 + 3 · 4 = <b>17 р.</b></p>
+        <div class="example-line">Отношения: 11 : 2 = 5,5; 17 : 4 = 4,25 — разные.<br>Произведения: 2 · 11 = 22; 4 · 17 = 68 — тоже разные.</div>
+        <p class="note"><b>Вывод:</b> пропорциональности нет. Мешает фиксированная плата за подачу: она есть даже до начала поездки. Здесь действует правило «стоимость = 5 + 3 × километры», а не пропорция.</p>
+      </div>
+    </details>
+
+    <div class="rule-banner">
+      Перед ответом спроси: «Получилось разумно?»
+      <small>Больше покупок — больше стоимость. Больше скорость на том же пути — меньше время.</small>
+    </div>
+  </section>
+
+  <!-- ВЫБОР МЕТОДА -->
+  <section id="method-choice">
+    <h2>Выбери метод за 5 секунд</h2>
+    <p class="sub">Сначала распознай ситуацию, потом считай. «Крест-накрест» помогает найти неизвестное, но не помогает понять вид зависимости.</p>
+    <div class="method-strip">
+      <div class="method-row">
+        <p class="question">Уже есть равенство двух отношений, а один член неизвестен?</p>
+        <p class="answer">Основное свойство пропорции<span>a · d = b · c, затем реши уравнение.</span></p>
+      </div>
+      <div class="method-row">
+        <p class="question">Обе величины меняются в одно и то же число раз?</p>
+        <p class="answer">Прямая зависимость<span>Постоянно отношение: y : x = k. Можно решить через единицу.</span></p>
+      </div>
+      <div class="method-row">
+        <p class="question">Одна величина растёт, другая уменьшается, а произведение не меняется?</p>
+        <p class="answer">Обратная зависимость<span>Постоянно произведение: x · y = k.</span></p>
+      </div>
+      <div class="method-row">
+        <p class="question">Множители разные или постоянна сумма, а не произведение?</p>
+        <p class="answer">Пропорции здесь нет<span>Ищи другое правило. Например, день + ночь = 24 ч — это не обратная зависимость.</span></p>
+      </div>
+    </div>
+    <div class="rule-banner">
+      Последний шаг всегда один: проверь ответ здравым смыслом
+      <small>Больше тетрадей → больше стоимость. Больше одинаковых насосов → меньше времени.</small>
+    </div>
+  </section>
+
+  <!-- МЕЖДУНАРОДНЫЕ ПОДХОДЫ -->
+  <section id="world-methods">
+    <h2>Одна идея — четыре подхода</h2>
+    <p class="sub">Это не четыре разные математики, а четыре способа увидеть одно и то же. Видео на языке оригинала открываются на сайтах источников; под каждым — самостоятельный конспект на русском.</p>
+
+    <div class="world-grid">
+      <article class="card world-card">
+        <div class="country-line"><span class="country-tag">США</span><span class="original-language">видео на английском</span></div>
+        <h3>Двойная числовая прямая</h3>
+        <p>Две шкалы показывают две величины одновременно. Одинаковые шаги помогают увидеть эквивалентные отношения до формул.</p>
+        <svg class="method-diagram" viewBox="0 0 520 180" role="img" aria-label="Двойная числовая прямая: 2, 4 и 6 порций соответствуют 200, 400 и 600 граммам муки">
+          <g font-family="Nunito, sans-serif" fill="#16171a">
+            <text x="20" y="28" font-size="15" font-weight="700">Порции</text>
+            <text x="20" y="143" font-size="15" font-weight="700">Мука, г</text>
+            <g stroke="#0a5593" stroke-width="3" stroke-linecap="round"><line x1="90" y1="48" x2="480" y2="48"/><line x1="90" y1="122" x2="480" y2="122"/></g>
+            <g stroke="#ecdfd2" stroke-width="2" stroke-dasharray="5 5"><line x1="90" y1="52" x2="90" y2="118"/><line x1="285" y1="52" x2="285" y2="118"/><line x1="480" y1="52" x2="480" y2="118"/></g>
+            <g stroke="#0a5593" stroke-width="2"><line x1="90" y1="39" x2="90" y2="57"/><line x1="285" y1="39" x2="285" y2="57"/><line x1="480" y1="39" x2="480" y2="57"/><line x1="90" y1="113" x2="90" y2="131"/><line x1="285" y1="113" x2="285" y2="131"/><line x1="480" y1="113" x2="480" y2="131"/></g>
+            <g font-size="18" font-weight="800" text-anchor="middle"><text x="90" y="29">2</text><text x="285" y="29">4</text><text x="480" y="29">6</text><text x="90" y="158">200</text><text x="285" y="158">400</text><text x="480" y="158">600</text></g>
+          </g>
+        </svg>
+        <p class="best-for">Выбирай, когда важно увидеть пары значений: рецепты, покупки, путь и время.</p>
+        <a class="method-video" href="https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop-topic/visualize-ratios/e/ratios-with-double-number-lines" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+          Смотреть видео и задания
+        </a>
+        <p class="video-source">Khan Academy · Ratios with double number lines · 5:53</p>
+        <details>
+          <summary>Русский конспект</summary>
+          <div class="body">
+            <figure class="conspect-figure">
+              <svg viewBox="0 0 400 180" role="img" aria-label="Две порции и 200 граммов муки умножают на три. Получают шесть порций и 600 граммов. Отношение сохраняется.">
+                <g font-family="Nunito, sans-serif" fill="#16171a">
+                  <text x="18" y="30" font-size="16" font-weight="800">Порции</text>
+                  <text x="130" y="30" font-size="22" font-weight="900" text-anchor="middle">2</text>
+                  <text x="305" y="30" font-size="22" font-weight="900" text-anchor="middle">6</text>
+                  <text x="18" y="116" font-size="16" font-weight="800">Мука, г</text>
+                  <text x="130" y="116" font-size="22" font-weight="900" text-anchor="middle">200</text>
+                  <text x="305" y="116" font-size="22" font-weight="900" text-anchor="middle">600</text>
+                  <text x="217" y="50" font-size="18" font-weight="900" fill="#0a5593" text-anchor="middle">× 3</text>
+                  <text x="217" y="143" font-size="18" font-weight="900" fill="#0a5593" text-anchor="middle">× 3</text>
+                  <text x="200" y="172" font-size="15" font-weight="800" fill="#1e7a4c" text-anchor="middle">2 : 200 = 6 : 600</text>
+                </g>
+                <g stroke="#0a5593" stroke-width="3" fill="none" stroke-linecap="round"><path d="M155 60 H275"/><path d="M155 145 H275"/></g>
+                <g fill="#0a5593"><path d="M275 53 L290 60 L275 67 Z"/><path d="M275 138 L290 145 L275 152 Z"/></g>
+                <g stroke="#fc7523" stroke-width="2" stroke-dasharray="4 4"><path d="M130 40 V88"/><path d="M305 40 V88"/></g>
+              </svg>
+              <figcaption>Обе величины умножаем на одно число — отношение не меняется.</figcaption>
+            </figure>
+            <ul><li>На верхней шкале отложи одну величину, на нижней — другую.</li><li>Каждая пара должна давать одинаковое отношение.</li><li>Чтобы получить новую пару, обе величины умножай на одно число.</li></ul>
+            <div class="example-line">2 : 200 = 4 : 400 = 6 : 600 = 0,01</div>
+            <p class="note">Если на 2 порции нужно 200 г, то на 6 порций — в 3 раза больше: 600 г.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="card world-card">
+        <div class="country-line"><span class="country-tag">Япония</span><span class="original-language">видео на японском</span></div>
+        <h3>Таблица → отношение → формула</h3>
+        <p>Сначала собери несколько пар значений. Затем проверь, остаётся ли одинаковым отношение второй величины к первой.</p>
+        <div class="method-mini">y : x = k &nbsp;→&nbsp; y = kx</div>
+        <p class="note">Прямую пропорциональность записывают формулой <b>y = kx</b>. Здесь k — постоянный коэффициент, например скорость.</p>
+        <p class="best-for">Выбирай, когда дана таблица или нужно доказать прямую зависимость.</p>
+        <a class="method-video" href="https://www.youtube.com/watch?v=53GqYAfwVd4" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+          Смотреть видео
+        </a>
+        <p class="video-source">Официальный канал префектуры Гумма · «Прямая и обратная зависимость» · 14:01</p>
+        <details>
+          <summary>Русский конспект</summary>
+          <div class="body">
+            <figure class="conspect-figure">
+              <svg viewBox="0 0 400 215" role="img" aria-label="Таблица пар значений. Для каждой пары y разделить на x даёт 60. Поэтому y равно 60 x.">
+                <rect x="10" y="20" width="380" height="135" rx="10" fill="#fffdf9"/>
+                <rect x="10" y="110" width="380" height="45" fill="#e6eef5"/>
+                <g stroke="#d7c8ba" stroke-width="2"><path d="M90 20 V155 M190 20 V155 M290 20 V155 M390 20 V155 M10 65 H390 M10 110 H390 M10 155 H390"/></g>
+                <g font-family="Nunito, sans-serif" fill="#16171a" text-anchor="middle">
+                  <g font-size="16" font-weight="800"><text x="50" y="48">x</text><text x="50" y="93">y</text><text x="50" y="139">y : x</text></g>
+                  <g font-size="19" font-weight="900"><text x="140" y="49">2</text><text x="240" y="49">4</text><text x="340" y="49">6</text><text x="140" y="94">120</text><text x="240" y="94">240</text><text x="340" y="94">360</text></g>
+                  <g font-size="19" font-weight="900" fill="#0a5593"><text x="140" y="140">60</text><text x="240" y="140">60</text><text x="340" y="140">60</text></g>
+                  <text x="200" y="193" font-size="20" font-weight="900" fill="#1e7a4c">k = 60 → y = 60x</text>
+                </g>
+              </svg>
+              <figcaption>Одинаковое отношение во всех столбцах — признак прямой зависимости.</figcaption>
+            </figure>
+            <ul><li>Запиши пары x и y в таблицу.</li><li>Для каждого столбца вычисли y : x.</li><li>Если результат всегда один и тот же, это прямая пропорциональность.</li><li>Тогда неизвестное значение можно найти по формуле y = kx.</li></ul>
+            <div class="example-line">120 : 2 = 240 : 4 = 360 : 6 = 60<br>Значит, путь = 60 × время.</div>
+            <p class="note">Для обратной зависимости проверяют не отношение, а произведение x · y.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="card world-card">
+        <div class="country-line"><span class="country-tag">Китай</span><span class="original-language">видео на китайском</span></div>
+        <h3>Сначала найди одну единицу</h3>
+        <p>Метод «归一» — «приведение к единице»: узнай значение для одной вещи, одного часа или одной порции, а затем перейди к нужному количеству.</p>
+        <div class="method-mini">3 ручки &nbsp;→&nbsp; 1 ручка &nbsp;→&nbsp; 7 ручек</div>
+        <p class="best-for">Выбирай, когда легко найти цену одной вещи, скорость или расход на одну порцию.</p>
+        <a class="method-video" href="https://www.bilibili.com/video/BV1vK4y1t7zx/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+          Смотреть видео
+        </a>
+        <p class="video-source">Bilibili · 小学数学典型应用题～归一问题 · «Типовые задачи: приведение к единице»</p>
+        <details>
+          <summary>Русский конспект</summary>
+          <div class="body">
+            <figure class="conspect-figure">
+              <svg viewBox="0 0 400 220" role="img" aria-label="Три ручки стоят 4,5 рубля. Делим на три и получаем цену одной ручки 1,5 рубля. Умножаем на семь и получаем 10,5 рубля.">
+                <g><rect x="10" y="55" width="110" height="90" rx="14" fill="#e6eef5"/><rect x="145" y="55" width="110" height="90" rx="14" fill="#fff0e5"/><rect x="280" y="55" width="110" height="90" rx="14" fill="#e3f2e8"/></g>
+                <g font-family="Nunito, sans-serif" fill="#16171a" text-anchor="middle">
+                  <g font-size="18" font-weight="900"><text x="65" y="91">3 ручки</text><text x="200" y="91">1 ручка</text><text x="335" y="91">7 ручек</text></g>
+                  <g font-size="17" font-weight="800"><text x="65" y="122">4,5 руб.</text><text x="200" y="122">1,5 руб.</text><text x="335" y="122">10,5 руб.</text></g>
+                  <g font-size="19" font-weight="900" fill="#0a5593"><text x="132" y="42">: 3</text><text x="267" y="42">× 7</text></g>
+                  <text x="200" y="184" font-size="18" font-weight="900" fill="#1e7a4c">сначала 1 → потом 7</text>
+                </g>
+                <g stroke="#0a5593" stroke-width="3" fill="none" stroke-linecap="round"><path d="M122 100 H140"/><path d="M257 100 H275"/></g>
+                <g fill="#0a5593"><path d="M136 93 L145 100 L136 107 Z"/><path d="M271 93 L280 100 L271 107 Z"/></g>
+              </svg>
+              <figcaption>Два действия: узнать цену одной вещи, затем умножить на новое количество.</figcaption>
+            </figure>
+            <ul><li>Раздели известное целое на количество единиц.</li><li>Проверь, что получилось значение именно для одной единицы.</li><li>Умножь его на новое количество.</li></ul>
+            <div class="example-line">1 ручка: 4,5 : 3 = 1,5 рубля<br>7 ручек: 1,5 × 7 = 10,5 рубля</div>
+            <p class="note">Это не другая математика: пропорция 3 : 7 = 4,5 : x даст тот же ответ.</p>
+          </div>
+        </details>
+      </article>
+
+      <article class="card world-card">
+        <div class="country-line"><span class="country-tag">Корея</span><span class="original-language">видео на корейском</span></div>
+        <h3>Свойство пропорции и проверка</h3>
+        <p>Формальный способ: записать отношения в одинаковом порядке, применить произведение крайних и средних членов, затем проверить равенство.</p>
+        <div class="method-mini">a : b = c : d &nbsp;→&nbsp; a · d = b · c</div>
+        <p class="best-for">Выбирай, когда пропорция уже записана и нужно точно найти неизвестный член.</p>
+        <a class="method-video" href="https://www.youtube.com/watch?v=n2n3g5dUS7I" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 8l6 4-6 4z" fill="currentColor"/></svg>
+          Смотреть видео
+        </a>
+        <p class="video-source">Math Factory · 초등수학 6학년 · «Знакомство с пропорцией» · 5:33</p>
+        <details>
+          <summary>Русский конспект</summary>
+          <div class="body">
+            <figure class="conspect-figure">
+              <svg viewBox="0 0 400 220" role="img" aria-label="В пропорции 24 относится к x как 8 к 5 перемножают члены крест-накрест. Получают 8 x равно 24 умножить на 5, поэтому x равно 15.">
+                <g font-family="Nunito, sans-serif" fill="#16171a" text-anchor="middle" font-size="27" font-weight="900"><text x="65" y="65">24</text><text x="112" y="65">:</text><text x="160" y="65">x</text><text x="205" y="65">=</text><text x="250" y="65">8</text><text x="290" y="65">:</text><text x="335" y="65">5</text></g>
+                <path d="M65 78 C90 128, 290 128, 335 78" fill="none" stroke="#fc7523" stroke-width="3" stroke-linecap="round"/>
+                <path d="M327 82 L339 73 L340 88 Z" fill="#fc7523"/>
+                <path d="M160 78 C170 20, 240 20, 250 78" fill="none" stroke="#1e7a4c" stroke-width="3" stroke-linecap="round"/>
+                <path d="M242 73 L254 82 L240 88 Z" fill="#1e7a4c"/>
+                <g font-family="Nunito, sans-serif" font-size="16" font-weight="900"><text x="290" y="137" fill="#fc7523">24 · 5</text><text x="110" y="25" fill="#1e7a4c">8 · x</text></g>
+                <rect x="35" y="150" width="330" height="50" rx="12" fill="#e6eef5"/>
+                <text x="200" y="183" font-family="Nunito, sans-serif" fill="#0a5593" text-anchor="middle" font-size="20" font-weight="900">8 · x = 24 · 5 → x = 15</text>
+              </svg>
+              <figcaption>Перемножаем наискось, приравниваем произведения и находим неизвестное.</figcaption>
+            </figure>
+            <ul><li>Следи за порядком: слева и справа величины должны идти одинаково.</li><li>Перемножь крайние и средние члены.</li><li>После ответа вычисли оба отношения — они должны совпасть.</li></ul>
+            <div class="example-line">24 : x = 8 : 5 → 8x = 120 → x = 15<br>Проверка: 24 : 15 = 1,6 и 8 : 5 = 1,6.</div>
+            <p class="note">Если величины записаны в разном порядке, даже правильная арифметика даст неверный смысл.</p>
+          </div>
+        </details>
+      </article>
+    </div>
+  </section>
+
+  <!-- ШЕСТЬ ЗАДАЧ -->
+  <section id="practice">
+    <h2>Шесть задач: от разминки к выбору метода</h2>
+    <p class="sub">Сначала реши в тетради. Открой спойлер только после собственной попытки: внутри подсказка, решение и проверка.</p>
+
+    <details class="practice-task">
+      <summary><span class="task-badge">1</span><span>Разминка. Сократи отношения 16 : 12 и 5,5 : 0,5 <span class="task-source">· из № 140</span></span></summary>
+      <div class="body">
+        <p class="note"><b>Метод:</b> раздели или умножь оба члена отношения на одно и то же число.</p>
+        <div class="example-line">16 : 12 = (16 : 4) : (12 : 4) = <b>4 : 3</b><br>5,5 : 0,5 = 55 : 5 = <b>11 : 1</b></div>
+        <p class="note"><b>Проверка:</b> 16 : 12 = 4/3 и 4 : 3 = 4/3; 5,5 : 0,5 = 11.</p>
+      </div>
+    </details>
+
+    <details class="practice-task">
+      <summary><span class="task-badge">2</span><span>Найди x: 24/x = 8/5 <span class="task-source">· из № 147</span></span></summary>
+      <div class="body">
+        <p class="note"><b>Метод:</b> пропорция уже записана, поэтому применяем основное свойство.</p>
+        <div class="example-line">8x = 24 · 5 → 8x = 120 → <b>x = 15</b></div>
+        <p class="note"><b>Проверка:</b> 24 : 15 = 1,6 и 8 : 5 = 1,6. Отношения равны.</p>
+      </div>
+    </details>
+
+    <details class="practice-task">
+      <summary><span class="task-badge">3</span><span>Три ручки стоят 4,5 рубля. Сколько стоят семь таких ручек?</span></summary>
+      <div class="body">
+        <p class="note"><b>Метод через единицу:</b> цена одной ручки постоянна. Сначала оцени: 7 &gt; 3, значит ответ должен быть больше 4,5 рубля.</p>
+        <div class="example-line">1 ручка: 4,5 : 3 = 1,5 рубля<br>7 ручек: 1,5 × 7 = <b>10,5 рубля</b></div>
+        <p class="note"><b>Проверка пропорцией:</b> 3 : 7 = 4,5 : 10,5, произведения 3 · 10,5 и 7 · 4,5 равны 31,5.</p>
+      </div>
+    </details>
+
+    <details class="practice-task">
+      <summary><span class="task-badge">4</span><span>Машина едет 2 часа. Найди путь при скорости 30, 45, 60, 90 и 120 км/ч. Какая это зависимость? <span class="task-source">· из № 152</span></span></summary>
+      <div class="body">
+        <p class="note"><b>Метод таблицы:</b> время постоянно, поэтому s = v · 2.</p>
+        <div class="table-scroll"><table class="compare-table solution-table"><tr><th>v, км/ч</th><td>30</td><td>45</td><td>60</td><td>90</td><td>120</td></tr><tr><th>s, км</th><td><b>60</b></td><td><b>90</b></td><td><b>120</b></td><td><b>180</b></td><td><b>240</b></td></tr></table></div>
+        <p class="note"><b>Проверка:</b> во всех столбцах s : v = 2. Постоянно отношение — зависимость <b>прямая</b>.</p>
+      </div>
+    </details>
+
+    <details class="practice-task">
+      <summary><span class="task-badge">5</span><span>Площадь прямоугольника 48 м². Найди ширину при длине 2, 4, 6, 8 и 12 м. Какая это зависимость? <span class="task-source">· из № 153</span></span></summary>
+      <div class="body">
+        <p class="note"><b>Метод таблицы:</b> площадь постоянна, поэтому b = 48 : a.</p>
+        <div class="table-scroll"><table class="compare-table solution-table"><tr><th>a, м</th><td>2</td><td>4</td><td>6</td><td>8</td><td>12</td></tr><tr><th>b, м</th><td><b>24</b></td><td><b>12</b></td><td><b>8</b></td><td><b>6</b></td><td><b>4</b></td></tr></table></div>
+        <p class="note"><b>Проверка:</b> во всех столбцах a · b = 48. Постоянно произведение — зависимость <b>обратная</b>.</p>
+      </div>
+    </details>
+
+    <details class="practice-task">
+      <summary><span class="task-badge">6</span><span>Четыре одинаковых принтера печатают заказ за 9 часов. За сколько часов его напечатают шесть таких принтеров?</span></summary>
+      <div class="body">
+        <p class="note"><b>Сначала выбор метода:</b> работа одна и та же, производительность одинаковая. Принтеров больше — времени должно быть <b>меньше</b> 9 часов.</p>
+        <div class="example-line">Число принтеров × время = одна работа<br>4 · 9 = 6 · x → 36 = 6x → <b>x = 6 часов</b></div>
+        <p class="note"><b>Проверка:</b> 4 · 9 = 36 и 6 · 6 = 36. Ответ меньше 9 часов, как и ожидали.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- 5. ОШИБКИ -->
+  <section id="mistakes">
+    <h2>Пять частых ошибок</h2>
+    <p class="sub">Проверяй себя именно по этому списку — здесь ошибаются почти все.</p>
+    <div class="card mistakes">
+      <div class="mistake"><div class="x">1</div><p><b>Сложил вместо умножения.</b> Крест-накрест — это умножение: a·d = b·c, а не a + d = b + c.</p></div>
+      <div class="mistake"><div class="x">2</div><p><b>Перепутал порядок.</b> Слева «порции : мука», справа «мука : порции» — пропорция разваливается. Порядок должен быть одинаковым.</p></div>
+      <div class="mistake"><div class="x">3</div><p><b>Не проверил здравым смыслом.</b> На 5 порций муки не может уйти меньше, чем на 2. Ответ всегда прикидывай «на глаз».</p></div>
+      <div class="mistake"><div class="x">4</div><p><b>Перепутал прямую и обратную.</b> «Быстрее едешь — больше времени» не бывает. Сначала вопрос «больше или меньше?», потом пропорция.</p></div>
+      <div class="mistake"><div class="x">5</div><p><b>Назвал любое уменьшение обратной зависимостью.</b> Стрелки в разные стороны — только подсказка. Обязательно проверь, что произведение x · y остаётся постоянным.</p></div>
+    </div>
+  </section>
+
+  <!-- 6. РАЗБОРЫ ИЗ УЧЕБНИКА -->
+  <section id="textbook">
+    <h2>Разбор задач из учебника № 140–158</h2>
+    <p class="sub">Сначала реши сам, потом открой решение. Выбери нужную группу — фильтры скроют остальные задания.</p>
+
+    <div class="solution-tools" role="group" aria-label="Фильтр разборов">
+      <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">Все · 19</button>
+      <button type="button" class="filter-btn" data-filter="base" aria-pressed="false">Отношения · 7</button>
+      <button type="button" class="filter-btn" data-filter="equations" aria-pressed="false">Найти x · 2</button>
+      <button type="button" class="filter-btn" data-filter="relations" aria-pressed="false">Зависимости · 7</button>
+      <button type="button" class="filter-btn" data-filter="applied" aria-pressed="false">Практика · 3</button>
+    </div>
+    <p class="filter-status" id="filter-status" aria-live="polite">Показаны все 19 разборов.</p>
+
+    <div id="solutions-list">
+      <details class="solution" data-group="base">
+        <summary><span class="task-badge">140</span>Сократи отношения</summary>
+        <div class="body">
+          <p>Делим оба члена отношения на одно и то же число. Величина отношения от этого не меняется.</p>
+          <div class="example-line">16 : 12 = <b>4 : 3</b><br>40 : 10 = <b>4 : 1</b><br>5,5 : 0,5 = 55 : 5 = <b>11 : 1</b><br>1/3 : 6 = 1/3 : 18/3 = <b>1 : 18</b></div>
+          <p class="note">В последнем примере умножили оба члена на 3, чтобы убрать дробь.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="base">
+        <summary><span class="task-badge">141</span>Отношения величин: сначала одни единицы</summary>
+        <div class="body">
+          <div class="example-line">3 м = 30 дм → 30 : 60 = <b>1 : 2</b><br>0,8 кг = 800 г → 800 : 500 = <b>8 : 5</b></div>
+          <p class="note">Нельзя напрямую делить метры на дециметры или килограммы на граммы. Единицы сокращаются только после перевода.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="base">
+        <summary><span class="task-badge">142</span>Вычисли отношения и соедини равные</summary>
+        <div class="body">
+          <div class="example-line">а) 1/2 : 1/12 = <b>6</b><br>б) 8 : 10 = <b>0,8</b><br>в) 2 1/2 : 5 = <b>0,5</b><br>г) 1,2 : 0,2 = <b>6</b><br>д) 2/5 : 1/2 = <b>0,8</b><br>е) 10 : 20 = <b>0,5</b></div>
+          <span class="answer-chip">Пропорции: а = г; б = д; в = е</span>
+        </div>
+      </details>
+
+      <details class="solution" data-group="base">
+        <summary><span class="task-badge">143</span>Является ли равенство пропорцией?</summary>
+        <div class="body">
+          <p>Сравниваем произведения крайних и средних членов. Если они равны — пропорция верна.</p>
+          <div class="example-line">а) 18 · 5 = 2 · 45 = 90 → <b>да</b><br>б) 20 · 5 = 100, 7 · 14 = 98 → <b>нет</b><br>в) 6 · 15 = 18 · 5 = 90 → <b>да</b><br>г) 9 · 10 = 18 · 5 = 90 → <b>да</b><br>д) 1 · 6 = 20 · 0,3 = 6 → <b>да</b><br>е) 0,3 · 4 = 1,2, 0,2 · 5 = 1 → <b>нет</b></div>
+          <span class="answer-chip">Верны: а, в, г, д</span>
+        </div>
+      </details>
+
+      <details class="solution" data-group="base">
+        <summary><span class="task-badge">144</span>Составь пропорцию из равенства произведений</summary>
+        <div class="body">
+          <p>Для пропорции a : b = c : d должно выполняться a · d = b · c. Подставляем числа на места букв.</p>
+          <div class="example-line">а) 10 · 3 = 15 · 2 → <b>10 : 15 = 2 : 3</b><br>б) 0,4 · 30 = 0,2 · 60 → <b>0,4 : 0,2 = 60 : 30</b></div>
+          <p class="note">Это не единственные возможные пропорции. Главное — проверить равенство произведений.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="base">
+        <summary><span class="task-badge">145</span>Переставь члены пропорции 8 : 15 = 16 : 30</summary>
+        <div class="body">
+          <div class="example-line">а) средние: <b>8 : 16 = 15 : 30</b><br>б) крайние: <b>30 : 15 = 16 : 8</b><br>в) и те и другие: <b>30 : 16 = 15 : 8</b></div>
+          <p class="note">Во всех трёх случаях произведение крайних и средних равно 240, поэтому пропорции остаются верными.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="base">
+        <summary><span class="task-badge">146</span>Составь пропорцию из чисел 5; 10; 9; 4,5</summary>
+        <div class="body">
+          <p>Ищем два одинаковых произведения: 5 · 9 = 45 и 10 · 4,5 = 45.</p>
+          <div class="example-line"><b>5 : 10 = 4,5 : 9</b></div>
+          <p class="note">Проверка: 5 : 10 = 0,5 и 4,5 : 9 = 0,5.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="equations">
+        <summary><span class="task-badge">147</span>Реши четыре пропорции</summary>
+        <div class="body">
+          <div class="example-line">а) 24/x = 8/5 → 8x = 120 → <b>x = 15</b><br>б) 13 : x = 2 : 3 → 2x = 39 → <b>x = 19,5</b><br>в) m : 12 = 7 : 10 → 10m = 84 → <b>m = 8,4</b><br>г) 28/x = 14/0,1 → 14x = 2,8 → <b>x = 0,2</b></div>
+          <p class="note">Проверка г): 28 : 0,2 = 140 и 14 : 0,1 = 140. Отношения равны.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="applied">
+        <summary><span class="task-badge">★</span>Три мяча: кто окажется выше?</summary>
+        <div class="body">
+          <p>После каждого подскока высоту умножаем на одну и ту же дробь. Начальная высота — 1,8 м.</p>
+          <div class="example-line">Красный, 5 подскоков:<br>1,8 · (4/5)⁵ = <b>0,589824 м</b><br><br>Синий, 4 подскока:<br>1,8 · (3/4)⁴ = <b>0,56953125 м</b><br><br>Белый, 3 подскока:<br>1,8 · (2/3)³ ≈ <b>0,5333 м</b></div>
+          <span class="answer-chip">Выше всех красный мяч</span>
+          <p class="note">Сравнение: 0,589824 &gt; 0,56953125 &gt; 0,5333…</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="relations">
+        <summary><span class="task-badge">149</span>Видимые пункты в и г: обоснуй изменение</summary>
+        <div class="body">
+          <p><b>в)</b> Масса фруктов не изменилась. Если в каждую сетку класть по 2 кг вместо 1 кг, сеток понадобится <b>в 2 раза меньше</b>: масса одной сетки × число сеток = общая масса.</p>
+          <p><b>г)</b> Верно. Банка краски — постоянное количество краски. Если расход на 1 м² уменьшить в 1,1 раза, той же банки хватит на площадь <b>в 1,1 раза большую</b>.</p>
+          <p class="note">Обе зависимости обратные: постоянно произведение. Пункты а и б на фотографии не видны.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="relations">
+        <summary><span class="task-badge">150</span>Периметр квадрата и его сторона</summary>
+        <div class="body">
+          <p>P = 4a. Коэффициент 4 не меняется, поэтому зависимость прямая.</p>
+          <div class="example-line">а) сторону × 1,8 → периметр <b>× 1,8</b><br>б) сторону : 2,5 → периметр <b>: 2,5</b></div>
+        </div>
+      </details>
+
+      <details class="solution" data-group="relations">
+        <summary><span class="task-badge">151</span>Длина прямоугольника площади 96 м²</summary>
+        <div class="body">
+          <p>Площадь постоянна: a · b = 96. Значит, длина и ширина обратно пропорциональны.</p>
+          <div class="example-line">а) ширину × 4 → длину <b>: 4</b><br>б) ширину : 1,5 → длину <b>× 1,5</b></div>
+          <p class="note">Произведение длины и ширины должно остаться равным 96 м².</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="relations">
+        <summary><span class="task-badge">152</span>Путь машины за 2 часа при разной скорости</summary>
+        <div class="body">
+          <p>Время постоянно: s = v · 2.</p>
+          <div class="table-scroll"><table class="compare-table solution-table"><tr><th>v, км/ч</th><td>30</td><td>45</td><td>60</td><td>90</td><td>120</td></tr><tr><th>s, км</th><td><b>60</b></td><td><b>90</b></td><td><b>120</b></td><td><b>180</b></td><td><b>240</b></td></tr></table></div>
+          <p class="note">s : v = 2 во всех столбцах. Отношение постоянно — зависимость <b>прямая</b>.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="relations">
+        <summary><span class="task-badge">153</span>Ширина прямоугольника площади 48 м²</summary>
+        <div class="body">
+          <p>b = 48 : a.</p>
+          <div class="table-scroll"><table class="compare-table solution-table"><tr><th>a, м</th><td>2</td><td>4</td><td>6</td><td>8</td><td>12</td></tr><tr><th>b, м</th><td><b>24</b></td><td><b>12</b></td><td><b>8</b></td><td><b>6</b></td><td><b>4</b></td></tr></table></div>
+          <p class="note">a · b = 48 во всех столбцах. Произведение постоянно — зависимость <b>обратная</b>.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="relations">
+        <summary><span class="task-badge">154</span>Определи зависимость по двум таблицам</summary>
+        <div class="body">
+          <p><b>а)</b> В каждом столбце a · b = 240: 60 · 4 = 30 · 8 = 20 · 12 = 15 · 16. Значит, зависимость <b>обратная</b>.</p>
+          <p><b>б)</b> В каждом столбце a : b = 0,1: 1 : 10 = 0,5 : 5 = 0,2 : 2 = 0,1 : 1. Значит, зависимость <b>прямая</b>.</p>
+          <p class="note">Удобный приём: проверь отношение y/x для прямой и произведение xy для обратной.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="relations">
+        <summary><span class="task-badge">155</span>Исправь одно значение для обратной зависимости</summary>
+        <div class="body">
+          <p>Почти во всех столбцах x · y = 240. Исключение: 12 · 50 = 600.</p>
+          <div class="example-line">Нужно: 12 · y = 240 → y = 240 : 12 = <b>20</b></div>
+          <span class="answer-chip">Заменить y = 50 на y = 20</span>
+        </div>
+      </details>
+
+      <details class="solution" data-group="equations">
+        <summary><span class="task-badge">156</span>Реши уравнения свойством пропорции</summary>
+        <div class="body">
+          <div class="example-line">а) m : 5 = 12 : 10 → 10m = 60 → <b>m = 6</b><br>б) 12/x = 18/4 → 18x = 48 → <b>x = 8/3 = 2 2/3</b><br>в) 3,5 : y = 7 : 1,5 → 7y = 5,25 → <b>y = 0,75</b><br>г) t/2,5 = 10/0,5 → 0,5t = 25 → <b>t = 50</b></div>
+          <p class="note">Проверка в): 3,5 : 0,75 = 14/3 и 7 : 1,5 = 14/3.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="applied">
+        <summary><span class="task-badge">157</span>Виды углов и построение транспортиром</summary>
+        <div class="body">
+          <div class="example-line">а) 60° — <b>острый</b><br>б) 180° — <b>развёрнутый</b><br>в) 120° — <b>тупой</b><br>г) 90° — <b>прямой</b></div>
+          <p><b>Как построить:</b> проведи луч, приложи центр транспортира к его началу, совмести луч с линией 0°–180°, отметь нужную градусную меру и соедини точку с началом луча.</p>
+          <p class="note">Для 180° второй луч продолжает первый в противоположную сторону. Для 90° лучи перпендикулярны.</p>
+        </div>
+      </details>
+
+      <details class="solution" data-group="applied">
+        <summary><span class="task-badge">158</span>Путь на плоту и обратно на моторной лодке</summary>
+        <div class="body">
+          <p>Плот движется со скоростью течения: 40 : 20 = <b>2 км/ч</b>.</p>
+          <p>Обратно лодка идёт против течения. Её собственная скорость 22 км/ч, а течение мешает:</p>
+          <div class="example-line">Скорость против течения: 22 − 2 = 20 км/ч<br>Время: 40 : 20 = <span class="math">2 часа</span></div>
+          <p class="note">Проверка: 20 км/ч × 2 ч = 40 км — ровно обратный путь.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 7. ТРЕНАЖЁР -->
+  <section id="trainer">
+    <h2>Тренажёр</h2>
+    <p class="sub">Режим «Числа» — найди x в пропорции. Режим «Задачи» — жизненные ситуации, включая обратную пропорциональность. Ответ можно писать с запятой или с точкой.</p>
+
+    <div class="card trainer">
+      <div class="t-tabs">
+        <button type="button" class="t-tab" id="tab-num" aria-pressed="true">Числа</button>
+        <button type="button" class="t-tab" id="tab-word" aria-pressed="false">Задачи</button>
+        <button type="button" class="t-tab t-error-toggle" id="t-errors-btn" aria-expanded="false" aria-controls="t-errors" disabled>Мои ошибки (0)</button>
+        <span class="t-score" id="t-score">Верно: 0 из 0</span>
+      </div>
+      <p class="t-method-guide"><b>Как работает подсказка:</b> США — через двойную числовую прямую, Китай — через единицу, Япония — через постоянную величину, Россия — через кратное сравнение, Корея — через свойство готовой пропорции. Метод выбирается по типу задачи.</p>
+      <div class="t-task" id="t-task"></div>
+      <form class="t-controls" id="t-form" autocomplete="off">
+        <label for="t-input" id="t-label">x =</label>
+        <input id="t-input" name="answer" inputmode="decimal" placeholder="ответ" aria-label="Ответ">
+        <button type="submit" class="btn">Проверить</button>
+        <button type="button" class="btn ghost" id="t-next">Ещё пример</button>
+        <button type="button" class="btn ghost" id="t-hint-btn">Подсказка</button>
+      </form>
+      <p class="t-feedback" id="t-feedback" aria-live="polite"></p>
+      <p class="t-hint" id="t-hint"></p>
+      <div class="t-errors" id="t-errors" hidden>
+        <h3>Разбор ошибок</h3>
+        <p class="t-error-help">Сначала попробуй решить снова. Если не получается, открой разбор: там есть способ решения и ответ.</p>
+        <div class="t-error-list" id="t-error-list"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    Памятка к теме «Отношения и пропорции»: отношение, основное свойство пропорции, прямая и обратная пропорциональность.
+    <br>Другие памятки на этом сайте: <a class="top-link" href="procenty.html">Проценты без путаницы →</a> <a class="top-link" href="luch.html">Координатный луч и десятичные дроби (5 класс) →</a>
+    <br><a class="top-link" href="#top">Наверх ↑</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+
+  // Адаптация учебного цикла LearnHarness для статического сайта.
+  // Здесь нет внешней модели: маршрут и проверки задаёт заранее написанный код.
+  var STORAGE_KEY = "mathProportionsLearningRouteV1";
+  var diagnosticAnswers = [1, 2, 0, 1];
+  var nodes = [
+    {
+      id: "ratio",
+      title: "Отношение",
+      target: "ratio",
+      intro: "Сначала поймём, что означает запись с двоеточием.",
+      prediction: {
+        question: "Что означает запись 12 : 18?",
+        options: ["12 делится на 18", "12 умножается на 18", "18 делится на 12"],
+        answer: 0,
+        success: "Да, отношение — это деление.",
+        retry: "Предсказание не совпало — сейчас разберём смысл записи."
+      },
+      explanation: "Отношение 12 : 18 означает 12/18. Сокращать можно только оба числа на один и тот же делитель: 12 : 18 = (12 : 6) : (18 : 6) = 2 : 3. Порядок важен: первым остаётся первое число.",
+      check: {
+        question: "Сократи отношение 15 : 25.",
+        options: ["5 : 3", "3 : 5", "10 : 15"],
+        answer: 1,
+        repair: "Раздели оба числа на 5: 15 : 5 = 3, а 25 : 5 = 5. Не меняй числа местами."
+      }
+    },
+    {
+      id: "proportion",
+      title: "Пропорция",
+      target: "proportion",
+      intro: "Теперь свяжем два равных отношения и найдём неизвестное число.",
+      prediction: {
+        question: "В пропорции a : b = c : d какие произведения равны?",
+        options: ["a · b = c · d", "a · c = b · d", "a · d = b · c"],
+        answer: 2,
+        success: "Верно: произведения крайних и средних членов равны.",
+        retry: "Посмотри на крайние и средние члены в объяснении — это разные пары."
+      },
+      explanation: "Пропорция — равенство двух отношений. В a : b = c : d крайние члены — a и d, средние — b и c. Основное свойство: a · d = b · c. Например, 4 : 6 = 10 : 15, потому что 4 · 15 = 6 · 10 = 60.",
+      check: {
+        question: "Найди x: 4 : 6 = 10 : x.",
+        options: ["15", "9", "24"],
+        answer: 0,
+        repair: "Перемножь крест-накрест: 4 · x = 6 · 10. Значит, x = 60 : 4."
+      }
+    },
+    {
+      id: "dependencies",
+      title: "Зависимости",
+      target: "direct-inverse",
+      intro: "Последний учебный узел: отличить прямую и обратную зависимость от контрпримера.",
+      prediction: {
+        question: "Путь не изменился, скорость стала в 2 раза больше. Как изменится время?",
+        options: ["Увеличится в 2 раза", "Уменьшится в 2 раза", "Не изменится"],
+        answer: 1,
+        success: "Да: произведение скорости и времени должно остаться равным пути.",
+        retry: "Проверим не направление стрелок, а постоянную величину — путь."
+      },
+      explanation: "При прямой пропорциональности постоянно отношение y : x. При обратной постоянно произведение x · y. На одном пути скорость × время = путь, поэтому 60 · 4 = 120 · 2. Но постоянная сумма не даёт обратной пропорциональности: у бака 1 + 9 = 2 + 8 = 10, а произведения 9 и 16 разные.",
+      check: {
+        question: "Через 1 час осталось 9 л, через 2 часа — 8 л. Какой вывод верен?",
+        options: ["Обратная зависимость: воды меньше", "Прямая зависимость: время растёт", "Не обратная: 1 · 9 ≠ 2 · 8"],
+        answer: 2,
+        repair: "Уменьшения одной величины недостаточно. Для обратной пропорциональности произведения должны быть одинаковыми, а здесь 9 и 16."
+      }
+    },
+    {
+      id: "practice",
+      title: "Практика",
+      target: "trainer"
+    }
+  ];
+
+  var diagnostic = document.getElementById("lh-diagnostic");
+  var diagnosticForm = document.getElementById("lh-diagnostic-form");
+  var diagnosticFeedback = document.getElementById("lh-diagnostic-feedback");
+  var planWrap = document.getElementById("lh-plan-wrap");
+  var plan = document.getElementById("lh-plan");
+  var lessonBox = document.getElementById("lh-lesson");
+  var storageNote = document.getElementById("lh-storage-note");
+  var storageWorks = true;
+
+  function freshState() {
+    return { diagnosed: false, score: null, start: null, current: null, completed: [] };
+  }
+
+  function validState(value) {
+    return value && typeof value.diagnosed === "boolean" &&
+      (value.score === null || (Number.isInteger(value.score) && value.score >= 0 && value.score <= 4)) &&
+      (value.start === null || (Number.isInteger(value.start) && value.start >= 0 && value.start < nodes.length)) &&
+      (value.current === null || (Number.isInteger(value.current) && value.current >= 0 && value.current < nodes.length)) &&
+      Array.isArray(value.completed) && value.completed.every(function (n) { return Number.isInteger(n) && n >= 0 && n < 3; });
+  }
+
+  var state = freshState();
+  try {
+    var saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    if (validState(saved)) state = saved;
+  } catch (error) {
+    storageWorks = false;
+  }
+
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (error) {
+      storageWorks = false;
+    }
+    updateStorageNote();
+  }
+
+  function updateStorageNote() {
+    storageNote.textContent = storageWorks
+      ? "Прогресс хранится только в этом браузере. Сайт не отправляет ответы на сервер и не использует внешнюю AI-модель."
+      : "Браузер запретил локальное сохранение: маршрут работает, но после перезагрузки прогресс может исчезнуть. Ответы никуда не отправляются.";
+  }
+
+  function optionsHtml(name, options) {
+    return options.map(function (option, index) {
+      return '<label class="lh-option"><input type="radio" name="' + name + '" value="' + index + '"> ' + option + '</label>';
+    }).join("");
+  }
+
+  function renderPlan() {
+    var completed = state.completed.filter(function (n, i, arr) { return arr.indexOf(n) === i; }).length;
+    document.getElementById("lh-progress").textContent = "Пройдено учебных шагов: " + completed + " из 3. Диагностика: " + state.score + "/4.";
+    document.getElementById("lh-diagnostic-result").textContent = state.start === 3
+      ? "Все диагностические ответы верные — можно сразу закрепить тему в тренажёре. Учебные узлы всё равно доступны для повторения."
+      : "Первая трудность обнаружена в разделе «" + nodes[state.start].title + "». Начни с него, затем двигайся по маршруту.";
+    plan.innerHTML = nodes.map(function (node, index) {
+      var done = state.completed.indexOf(index) !== -1;
+      var current = state.current === index;
+      var status = done ? "Пройдено" : (current ? "Текущий шаг" : "Открыть");
+      return '<button type="button" class="lh-node' + (done ? ' done' : '') + (current ? ' current' : '') + '" data-node="' + index + '"' + (current ? ' aria-current="step"' : '') + '>' +
+        '<span class="lh-node-status">' + (index + 1) + '. ' + status + '</span>' +
+        '<b>' + node.title + '</b>' +
+        '<small>' + (index === 3 ? 'Самостоятельные задачи' : 'Предсказание → объяснение → проверка') + '</small></button>';
+    }).join("");
+  }
+
+  function showPlan() {
+    diagnostic.hidden = true;
+    planWrap.hidden = false;
+    renderPlan();
+  }
+
+  function showDiagnostic() {
+    planWrap.hidden = true;
+    diagnostic.hidden = false;
+    lessonBox.innerHTML = "";
+    diagnosticFeedback.textContent = "";
+    diagnosticFeedback.className = "lh-feedback";
+  }
+
+  function renderLesson(index) {
+    state.current = index;
+    saveState();
+    renderPlan();
+    var node = nodes[index];
+    if (index === 3) {
+      lessonBox.innerHTML = '<p class="lh-step-label">Самостоятельное применение</p>' +
+        '<h3>Практика в тренажёре</h3>' +
+        '<p>Теперь решай без готового маршрута. Выбирай тип задачи, пробуй сам, а подсказку открывай только после попытки.</p>' +
+        '<div class="lh-actions"><a class="btn" href="#trainer">Перейти к тренажёру</a><a class="btn secondary" href="#practice">Сначала 6 разобранных задач</a></div>';
+      return;
+    }
+    lessonBox.innerHTML = '<p class="lh-step-label" id="lh-step-label">1 из 3: предсказание</p>' +
+      '<h3>' + node.title + '</h3><p>' + node.intro + '</p>' +
+      '<form id="lh-predict-form" novalidate><fieldset class="lh-question"><legend>' + node.prediction.question + '</legend>' +
+      '<div class="lh-options">' + optionsHtml("lh-predict", node.prediction.options) + '</div></fieldset>' +
+      '<div class="lh-actions"><button class="btn" type="submit">Проверить предсказание</button></div>' +
+      '<p id="lh-predict-feedback" class="lh-feedback" role="status"></p></form>' +
+      '<div id="lh-explanation" class="lh-explanation" hidden><h4>2 из 3: объяснение</h4><p>' + node.explanation + '</p>' +
+      '<p><a href="#' + node.target + '">Открыть полный конспект по этой теме</a></p></div>' +
+      '<form id="lh-check-form" novalidate hidden><fieldset class="lh-question"><legend>3 из 3: проверь себя. ' + node.check.question + '</legend>' +
+      '<div class="lh-options">' + optionsHtml("lh-check", node.check.options) + '</div></fieldset>' +
+      '<div class="lh-actions"><button class="btn" type="submit">Проверить ответ</button></div>' +
+      '<p id="lh-check-feedback" class="lh-feedback" role="status"></p></form><div id="lh-next-wrap" class="lh-actions"></div>';
+  }
+
+  diagnosticForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var answers = [];
+    for (var i = 0; i < diagnosticAnswers.length; i++) {
+      var selected = diagnosticForm.querySelector('input[name="lh-d' + i + '"]:checked');
+      if (!selected) {
+        diagnosticFeedback.className = "lh-feedback no";
+        diagnosticFeedback.textContent = "Ответь на вопрос " + (i + 1) + " — без него маршрут будет неточным.";
+        diagnosticForm.querySelector('input[name="lh-d' + i + '"]').focus();
+        return;
+      }
+      answers.push(Number(selected.value));
+    }
+    var score = 0;
+    var firstWrong = -1;
+    answers.forEach(function (answer, index) {
+      if (answer === diagnosticAnswers[index]) score++;
+      else if (firstWrong === -1) firstWrong = index;
+    });
+    var start = firstWrong === -1 ? 3 : Math.min(firstWrong, 2);
+    state = { diagnosed: true, score: score, start: start, current: start, completed: [] };
+    for (var j = 0; j < start && j < 3; j++) state.completed.push(j);
+    saveState();
+    showPlan();
+    renderLesson(start);
+    document.getElementById("learning-harness").scrollIntoView({ block: "start" });
+  });
+
+  plan.addEventListener("click", function (event) {
+    var button = event.target.closest("button[data-node]");
+    if (button) renderLesson(Number(button.getAttribute("data-node")));
+  });
+
+  lessonBox.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var node = nodes[state.current];
+    if (!node || state.current === 3) return;
+
+    if (event.target.id === "lh-predict-form") {
+      var prediction = event.target.querySelector('input[name="lh-predict"]:checked');
+      var predictionFeedback = document.getElementById("lh-predict-feedback");
+      if (!prediction) {
+        predictionFeedback.className = "lh-feedback no";
+        predictionFeedback.textContent = "Сначала выбери свой вариант — предсказание нужно до объяснения.";
+        return;
+      }
+      var predictionCorrect = Number(prediction.value) === node.prediction.answer;
+      predictionFeedback.className = "lh-feedback " + (predictionCorrect ? "ok" : "no");
+      predictionFeedback.textContent = predictionCorrect ? node.prediction.success : node.prediction.retry;
+      event.target.querySelectorAll("input, button").forEach(function (control) { control.disabled = true; });
+      document.getElementById("lh-step-label").textContent = "2–3 из 3: объяснение и проверка";
+      document.getElementById("lh-explanation").hidden = false;
+      document.getElementById("lh-check-form").hidden = false;
+      document.getElementById("lh-explanation").scrollIntoView({ block: "nearest" });
+      return;
+    }
+
+    if (event.target.id === "lh-check-form") {
+      var answer = event.target.querySelector('input[name="lh-check"]:checked');
+      var feedback = document.getElementById("lh-check-feedback");
+      if (!answer) {
+        feedback.className = "lh-feedback no";
+        feedback.textContent = "Выбери ответ, затем нажми «Проверить ответ».";
+        return;
+      }
+      if (Number(answer.value) !== node.check.answer) {
+        feedback.className = "lh-feedback no";
+        feedback.textContent = "Пока не засчитываем. " + node.check.repair + " Попробуй ещё раз.";
+        return;
+      }
+      if (state.completed.indexOf(state.current) === -1) state.completed.push(state.current);
+      saveState();
+      renderPlan();
+      feedback.className = "lh-feedback ok";
+      feedback.textContent = "Верно — шаг пройден. Можно двигаться дальше.";
+      event.target.querySelectorAll("input, button").forEach(function (control) { control.disabled = true; });
+      document.getElementById("lh-step-label").textContent = "Шаг пройден";
+      document.getElementById("lh-next-wrap").innerHTML = '<button class="btn" type="button" id="lh-next">' + (state.current === 2 ? "Перейти к практике" : "Следующий шаг: " + nodes[state.current + 1].title) + '</button>';
+      document.getElementById("lh-next").focus();
+    }
+  });
+
+  lessonBox.addEventListener("click", function (event) {
+    if (event.target.id === "lh-next" && state.current < 3) {
+      renderLesson(state.current + 1);
+      lessonBox.scrollIntoView({ block: "start" });
+    }
+  });
+
+  function resetRoute() {
+    state = freshState();
+    try { localStorage.removeItem(STORAGE_KEY); } catch (error) { storageWorks = false; }
+    diagnosticForm.reset();
+    updateStorageNote();
+    showDiagnostic();
+  }
+
+  document.getElementById("lh-reset").addEventListener("click", resetRoute);
+  document.getElementById("lh-reset-top").addEventListener("click", resetRoute);
+  document.getElementById("lh-retake").addEventListener("click", resetRoute);
+  updateStorageNote();
+  if (state.diagnosed && state.current !== null) {
+    showPlan();
+    renderLesson(state.current);
+  } else {
+    showDiagnostic();
+  }
+})();
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  function fmt(v) {
+    var r = Math.round(v * 100) / 100;
+    var s = String(r).replace(".", ",");
+    return s;
+  }
+  function rnd(a, b) { return a + Math.floor(Math.random() * (b - a + 1)); }
+  function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+  // склонение: plural(5, ["порция", "порции", "порций"]) -> "порций"
+  function plural(n, forms) {
+    var n10 = n % 10, n100 = n % 100;
+    if (n10 === 1 && n100 !== 11) return forms[0];
+    if (n10 >= 2 && n10 <= 4 && (n100 < 12 || n100 > 14)) return forms[1];
+    return forms[2];
+  }
+
+  var mode = "num";
+  var state = { answer: 0, hint: "", total: 0, ok: 0, currentMistakeId: null };
+  var mistakes = [];
+  var nextMistakeId = 1;
+
+  var tTask = document.getElementById("t-task");
+  var tLabel = document.getElementById("t-label");
+  var tInput = document.getElementById("t-input");
+  var tFeedback = document.getElementById("t-feedback");
+  var tHint = document.getElementById("t-hint");
+  var tScore = document.getElementById("t-score");
+  var tabNum = document.getElementById("tab-num");
+  var tabWord = document.getElementById("tab-word");
+  var tErrorsBtn = document.getElementById("t-errors-btn");
+  var tErrors = document.getElementById("t-errors");
+  var tErrorList = document.getElementById("t-error-list");
+
+  /* ---------- генератор числовых пропорций ---------- */
+  function genNum() {
+    // a : b = c : d, где c = a·m, d = b·m — все члены целые
+    var a = rnd(2, 12), b = rnd(2, 12), m = rnd(2, 6);
+    var c = a * m, d = b * m;
+    var vals = [a, b, c, d];
+    var hidden = rnd(0, 3);
+    state.answer = vals[hidden];
+    var shown = vals.map(function (v, i) { return i === hidden ? "x" : String(v); });
+    var formulas = [
+      "(b · c) : d = (" + b + " · " + c + ") : " + d,
+      "(a · d) : c = (" + a + " · " + d + ") : " + c,
+      "(a · d) : b = (" + a + " · " + d + ") : " + b,
+      "(b · c) : a = (" + b + " · " + c + ") : " + a
+    ];
+    state.hint = "Лучший способ — Корея: основное свойство пропорции. Пропорция уже записана, поэтому сначала получи a · d = b · c, а затем вырази x: x = " + formulas[hidden] + ". После расчёта проверь равенство отношений.";
+    return "<span class='prop'>" + shown[0] + " : " + shown[1] + " = " + shown[2] + " : " + shown[3] + "</span>";
+  }
+
+  /* ---------- генератор текстовых задач ---------- */
+  function genWord() {
+    var kind = pick(["recipe", "speed", "shop", "pipes", "workers"]);
+    if (kind === "recipe") {
+      var p = pick([2, 3, 4, 5]);
+      var q = pick([6, 7, 8, 9, 10, 12]);
+      var per = pick([50, 100, 150, 200, 250]); // граммов на порцию
+      var m = p * per;
+      state.answer = q * per;
+      state.hint = "Лучший способ — США: двойная числовая прямая. На верхней шкале откладываем порции, на нижней — муку. Чтобы перейти от " + p + " к " + q + " порциям, обе величины умножаем на " + q + " и делим на " + p + ". Порции: " + p + " × " + q + " : " + p + " = " + q + ". Мука: " + m + " × " + q + " : " + p + " = " + state.answer + " г. Одинаковый множитель сохраняет отношение.";
+      return "На " + p + " " + plural(p, ["порцию", "порции", "порций"]) + " нужно " + m + " г муки. Сколько граммов муки нужно на " + q + " порций? Ответ дай в граммах.";
+    }
+    if (kind === "speed") {
+      var v = pick([40, 50, 60, 70, 80, 90]);   // км/ч
+      var t = rnd(2, 4);
+      var u = pick([3, 5, 6]);
+      state.answer = v * u;
+      state.hint = "Лучший способ — Япония: постоянная величина. Здесь не меняется скорость. Найди её отношением пути ко времени: " + (v * t) + " : " + t + " = " + v + " км/ч. Затем используй формулу: путь = скорость × время, то есть " + v + " × " + u + ".";
+      return "Машина проехала " + (v * t) + " км за " + t + " ч. Сколько километров она проедет за " + u + " ч с той же скоростью?";
+    }
+    if (kind === "shop") {
+      var n = pick([2, 3, 4, 5]);
+      var k = pick([6, 7, 8, 9, 10]);
+      var price = pick([1, 1.5, 2, 2.5]);        // за штуку
+      var cost = Math.round(n * price * 100) / 100;
+      state.answer = Math.round(k * price * 100) / 100;
+      state.hint = "Лучший способ — Китай: приведение к единице. Сначала найди цену одной тетради: " + fmt(cost) + " : " + n + " = " + fmt(price) + " руб. Затем умножь её на " + k + ": " + fmt(price) + " × " + k + ". Тетрадей больше — стоимость тоже должна быть больше.";
+      return n + " " + plural(n, ["тетрадь", "тетради", "тетрадей"]) + " стоят " + fmt(cost) + " руб. Сколько рублей стоят " + k + " таких тетрадей?";
+    }
+    if (kind === "pipes") {
+      var pipes = pick([2, 3, 4]);
+      var hours = pipes * pick([2, 3, 4, 5]);    // чтобы делилось нацело
+      state.answer = hours / pipes;
+      state.hint = "Лучший способ — Россия: кратное сравнение. Работа одна и та же, а труб стало в " + pipes + " раза больше. Значит, времени нужно во столько же раз меньше: " + hours + " : " + pipes + ". Проверь постоянное произведение: 1 · " + hours + " = " + pipes + " · x.";
+      return "Бассейн наполняется одной трубой за " + hours + " ч. За сколько часов наполнят его " + pipes + " такие трубы? Ответ дай в часах.";
+    }
+    // workers
+    var w1 = pick([4, 6, 8]);
+    var w2 = w1 * 2;
+    var days = pick([3, 5, 6, 9]);
+    state.answer = days / 2;
+    state.hint = "Лучший способ — Россия: кратное сравнение. Рабочих стало в 2 раза больше, а работа прежняя. Значит, времени нужно в 2 раза меньше: " + days + " : 2. Проверь постоянное произведение: " + w1 + " · " + days + " = " + w2 + " · x.";
+    return w1 + " рабочих выполняют работу за " + days + " дней. За сколько дней выполнят ту же работу " + w2 + " рабочих при той же производительности?";
+  }
+
+  function findMistake(id) {
+    for (var i = 0; i < mistakes.length; i++) {
+      if (mistakes[i].id === id) return mistakes[i];
+    }
+    return null;
+  }
+
+  function updateModeTabs() {
+    tabNum.setAttribute("aria-pressed", mode === "num" ? "true" : "false");
+    tabWord.setAttribute("aria-pressed", mode === "word" ? "true" : "false");
+  }
+
+  function renderMistakes() {
+    tErrorsBtn.textContent = "Мои ошибки (" + mistakes.length + ")";
+    tErrorsBtn.disabled = mistakes.length === 0;
+    if (mistakes.length === 0) {
+      tErrors.hidden = true;
+      tErrorsBtn.setAttribute("aria-expanded", "false");
+    }
+    tErrorList.textContent = "";
+
+    mistakes.forEach(function (mistake) {
+      var item = document.createElement("article");
+      item.className = "t-error-item";
+
+      var question = document.createElement("p");
+      question.className = "t-error-question";
+      question.textContent = mistake.question;
+      item.appendChild(question);
+
+      var lastAnswer = document.createElement("p");
+      lastAnswer.className = "t-error-last";
+      lastAnswer.textContent = "Ваш неверный ответ: " + mistake.lastAnswer;
+      item.appendChild(lastAnswer);
+
+      var retry = document.createElement("button");
+      retry.type = "button";
+      retry.className = "btn";
+      retry.textContent = "Решить снова";
+      retry.addEventListener("click", function () { retryMistake(mistake.id); });
+      item.appendChild(retry);
+
+      var details = document.createElement("details");
+      var summary = document.createElement("summary");
+      summary.textContent = "Показать разбор";
+      details.appendChild(summary);
+      var body = document.createElement("div");
+      body.className = "body";
+      var hint = document.createElement("p");
+      hint.textContent = mistake.hint;
+      body.appendChild(hint);
+      var answer = document.createElement("p");
+      answer.className = "t-error-answer";
+      answer.textContent = "Правильный ответ: " + fmt(mistake.answer);
+      body.appendChild(answer);
+      details.appendChild(body);
+      item.appendChild(details);
+      tErrorList.appendChild(item);
+    });
+  }
+
+  function recordMistake(rawAnswer) {
+    var existing = findMistake(state.currentMistakeId);
+    if (existing) {
+      existing.lastAnswer = rawAnswer;
+    } else {
+      var mistake = {
+        id: nextMistakeId++,
+        question: tTask.textContent.trim(),
+        taskHtml: tTask.innerHTML,
+        answer: state.answer,
+        hint: state.hint,
+        mode: mode,
+        lastAnswer: rawAnswer
+      };
+      mistakes.push(mistake);
+      state.currentMistakeId = mistake.id;
+    }
+    renderMistakes();
+  }
+
+  function retryMistake(id) {
+    var mistake = findMistake(id);
+    if (!mistake) return;
+    mode = mistake.mode;
+    updateModeTabs();
+    state.answer = mistake.answer;
+    state.hint = mistake.hint;
+    state.currentMistakeId = mistake.id;
+    // Возвращаем только внутренний HTML генератора, не ввод пользователя.
+    tTask.innerHTML = mistake.taskHtml;
+    tLabel.textContent = mode === "num" ? "x =" : "Ответ:";
+    tInput.value = "";
+    tFeedback.textContent = "Реши это задание ещё раз. Разбор остаётся доступен в списке ошибок.";
+    tFeedback.className = "t-feedback";
+    tHint.textContent = "";
+    tErrors.hidden = true;
+    tErrorsBtn.setAttribute("aria-expanded", "false");
+    tInput.focus();
+  }
+
+  function newTask(focusInput) {
+    state.currentMistakeId = null;
+    tTask.innerHTML = mode === "num" ? genNum() : genWord();
+    tLabel.textContent = mode === "num" ? "x =" : "Ответ:";
+    tInput.value = "";
+    tFeedback.textContent = "";
+    tFeedback.className = "t-feedback";
+    tHint.textContent = "";
+    if (focusInput) tInput.focus();
+  }
+
+  document.getElementById("t-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var raw = tInput.value.trim().replace(/\s/g, "").replace(",", ".");
+    var val = parseFloat(raw);
+    if (isNaN(val)) {
+      tFeedback.textContent = "Впиши число, например 6 или 2,5";
+      tFeedback.className = "t-feedback no";
+      return;
+    }
+    state.total++;
+    if (Math.abs(val - state.answer) < 0.005) {
+      state.ok++;
+      var corrected = state.currentMistakeId !== null;
+      if (corrected) {
+        mistakes = mistakes.filter(function (mistake) { return mistake.id !== state.currentMistakeId; });
+        state.currentMistakeId = null;
+        renderMistakes();
+      }
+      tFeedback.textContent = corrected
+        ? "Верно! Ошибка исправлена, задание удалено из списка. Можно следующий пример."
+        : "Верно! Ответ: " + fmt(state.answer) + ". Жми «Ещё пример».";
+      tFeedback.className = "t-feedback ok";
+    } else {
+      recordMistake(tInput.value.trim());
+      tFeedback.textContent = "Пока мимо. Правильный ответ: " + fmt(state.answer) + ". Задание сохранено в «Мои ошибки»: открой разбор или реши его снова.";
+      tFeedback.className = "t-feedback no";
+    }
+    tScore.textContent = "Верно: " + state.ok + " из " + state.total;
+  });
+
+  document.getElementById("t-next").addEventListener("click", function () { newTask(true); });
+  document.getElementById("t-hint-btn").addEventListener("click", function () {
+    tHint.textContent = state.hint;
+  });
+
+  function setMode(m) {
+    mode = m;
+    updateModeTabs();
+    newTask(false);
+  }
+  tabNum.addEventListener("click", function () { setMode("num"); });
+  tabWord.addEventListener("click", function () { setMode("word"); });
+  tErrorsBtn.addEventListener("click", function () {
+    if (mistakes.length === 0) return;
+    tErrors.hidden = !tErrors.hidden;
+    tErrorsBtn.setAttribute("aria-expanded", tErrors.hidden ? "false" : "true");
+  });
+
+  renderMistakes();
+  newTask(false);
+})();
+</script>
+
+<script>
+(function () {
+  "use strict";
+  var filterButtons = document.querySelectorAll(".filter-btn");
+  var solutions = document.querySelectorAll(".solution");
+  var status = document.getElementById("filter-status");
+
+  function applyFilter(filter) {
+    var visible = 0;
+    solutions.forEach(function (item) {
+      var show = filter === "all" || item.getAttribute("data-group") === filter;
+      item.hidden = !show;
+      if (!show) item.open = false;
+      if (show) visible++;
+    });
+    filterButtons.forEach(function (button) {
+      button.setAttribute("aria-pressed", button.getAttribute("data-filter") === filter ? "true" : "false");
+    });
+    status.textContent = filter === "all" ? "Показаны все 19 разборов." : "Показано разборов: " + visible + ".";
+  }
+
+  filterButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      applyFilter(button.getAttribute("data-filter"));
+    });
+  });
+})();
+</script>
+</body>
+</html>
