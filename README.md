@@ -2,6 +2,8 @@
 
 Русскоязычный учебный сайт для 6 класса с памятками, короткими видеообъяснениями, пошаговыми разборами и интерактивными тренажёрами. Сейчас доступны пропорции, проценты и координатный луч. Сборка, база данных, PHP и серверная логика не нужны.
 
+**Опубликованный сайт:** [https://shulgaop.github.io/math-trainers/](https://shulgaop.github.io/math-trainers/). Репозиторий: [github.com/shulgaop/math-trainers](https://github.com/shulgaop/math-trainers).
+
 ## Что внутри
 
 ```text
