@@ -76,7 +76,7 @@ git push -u origin main
 https://shulgaop.github.io/math-trainers/
 ```
 
-Откройте главную, затем `procenty.html` и `luch.html`. Проверьте запуск локальных видео, тренажёр и раздел «Мой маршрут».
+Откройте главную, затем `procenty.html` и `luch.html`. Проверьте запуск локальных видео, тренажёр и раздел «С чего начать».
 
 Официальная инструкция: [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
